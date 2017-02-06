@@ -1,0 +1,6 @@
+2675  -bash
+  \_ 2761  socat - EXEC:ssh root@96.126.102.249,pty
+  \_ 2762  ssh root@96.126.102.249
+26313  -bash
+  \_ 2741  socat - EXEC:ssh root@96.126.102.249,pty,setsid,ctty
+2742  ssh root@96.126.102.249

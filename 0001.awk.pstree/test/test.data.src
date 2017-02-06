@@ -1,1 +1,5 @@
 ps -eo euser,pid,ppid,pgid,sid,tty,stat,cmd > test.data
+
+cat test.data.orig | awk -f ../build.awk - PID PGID CMD > test.PID-PGID.lst
+cat test.data.orig | awk -f ../build.awk - PID PPID CMD > test.PID-PPID.lst
+cat test.data.orig | awk -f ../build.awk - PID SID CMD > test.PID-SID.lst
