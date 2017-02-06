@@ -1,0 +1,1 @@
+ps -eo euser,pid,ppid,pgid,sid,tty,stat,cmd > test.data
