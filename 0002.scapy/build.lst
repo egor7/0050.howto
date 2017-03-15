@@ -1,15 +1,20 @@
-<IP  id=66 dst=Net('ya.ru') |>
-###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 66
-  flags     = 
-  frag      = 0
-  ttl       = 64
-  proto     = hopopt
-  chksum    = None
-  src       = 192.168.43.41
-  dst       = Net('ya.ru')
-  \options   \
+###[ TCP ]###
+  sport     = 44904
+  dport     = 5640
+  seq       = 405877264
+  ack       = 2868626943
+  dataofs   = 8L
+  reserved  = 0L
+  flags     = PA
+  window    = 576
+  chksum    = 0xfe43
+  urgptr    = 0
+  options   = [('NOP', None), ('NOP', None), ('Timestamp', (23817663, 23785030))]
+###[ P9 ]###
+     size      = 27
+     type      = 110
+     tag       = 3
+###[ Raw ]###
+        load      = '\x00\x00\x00\x00\x0b\x00\x00\x00\x01\x00\x08\x00fuse.txt'
+0000   1B 00 00 00 6E 03 00 00  00 00 00 0B 00 00 00 01   ....n...........
+0010   00 08 00 66 75 73 65 2E  74 78 74                  ...fuse.txt

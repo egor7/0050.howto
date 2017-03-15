@@ -1,15 +1,6 @@
-<IP  id=66 dst=Net('ya.ru') |>
-###[ IP ]###
-  version   = 4
-  ihl       = None
-  tos       = 0x0
-  len       = None
-  id        = 66
-  flags     = 
-  frag      = 0
-  ttl       = 64
-  proto     = hopopt
-  chksum    = None
-  src       = 192.168.43.41
-  dst       = Net('ya.ru')
-  \options   \
+P9
+<P9  type=1 tag=123 |>
+Traceback (most recent call last):
+  File "build.py", line 17, in <module>
+    class A(obect):
+NameError: name 'obect' is not defined
