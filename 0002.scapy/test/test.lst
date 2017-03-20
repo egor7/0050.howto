@@ -1,6 +1,21 @@
-P9
-<P9  type=1 tag=123 |>
-Traceback (most recent call last):
-  File "build.py", line 17, in <module>
-    class A(obect):
-NameError: name 'obect' is not defined
+Ether / IP / TCP 127.0.0.1:56802 > 127.0.0.1:5640 S
+Ether / IP / TCP 127.0.0.1:5640 > 127.0.0.1:56802 SA
+Ether / IP / TCP 127.0.0.1:56802 > 127.0.0.1:5640 A
+Ether / IP / TCP 127.0.0.1:56802 > 127.0.0.1:5640 PA / Raw
+Ether / IP / TCP 127.0.0.1:5640 > 127.0.0.1:56802 A
+Ether / IP / TCP 127.0.0.1:5640 > 127.0.0.1:56802 PA
+###[ TCP ]###
+  sport     = 56802
+  dport     = 5640
+  seq       = 3928913980
+  ack       = 2231771512
+  dataofs   = 8L
+  reserved  = 0L
+  flags     = PA
+  window    = 342
+  chksum    = 0xfe3b
+  urgptr    = 0
+  options   = [('NOP', None), ('NOP', None), ('Timestamp', (10379282, 10379282))]
+###[ Raw ]###
+     load      = '\x13\x00\x00\x00d\xff\xff\x00 \x00\x00\x06\x009P2000'
+{}

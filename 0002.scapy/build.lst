@@ -1,20 +1,9 @@
-###[ TCP ]###
-  sport     = 44904
-  dport     = 5640
-  seq       = 405877264
-  ack       = 2868626943
-  dataofs   = 8L
-  reserved  = 0L
-  flags     = PA
-  window    = 576
-  chksum    = 0xfe43
-  urgptr    = 0
-  options   = [('NOP', None), ('NOP', None), ('Timestamp', (23817663, 23785030))]
+Ether / IP / TCP 127.0.0.1:56802 > 127.0.0.1:5640 PA / P9 / Raw
 ###[ P9 ]###
-     size      = 27
-     type      = 110
-     tag       = 3
+  size      = 19
+  type      = Tversion
+  tag       = 65535
 ###[ Raw ]###
-        load      = '\x00\x00\x00\x00\x0b\x00\x00\x00\x01\x00\x08\x00fuse.txt'
-0000   1B 00 00 00 6E 03 00 00  00 00 00 0B 00 00 00 01   ....n...........
-0010   00 08 00 66 75 73 65 2E  74 78 74                  ...fuse.txt
+     load      = '\x00 \x00\x00\x06\x009P2000'
+0000   13 00 00 00 64 FF FF 00  20 00 00 06 00 39 50 32   ....d... ....9P2
+0010   30 30 30                                           000
