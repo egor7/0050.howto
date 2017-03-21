@@ -1,9 +1,10 @@
-Ether / IP / TCP 127.0.0.1:56802 > 127.0.0.1:5640 PA / P9 / Raw
+Ether / IP / TCP / 65535 Tversion / Raw
 ###[ P9 ]###
   size      = 19
   type      = Tversion
   tag       = 65535
+  msize     = 8192
 ###[ Raw ]###
-     load      = '\x00 \x00\x00\x06\x009P2000'
+     load      = '\x06\x009P2000'
 0000   13 00 00 00 64 FF FF 00  20 00 00 06 00 39 50 32   ....d... ....9P2
 0010   30 30 30                                           000
