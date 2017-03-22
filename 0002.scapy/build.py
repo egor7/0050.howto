@@ -30,35 +30,6 @@ p9types = { 100 : "Tversion",  # size[4] Tversion tag[2]        msize[4] version
             126 : "Twstat",    # size[4] Twstat   tag[2] fid[4]          stat[n]
             127 : "Rwstat" }   # size[4] Rwstat   tag[2]
 
-class P9StrField(Field):
-    """9P-strings starts with 2 byte size-field followed by UTF-8 string-field"""
-
-               any2i(h2i)
-(m) - <m2i,i2m> - (i) - <i2h,h2i> - (h)
-
-
-    def __init__(self, name, default, fld):
-        Field.__init__(self, name, default)
-        self.fld = fld
-
-    def i2m(self, pkt, x):
-        if x is None:
-            f = pkt.get_field(self.fld)
-            x = f.i2len(pkt, pkt.getfieldval(self.fld))
-            x = vlenq2str(x)
-        return str(x)
-
-    def m2i(self, pkt, x):
-        if s is None:
-            return None, 0
-        return str2vlenq(x)[1]
-
-    def addfield(self, pkt, s, val):
-        return s+self.i2m(pkt, val)
-
-    def getfield(self, pkt, s):
-        return str2vlenq(s)
-
 
 class P9(Packet):
     name = "P9"
@@ -66,9 +37,12 @@ class P9(Packet):
                  ByteEnumField("type",106,p9types),
                  LEShortField("tag",0),
                  ConditionalField(LEIntField("fid", None), lambda pkt:pkt.type in [104,110,112,114,116,118,120,122,124,126]),
-                 ConditionalField(LEIntField("msize", None), lambda pkt:pkt.type in [100,101])
+                 ConditionalField(LEIntField("msize", None), lambda pkt:pkt.type in [100,101]),
+                 ConditionalField(LEShortField("vsize",0), lambda pkt:pkt.type in [100,101]),
+				 ConditionalField(StrLenField("version", "", length_from=lambda pkt:pkt.vsize), lambda pkt:pkt.type in [100,101])
                 ]
     def mysummary(self):
+        #cond = '{0}'.format()
         s = self.sprintf("%P9.tag% %P9.type%") # TODO: add conditional %P9.msize
         return s
 
@@ -87,4 +61,3 @@ hexdump(p[0][P9])
 #p[5][TCP].show()
 #hexdump(p[3][P9])
 #hexdump(p[5][P9])
-

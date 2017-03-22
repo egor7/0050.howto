@@ -1,3 +1,10 @@
-  File "build.py", line 43
-    return s
-SyntaxError: 'return' outside function
+Ether / IP / TCP / 65535 Tversion
+###[ P9 ]###
+  size      = 19
+  type      = Tversion
+  tag       = 65535
+  msize     = 8192
+  vsize     = 6
+  version   = '9P2000'
+0000   13 00 00 00 64 FF FF 00  20 00 00 06 00 39 50 32   ....d... ....9P2
+0010   30 30 30                                           000
