@@ -1,10 +1,649 @@
-Ether / IP / TCP / 65535 Tversion
+Ether / IP / TCP / 65535 Tversion '9P2000'
+Ether / IP / TCP / 65535 Rversion '9P2000'
+Ether / IP / TCP / 0 Tattach 'chrx'
+Ether / IP / TCP / 0 Rattach / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Topen / Raw
+Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tread / Raw
+Ether / IP / TCP / 0 Rread / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Twalk / Raw
+Ether / IP / TCP / 0 Rwalk / Raw
+Ether / IP / TCP / 0 Tstat
+Ether / IP / TCP / 0 Rstat / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 0 Tclunk
+Ether / IP / TCP / 0 Rclunk
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Topen / Raw
+Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tread / Raw
+Ether / IP / TCP / 1 Rread / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Tcreate / Raw
+Ether / IP / TCP / 1 Rcreate / Raw
+Ether / IP / TCP / 1 Tstat
+Ether / IP / TCP / 1 Rstat / Raw
+Ether / IP / TCP / 1 Twalk / Raw
+Ether / IP / TCP / 1 Rwalk / Raw
+Ether / IP / TCP / 1 Twrite / Raw
+Ether / IP / TCP / 1 Rwrite / Raw
+Ether / IP / TCP / 1 Tclunk
+Ether / IP / TCP / 1 Rclunk
 ###[ P9 ]###
-  size      = 19
-  type      = Tversion
-  tag       = 65535
-  msize     = 8192
-  vsize     = 6
-  version   = '9P2000'
-0000   13 00 00 00 64 FF FF 00  20 00 00 06 00 39 50 32   ....d... ....9P2
-0010   30 30 30                                           000
+  size      = 23
+  type      = Tattach
+  tag       = 0
+  fid       = 0
+  afid      = 4294967295
+  unsize    = 4
+  uname     = 'chrx'
+  ansize    = 0
+  aname     = ''
+0000   17 00 00 00 68 00 00 00  00 00 00 FF FF FF FF 04   ....h...........
+0010   00 63 68 72 78 00 00                               .chrx..

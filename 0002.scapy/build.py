@@ -37,27 +37,32 @@ class P9(Packet):
                  ByteEnumField("type",106,p9types),
                  LEShortField("tag",0),
                  ConditionalField(LEIntField("fid", None), lambda pkt:pkt.type in [104,110,112,114,116,118,120,122,124,126]),
+                 # Tversion, Rversion
                  ConditionalField(LEIntField("msize", None), lambda pkt:pkt.type in [100,101]),
                  ConditionalField(LEShortField("vsize",0), lambda pkt:pkt.type in [100,101]),
-				 ConditionalField(StrLenField("version", "", length_from=lambda pkt:pkt.vsize), lambda pkt:pkt.type in [100,101])
+				 ConditionalField(StrLenField("version", "", length_from=lambda pkt:pkt.vsize), lambda pkt:pkt.type in [100,101]),
+                 # Tauth, Tattach
+                 ConditionalField(LEIntField("afid", None), lambda pkt:pkt.type in [102, 104]),
+                 ConditionalField(LEShortField("unsize",0), lambda pkt:pkt.type in [102,104]),
+				 ConditionalField(StrLenField("uname", "", length_from=lambda pkt:pkt.unsize), lambda pkt:pkt.type in [102,104]),
+                 ConditionalField(LEShortField("ansize",0), lambda pkt:pkt.type in [102,104]),
+				 ConditionalField(StrLenField("aname", "", length_from=lambda pkt:pkt.ansize), lambda pkt:pkt.type in [102,104]),
                 ]
     def mysummary(self):
-        #cond = '{0}'.format()
-        s = self.sprintf("%P9.tag% %P9.type%") # TODO: add conditional %P9.msize
+        s = self.sprintf("%P9.tag% %P9.type%")
+        if self.type in [100,101]:
+            s += self.sprintf(" %P9.version%")
+        if self.type in [102,104]:
+            s += self.sprintf(" %P9.uname%")
         return s
 
                                             
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 
-p=rdpcap('5640-2.pcap')
+p=rdpcap('5640-1.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
 
 p.summary()
-p[0][P9].show()
-hexdump(p[0][P9])
-#p[3][TCP].show()
-#p[3][TCP].show()
-#p[5][TCP].show()
-#hexdump(p[3][P9])
-#hexdump(p[5][P9])
+p[2][P9].show()
+hexdump(p[2][P9])
