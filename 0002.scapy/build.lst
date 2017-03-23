@@ -1,18 +1,18 @@
 Ether / IP / TCP / 65535 Tversion '9P2000'
 Ether / IP / TCP / 65535 Rversion '9P2000'
 Ether / IP / TCP / 0 Tattach 'chrx'
-Ether / IP / TCP / 0 Rattach / Raw
+Ether / IP / TCP / 0 Rattach 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'No such file or directory' / Raw
 Ether / IP / TCP / 1 Topen / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'No such file or directory'
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -62,11 +62,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -80,11 +80,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -98,11 +98,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -116,11 +116,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -134,11 +134,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -152,11 +152,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -170,11 +170,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -188,11 +188,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -206,11 +206,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -224,11 +224,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -242,11 +242,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -260,11 +260,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -278,11 +278,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -296,11 +296,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -314,11 +314,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -332,11 +332,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -350,11 +350,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -368,11 +368,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -386,11 +386,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -404,11 +404,11 @@ Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -422,11 +422,11 @@ Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -440,11 +440,11 @@ Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -456,13 +456,13 @@ Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tclunk
 Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'No such file or directory'
 Ether / IP / TCP / 0 Tstat
 Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Tclunk
 Ether / IP / TCP / 0 Rclunk
 Ether / IP / TCP / 0 Tstat
@@ -470,9 +470,9 @@ Ether / IP / TCP / 0 Rstat / Raw
 Ether / IP / TCP / 0 Twalk / Raw
 Ether / IP / TCP / 0 Rwalk / Raw
 Ether / IP / TCP / 0 Topen / Raw
-Ether / IP / TCP / 0 Ropen / Raw
+Ether / IP / TCP / 0 Ropen 80:1c:3a:b5:58:55:c5:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 0 Twalk / Raw
-Ether / IP / TCP / 0 Rerror / Raw
+Ether / IP / TCP / 0 Rerror 'bad use of fid'
 Ether / IP / TCP / 0 Tread / Raw
 Ether / IP / TCP / 0 Rread / Raw
 Ether / IP / TCP / 0 Tread / Raw
@@ -606,15 +606,15 @@ Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:27:99:03:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tclunk
 Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Topen / Raw
-Ether / IP / TCP / 1 Ropen / Raw
+Ether / IP / TCP / 1 Ropen 80:1c:3a:b5:58:27:99:03:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'bad use of fid'
 Ether / IP / TCP / 1 Tread / Raw
 Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tread / Raw
@@ -622,11 +622,11 @@ Ether / IP / TCP / 1 Rread / Raw
 Ether / IP / TCP / 1 Tclunk
 Ether / IP / TCP / 1 Rclunk
 Ether / IP / TCP / 1 Twalk / Raw
-Ether / IP / TCP / 1 Rerror / Raw
+Ether / IP / TCP / 1 Rerror 'No such file or directory'
 Ether / IP / TCP / 1 Twalk / Raw
 Ether / IP / TCP / 1 Rwalk / Raw
 Ether / IP / TCP / 1 Tcreate / Raw
-Ether / IP / TCP / 1 Rcreate / Raw
+Ether / IP / TCP / 1 Rcreate 00:ec:7a:cf:58:19:99:02:00:00:00:00:00 / Raw
 Ether / IP / TCP / 1 Tstat
 Ether / IP / TCP / 1 Rstat / Raw
 Ether / IP / TCP / 1 Twalk / Raw
@@ -635,15 +635,3 @@ Ether / IP / TCP / 1 Twrite / Raw
 Ether / IP / TCP / 1 Rwrite / Raw
 Ether / IP / TCP / 1 Tclunk
 Ether / IP / TCP / 1 Rclunk
-###[ P9 ]###
-  size      = 23
-  type      = Tattach
-  tag       = 0
-  fid       = 0
-  afid      = 4294967295
-  unsize    = 4
-  uname     = 'chrx'
-  ansize    = 0
-  aname     = ''
-0000   17 00 00 00 68 00 00 00  00 00 00 FF FF FF FF 04   ....h...........
-0010   00 63 68 72 78 00 00                               .chrx..
