@@ -27,14 +27,14 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             105: "Rattach",   # size[4] Rattach  tag[2]                 qid[13]
             106: "Terror",    # illegal
             107: "Rerror",    # size[4] Rerror   tag[2]                 ename[s]
-            108 : "Tflush",    # size[4] Tflush   tag[2]                 oldtag[2]
+            108: "Tflush",    # size[4] Tflush   tag[2]                 oldtag[2]
             109: "Rflush",    # size[4] Rflush   tag[2]
-            110 : "Twalk",     # size[4] Twalk    tag[2] fid[4]          newfid[4] nwname[2] nwname*(wname[s])
+            110: "Twalk",     # size[4] Twalk    tag[2] fid[4]          newfid[4] nwname[2] nwname*(wname[s])
             111 : "Rwalk",     # size[4] Rwalk    tag[2]                 nwqid[2] nwqid*(wqid[13])
             112 : "Topen",     # size[4] Topen    tag[2] fid[4]          mode[1]
-            113 : "Ropen",     # size[4] Ropen    tag[2]                 qid[13] iounit[4]
+            113: "Ropen",     # size[4] Ropen    tag[2]                 qid[13] iounit[4]
             114 : "Tcreate",   # size[4] Tcreate  tag[2] fid[4]          name[s] perm[4] mode[1]
-            115 : "Rcreate",   # size[4] Rcreate  tag[2]                 qid[13] iounit[4]
+            115: "Rcreate",   # size[4] Rcreate  tag[2]                 qid[13] iounit[4]
             116 : "Tread",     # size[4] Tread    tag[2] fid[4]          offset[8] count[4]
             117 : "Rread",     # size[4] Rread    tag[2]                           count[4] data[count]
             118 : "Twrite",    # size[4] Twrite   tag[2] fid[4]          offset[8] count[4] data[count]
@@ -46,7 +46,7 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             124: "Tstat",     # size[4] Tstat    tag[2] fid[4]
             125 : "Rstat",     # size[4] Rstat    tag[2]                 stat[n]
             126 : "Twstat",    # size[4] Twstat   tag[2] fid[4]          stat[n]
-            127 : "Rwstat" }   # size[4] Rwstat   tag[2]
+            127: "Rwstat" }   # size[4] Rwstat   tag[2]
 
 class P9s(StrField):
     def m2i(self, pkt, x):
@@ -62,8 +62,20 @@ class P9s(StrField):
         return s[2+len(str):],str
 
 class P9qid(StrFixedLenField):
-    pass
+    def __repr__(self):
+        return "123"#????<Field (%s).%s>" % (",".join(x.__name__ for x in self.owners),self.name)
+    def i2repr(self, pkt, v):
+        # type[1].version[4].path[8]
+        s  = "{:0>8}".format(bin(ord(v[0:1]))[2:])
+        s += '.' + "{:0>10}".format(struct.unpack("<I", v[1:5])[0])
+        s += '.' + "{:0>20}".format(struct.unpack("<Q", v[5:])[0])
+        s += '(' + ":".join("{:02x}".format(ord(c)) for c in v[:]) + ')'
+        return s
 
+class P9lst(FieldListField):
+    def i2repr(self, pkt, v):
+        # todo
+        return '[%s]' % ', '.join(map(repr, v))
 
 class P9(Packet):
     name = "P9"
@@ -78,17 +90,27 @@ class P9(Packet):
                  ConditionalField(LEIntField("afid", None), lambda pkt:pkt.type in [102,104]),
                  ConditionalField(P9s("uname", ""), lambda pkt:pkt.type in [102,104]),
                  ConditionalField(P9s("aname", ""), lambda pkt:pkt.type in [102,104]),
+                 # Tflush
+                 ConditionalField(LEShortField("oldtag",0), lambda pkt:pkt.type in [108]),
                  # Rerror
                  ConditionalField(LEShortField("esize",0), lambda pkt:pkt.type in [107]),
                  ConditionalField(StrLenField("ename", "", length_from=lambda pkt:pkt.esize), lambda pkt:pkt.type in [107]),
-#                 # Rauth
-#                 ConditionalField(BitField("aqid", None, 13), lambda pkt:pkt.type in [103]),
+                 # Rauth
+                 ConditionalField(P9qid("aqid", None, 13), lambda pkt:pkt.type in [103]),
                  # Rattach, Ropen, Rcreate
-                 ConditionalField(StrFixedLenField("qid", None, 13), lambda pkt:pkt.type in [105,113,115])
+                 ConditionalField(P9qid("qid", None, 13), lambda pkt:pkt.type in [105,113,115]),
+                 # Ropen, Rcreate
+                 ConditionalField(LEIntField("iounit", None), lambda pkt:pkt.type in [113,115]),
+                 # Twalk
+                 ConditionalField(LEIntField("newfid", None), lambda pkt:pkt.type in [110]),
+                 ConditionalField(FieldLenField("nwname", 0, count_of="wname", fmt="<H"), lambda pkt:pkt.type in [110]),
+                 ConditionalField(P9lst("wname", [], P9s("", ""), count_from=lambda pkt:pkt.nwname), lambda pkt:pkt.type in [110]),
+                 # Rwalk
+                 ConditionalField(FieldLenField("nwqid", 0, count_of="wqid", fmt="<H"), lambda pkt:pkt.type in [111]),
+                 ConditionalField(P9lst("wqid", [], P9qid("", None, 13), count_from=lambda pkt:pkt.nwqid), lambda pkt:pkt.type in [111]),
                 ]
     def mysummary(self):
-        s = self.sprintf("%2s,P9.tag%")
-        s += " {:<7}".format(self.sprintf("%P9.type%")) 
+        s = self.sprintf("%2s,P9.tag% %P9.type%")
         #? replace uppper s += self.sprintf(" %7s,P9.type%")
         if self.type in [100,101]:
             s += self.sprintf(" %P9.version%")
@@ -96,14 +118,22 @@ class P9(Packet):
             s += self.sprintf(" %P9.uname%")
         if self.type in [107]:
             s += self.sprintf(" %P9.ename%")
+        if self.type in [108]:
+            s += self.sprintf(" %P9.oldtag%")
         if self.type in [103]:
             s += self.sprintf(" %P9.aqid%")
         if self.type in [105,113,115]:
-            # type[1].version[4].path[8]
-            s += " " + "{:0>8}".format(bin(ord(self.qid[0:1]))[2:])
-            s += '.' + "{:0>10}".format(struct.unpack("<I", self.qid[1:5])[0])
-            s += '.' + "{:0>20}".format(struct.unpack("<Q", self.qid[5:])[0])
-            s += '(' + ":".join("{:02x}".format(ord(c)) for c in self.qid[:]) + ')'
+            s += self.sprintf(" %P9.qid%")
+        if self.type in [113,115]:
+            s += self.sprintf(" %P9.iounit%")
+        if self.type in [110]:
+            s += self.sprintf(" %P9.newfid%")
+        if self.type in [110]:
+            s += self.sprintf(" %P9.nwname%")
+            s += self.sprintf(" %P9.wname%")
+        if self.type in [111]:
+            s += self.sprintf(" %P9.nwqid%")
+            s += self.sprintf(" %P9.wqid%")
 
         return s
 
@@ -111,7 +141,7 @@ class P9(Packet):
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 
-p=rdpcap('5640-1.pcap')
+p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
 p.summary()
 
