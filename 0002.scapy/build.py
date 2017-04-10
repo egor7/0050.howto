@@ -19,6 +19,14 @@ conf.color_theme=NoTheme()
 # s2=p.addfield(None,"","555")
 # print(p.getfield(None,s2))
 
+# === Field access
+# print(p[23][P9].sprintf("%P9.wqid%"))
+# print(p[23][P9].wqid)
+# print(repr(p[23][P9].wqid))
+# print("type = " + p[23][P9].fieldtype["wqid"].__repr__())
+# print(p[23][P9].fields["wqid"])
+# p.nsummary()
+
 p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[s]
             101: "Rversion",  # size[4] Rversion tag[2]        msize[4] version[s]
             102: "Tauth",     # size[4] Tauth    tag[2]                 afid[4] uname[s] aname[s]
@@ -71,11 +79,19 @@ class P9qid(StrFixedLenField):
         s += '.' + "{:0>20}".format(struct.unpack("<Q", v[5:])[0])
         s += '(' + ":".join("{:02x}".format(ord(c)) for c in v[:]) + ')'
         return s
+#    def getfield(self, pkt, s):
+#        l = self.length_from(pkt)
+#        return s[l:], "XXX"+self.m2i(pkt,s[:l])
 
 class P9lst(FieldListField):
+    pass
     def i2repr(self, pkt, v):
-        # todo
-        return '[%s]' % ', '.join(map(repr, v))
+        print('=== i2repr: ' + '"' + self.name + '"')
+        # why STR - because!
+        # todo: transform str through internal repr to object and repr it
+        if v:
+            print type(v[0])
+        return '[[%s]]' % ', '.join(map(repr, v))
 
 class P9(Packet):
     name = "P9"
@@ -143,7 +159,9 @@ bind_layers(TCP, P9, dport=5640)
 
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-p.summary()
+#p.nsummary()
+#hexdump(p[12][P9])
+#hexdump(p[23][P9])
+#p[23][P9].show()
 
-#p[3][P9].show()
-#hexdump(p[3][P9])
+print(p[23][P9].sprintf("%P9.wqid%"))
