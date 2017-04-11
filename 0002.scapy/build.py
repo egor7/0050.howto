@@ -7,6 +7,9 @@ conf.color_theme=NoTheme()
 # print(":".join("{:02x}".format(ord(c)) for c in s))
 # print(struct.unpack("<H", s[:2])[0])
 
+# === convert BYTE to CHAR
+# print(chr(int('7a',16)))
+
 # === convert BYTE to 8BIT
 # print bin(int('ff', base=16))[2:]
 # print bin(int('0f', base=16))[2:].zfill(8)
@@ -32,6 +35,24 @@ conf.color_theme=NoTheme()
 # hexdump(p[23][P9])
 # p[23][P9].show()
 # print(p[23][P9].sprintf("%P9.wqid%"))
+
+#class P9stat(P9s):
+#    pass
+# === stat[n]
+# size[2]:      total byte count of the following data
+# type[2]:      for kernel use
+# dev[4]:       for kernel use
+# qid.type[1]:  the type of the file (directory, etc.)
+# qid.vers[4]:  version number for given path
+# qid.path[8]:  the file servers unique identification for the file
+# mode[4]:      permissions and flags
+# atime[4]:     last access time
+# mtime[4]:     last modification time
+# length[8]:    length of file in bytes
+# name[ s ]:    file name; must be / if the file is the root directory of the server
+# uid[ s ]:     owner name
+# gid[ s ]:     group name
+# muid[ s ]:    name of the user who last modified the file
 
 p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[s]
             101: "Rversion",  # size[4] Rversion tag[2]        msize[4] version[s]
@@ -62,23 +83,58 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             126 : "Twstat",    # size[4] Twstat   tag[2] fid[4]          stat[n]
             127: "Rwstat" }   # size[4] Rwstat   tag[2]
 
-# === stat[n]
-# size[2]:      total byte count of the following data
-# type[2]:      for kernel use
-# dev[4]:       for kernel use
-# qid.type[1]:  the type of the file (directory, etc.), represented as a bit vector corresponding to the high 8 bits of the files mode word.
-# qid.vers[4]:  version number for given path
-# qid.path[8]:  the file servers unique identification for the file
-# mode[4]:      permissions and flags
-# atime[4]:     last access time
-# mtime[4]:     last modification time
-# length[8]:    length of file in bytes
-# name[ s ]:    file name; must be / if the file is the root directory of the server
-# uid[ s ]:     owner name
-# gid[ s ]:     group name
-# muid[ s ]:    name of the user who last modified the file
+# === the new way
+class P9size(Field):
+    # all
+    # TODO: add lambda function to calculate package size
+    def __init__(self):
+        Field.__init__(self, "size", -1, "<I")
 
-class P9s(StrField):
+class P9tag(Field):
+    # all
+    # distinct concurrent messages
+    def __init__(self):
+        Field.__init__(self, "tag", 0, "<H")
+
+class P9oldtag(Field):
+    # 108:Tflush
+    # force tag to be free
+    def __init__(self):
+        Field.__init__(self, "oldtag", 0, "<H")
+
+class P9msize(Field):
+    # 100:Tversion, 101:Rversion
+    # maximum supported length
+    def __init__(self):
+        Field.__init__(self, "msize", 8192, "<I")
+
+class P9fid(Field):
+    # 104:Tattach, 110:Twalk, 112:Topen, 114:Tcreate, 116:Tread, 118:Twrite, 120:Tclunk, 122:Tremove, 124:Tstat, 126:Twstat
+    # file id, choosen by client
+    def __init__(self):
+        Field.__init__(self, "fid", -1, "<I")
+
+class P9afid(Field):
+    # 102:Tauth, 104:Tattach
+    # auth file id
+    def __init__(self):
+        Field.__init__(self, "afid", -1, "<I")
+
+class P9newfid(Field):
+    # 110:Twalk
+    # new approved file id
+    def __init__(self):
+        Field.__init__(self, "newfid", -1, "<I")
+
+class P9iounit(Field):
+    # 113:Ropen, 115:Rcreate
+    # TODO: what is that
+    def __init__(self):
+        Field.__init__(self, "iounit", -1, "<I")
+
+
+
+class P9s(Field):
     def m2i(self, pkt, x):
         return x[2:2+struct.unpack("<H", x[:2])[0]]
     def i2m(self, pkt, x):
@@ -87,6 +143,8 @@ class P9s(StrField):
         elif type(x) is not str:
             x=str(x)
         return "" + struct.pack("<H", len(x)) + x
+    def addfield(self, pkt, s, val):
+        return s+self.i2m(pkt, val)
     def getfield(self, pkt, s):
         str = self.m2i(pkt, s)
         return s[2+len(str):],str
@@ -104,22 +162,23 @@ class P9lst(FieldListField):
     def i2repr(self, pkt, val):
         return '[%s]' % ', '.join(map(lambda v:self.field.i2repr(pkt, v), val))
 
+
 class P9(Packet):
     name = "P9"
-    fields_desc=[LEIntField("size",0),
+    fields_desc=[P9size(),
                  ByteEnumField("type",106,p9types),
-                 LEShortField("tag",0),
-                 ConditionalField(LEIntField("fid", None), lambda pkt:pkt.type in [104,110,112,114,116,118,120,122,124,126]),
+                 P9tag(),
+                 ConditionalField(P9fid(), lambda pkt:pkt.type in [104,110,112,114,116,118,120,122,124,126]),
                  # Tversion, Rversion
-                 ConditionalField(LEIntField("msize", None), lambda pkt:pkt.type in [100,101]),
+                 ConditionalField(P9msize(), lambda pkt:pkt.type in [100,101]),
                  ConditionalField(P9s("version", ""), lambda pkt:pkt.type in [100,101]),
                  # Tauth, Tattach
-                 ConditionalField(LEIntField("afid", None), lambda pkt:pkt.type in [102,104]),
+                 ConditionalField(P9afid(), lambda pkt:pkt.type in [102,104]),
                  ConditionalField(P9s("uname", ""), lambda pkt:pkt.type in [102,104]),
                  ConditionalField(P9s("aname", ""), lambda pkt:pkt.type in [102,104]),
                  # Tflush
-                 ConditionalField(LEShortField("oldtag",0), lambda pkt:pkt.type in [108]),
-                 # Rerror
+                 ConditionalField(P9oldtag(), lambda pkt:pkt.type in [108]),
+                 # Rerror TODO: remap to 9Ps - esize doesn't exists
                  ConditionalField(LEShortField("esize",0), lambda pkt:pkt.type in [107]),
                  ConditionalField(StrLenField("ename", "", length_from=lambda pkt:pkt.esize), lambda pkt:pkt.type in [107]),
                  # Rauth
@@ -127,18 +186,19 @@ class P9(Packet):
                  # Rattach, Ropen, Rcreate
                  ConditionalField(P9qid("qid", None, 13), lambda pkt:pkt.type in [105,113,115]),
                  # Ropen, Rcreate
-                 ConditionalField(LEIntField("iounit", None), lambda pkt:pkt.type in [113,115]),
+                 ConditionalField(P9iounit(), lambda pkt:pkt.type in [113,115]),
                  # Twalk
-                 ConditionalField(LEIntField("newfid", None), lambda pkt:pkt.type in [110]),
+                 ConditionalField(P9newfid(), lambda pkt:pkt.type in [110]),
                  ConditionalField(FieldLenField("nwname", 0, count_of="wname", fmt="<H"), lambda pkt:pkt.type in [110]),
                  ConditionalField(P9lst("wname", [], P9s("", ""), count_from=lambda pkt:pkt.nwname), lambda pkt:pkt.type in [110]),
                  # Rwalk
                  ConditionalField(FieldLenField("nwqid", 0, count_of="wqid", fmt="<H"), lambda pkt:pkt.type in [111]),
                  ConditionalField(P9lst("wqid", [], P9qid("", None, 13), count_from=lambda pkt:pkt.nwqid), lambda pkt:pkt.type in [111]),
+                 # Rstat, Twstat
+                 ConditionalField(P9s("stat", ""), lambda pkt:pkt.type in [125,126]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
-        #? replace uppper s += self.sprintf(" %7s,P9.type%")
         #where is fid? [104,110,112,114,116,118,120,122,124,126]
         if self.type in [100,101]:
             s += self.sprintf(" %P9.version%")
@@ -161,6 +221,8 @@ class P9(Packet):
         if self.type in [111]:
             s += self.sprintf(" %P9.nwqid%")
             s += self.sprintf(" %P9.wqid%")
+        if self.type in [125,126]:
+            s += self.sprintf(" %P9.stat%")
         return s
 
 
@@ -169,7 +231,6 @@ bind_layers(TCP, P9, dport=5640)
 
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-#p.nsummary()
-p[518][P9].show()
-hexdump(p[518][P9])
-hexdump(p[518][P9][Raw])
+p.nsummary()
+#p[518][P9].show()
+
