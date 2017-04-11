@@ -62,6 +62,22 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             126 : "Twstat",    # size[4] Twstat   tag[2] fid[4]          stat[n]
             127: "Rwstat" }   # size[4] Rwstat   tag[2]
 
+# === stat[n]
+# size[2]:      total byte count of the following data
+# type[2]:      for kernel use
+# dev[4]:       for kernel use
+# qid.type[1]:  the type of the file (directory, etc.), represented as a bit vector corresponding to the high 8 bits of the files mode word.
+# qid.vers[4]:  version number for given path
+# qid.path[8]:  the file servers unique identification for the file
+# mode[4]:      permissions and flags
+# atime[4]:     last access time
+# mtime[4]:     last modification time
+# length[8]:    length of file in bytes
+# name[ s ]:    file name; must be / if the file is the root directory of the server
+# uid[ s ]:     owner name
+# gid[ s ]:     group name
+# muid[ s ]:    name of the user who last modified the file
+
 class P9s(StrField):
     def m2i(self, pkt, x):
         return x[2:2+struct.unpack("<H", x[:2])[0]]
@@ -123,6 +139,7 @@ class P9(Packet):
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
         #? replace uppper s += self.sprintf(" %7s,P9.type%")
+        #where is fid? [104,110,112,114,116,118,120,122,124,126]
         if self.type in [100,101]:
             s += self.sprintf(" %P9.version%")
         if self.type in [102,104]:
@@ -144,7 +161,6 @@ class P9(Packet):
         if self.type in [111]:
             s += self.sprintf(" %P9.nwqid%")
             s += self.sprintf(" %P9.wqid%")
-#fid? [104,110,112,114,116,118,120,122,124,126]
         return s
 
 
@@ -154,4 +170,6 @@ bind_layers(TCP, P9, dport=5640)
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
 #p.nsummary()
-p[530][P9].show()
+p[518][P9].show()
+hexdump(p[518][P9])
+hexdump(p[518][P9][Raw])
