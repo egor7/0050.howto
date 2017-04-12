@@ -191,6 +191,12 @@ class P9Sstat(P9S):
     def __init__(self, default=""):
         P9S.__init__(self, "stat", default)
 
+# === composed with subfields
+#class P9C(Field):
+#    def __init__(self, name, default, length, cls):
+#        Field.__init__(self, name, default, "%is"%length)
+#        self.cls = cls
+
 class P9qid(StrFixedLenField):
     def i2repr(self, pkt, v):
         # type[1].version[4].path[8](summary[13])
@@ -200,7 +206,8 @@ class P9qid(StrFixedLenField):
         s += '(' + ":".join("{0:02x}".format(ord(c)) for c in v[:]) + ')'
         return s
 
-
+# === list
+# TODO: pack into one field
 class P9L(Field):
     def __init__(self, name, field, count_from):
         default = []
@@ -317,8 +324,32 @@ class P9(Packet):
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 
-p=rdpcap('5640-4.pcap')
-p=p.filter(lambda x:x.haslayer(P9))[:]
-p.nsummary()
-#p[518][P9].show()
+#p=rdpcap('5640-4.pcap')
+#p=p.filter(lambda x:x.haslayer(P9))[:]
+#p.nsummary()
+##p[518][P9].show()
 
+
+class P9CQID:
+    def __init__(self, type, vers, path):
+        self.type = type
+        self.vers = vers
+        self.path = path
+
+class P9C(Field):
+    def __init__(self, name, default, length, cls):
+        Field.__init__(self, name, default, "%is"%length)
+        self.length = length
+        self.cls = cls
+    def i2m(self, pkt, x):
+        """Convert internal(class) representation to machine(string) value"""
+        if x is None:
+            x = "0".zfill(length)
+        return "" + x.type + x.vers + x.path
+
+a=P9C("test", None, 13, P9CQID)
+#print(a.i2m(None, "0000000000000123"))
+#print(a.addfield(None, "only 13 bytes allowed: ", "0000000000000123"))
+print(a.i2m(None, P9CQID("1", "2003", "40000005")))
+
+# gone to create P9Q class
