@@ -90,17 +90,43 @@ class P9size(Field):
     def __init__(self):
         Field.__init__(self, "size", -1, "<I")
 
-class P9tag(Field):
+
+class P9Ntag(LEShortField):
     # all
     # distinct concurrent messages
     def __init__(self):
-        Field.__init__(self, "tag", 0, "<H")
+        LEShortField.__init__(self, "tag", 0)
 
 class P9oldtag(Field):
     # 108:Tflush
     # force tag to be free
     def __init__(self):
         Field.__init__(self, "oldtag", 0, "<H")
+
+class P9nwname(Field):
+    # 110:Twalk
+    # size
+    def __init__(self, count_of):
+        Field.__init__(self, "nwname", 0, "<H")
+        self.count_of=count_of
+    def i2m(self, pkt, x):
+        if x is None:
+            fld,fval = pkt.getfield_and_val(self.count_of)
+            x = fld.i2count(pkt, fval)
+        return x
+
+class P9nwqid(Field):
+    # 111:Rwalk
+    # size
+    def __init__(self, count_of):
+        Field.__init__(self, "nwqid", 0, "<H")
+        self.count_of=count_of
+    def i2m(self, pkt, x):
+        if x is None:
+            fld,fval = pkt.getfield_and_val(self.count_of)
+            x = fld.i2count(pkt, fval)
+        return x
+
 
 class P9msize(Field):
     # 100:Tversion, 101:Rversion
@@ -134,7 +160,7 @@ class P9iounit(Field):
 
 
 
-class P9s(Field):
+class P9S(Field):
     def m2i(self, pkt, x):
         return x[2:2+struct.unpack("<H", x[:2])[0]]
     def i2m(self, pkt, x):
@@ -149,6 +175,22 @@ class P9s(Field):
         str = self.m2i(pkt, s)
         return s[2+len(str):],str
 
+class P9Sversion(P9S):
+    def __init__(self, default="9P2000"):
+        P9S.__init__(self, "version", default)
+class P9Suname(P9S):
+    def __init__(self, default=""):
+        P9S.__init__(self, "uname", default)
+class P9Saname(P9S):
+    def __init__(self, default=""):
+        P9S.__init__(self, "aname", default)
+class P9Sename(P9S):
+    def __init__(self, default=""):
+        P9S.__init__(self, "ename", default)
+class P9Sstat(P9S):
+    def __init__(self, default=""):
+        P9S.__init__(self, "stat", default)
+
 class P9qid(StrFixedLenField):
     def i2repr(self, pkt, v):
         # type[1].version[4].path[8](summary[13])
@@ -158,29 +200,75 @@ class P9qid(StrFixedLenField):
         s += '(' + ":".join("{0:02x}".format(ord(c)) for c in v[:]) + ')'
         return s
 
-class P9lst(FieldListField):
+
+class P9L(Field):
+    def __init__(self, name, field, count_from):
+        default = []
+        Field.__init__(self, name, default)
+        self.count_from = count_from
+        self.field = field
+
+    def i2count(self, pkt, val):
+        if type(val) is list:
+            return len(val)
+        return 1
+    def i2len(self, pkt, val):
+        return sum( self.field.i2len(pkt,v) for v in val )
+    def i2m(self, pkt, val):
+        if val is None:
+            val = []
+        return val
+    def any2i(self, pkt, x):
+        if type(x) is not list:
+            return [x]
+        return x
     def i2repr(self, pkt, val):
         return '[%s]' % ', '.join(map(lambda v:self.field.i2repr(pkt, v), val))
+
+    def addfield(self, pkt, s, val):
+        val = self.i2m(pkt, val)
+        for v in val:
+            s = self.field.addfield(pkt, s, v)
+        return s
+    def getfield(self, pkt, s):
+        #c = self.count_from(pkt)
+        c = pkt.getfieldval(self.count_from)
+        val = []
+        while s:
+            if c <= 0:
+                break
+
+            c -= 1
+            s,v = self.field.getfield(pkt, s)
+            val.append(v)
+        return s, val
+
+class P9Lwname(P9L):
+    def __init__(self, count_from):
+        P9L.__init__(self, "wname", P9S("", ""), count_from=count_from)
+
+class P9Lwqid(P9L):
+    def __init__(self, count_from):
+        P9L.__init__(self, "wqid", P9qid("", None, 13), count_from=count_from)
 
 
 class P9(Packet):
     name = "P9"
     fields_desc=[P9size(),
                  ByteEnumField("type",106,p9types),
-                 P9tag(),
+                 P9Ntag(),
                  ConditionalField(P9fid(), lambda pkt:pkt.type in [104,110,112,114,116,118,120,122,124,126]),
                  # Tversion, Rversion
                  ConditionalField(P9msize(), lambda pkt:pkt.type in [100,101]),
-                 ConditionalField(P9s("version", ""), lambda pkt:pkt.type in [100,101]),
+                 ConditionalField(P9Sversion(), lambda pkt:pkt.type in [100,101]),
                  # Tauth, Tattach
                  ConditionalField(P9afid(), lambda pkt:pkt.type in [102,104]),
-                 ConditionalField(P9s("uname", ""), lambda pkt:pkt.type in [102,104]),
-                 ConditionalField(P9s("aname", ""), lambda pkt:pkt.type in [102,104]),
+                 ConditionalField(P9Suname(), lambda pkt:pkt.type in [102,104]),
+                 ConditionalField(P9Saname(), lambda pkt:pkt.type in [102,104]),
                  # Tflush
                  ConditionalField(P9oldtag(), lambda pkt:pkt.type in [108]),
-                 # Rerror TODO: remap to 9Ps - esize doesn't exists
-                 ConditionalField(LEShortField("esize",0), lambda pkt:pkt.type in [107]),
-                 ConditionalField(StrLenField("ename", "", length_from=lambda pkt:pkt.esize), lambda pkt:pkt.type in [107]),
+                 # Rerror
+                 ConditionalField(P9Sename(), lambda pkt:pkt.type in [107]),
                  # Rauth
                  ConditionalField(P9qid("aqid", None, 13), lambda pkt:pkt.type in [103]),
                  # Rattach, Ropen, Rcreate
@@ -189,13 +277,13 @@ class P9(Packet):
                  ConditionalField(P9iounit(), lambda pkt:pkt.type in [113,115]),
                  # Twalk
                  ConditionalField(P9newfid(), lambda pkt:pkt.type in [110]),
-                 ConditionalField(FieldLenField("nwname", 0, count_of="wname", fmt="<H"), lambda pkt:pkt.type in [110]),
-                 ConditionalField(P9lst("wname", [], P9s("", ""), count_from=lambda pkt:pkt.nwname), lambda pkt:pkt.type in [110]),
+                 ConditionalField(P9nwname(count_of="wname"), lambda pkt:pkt.type in [110]),
+                 ConditionalField(P9Lwname(count_from="nwname"), lambda pkt:pkt.type in [110]),
                  # Rwalk
-                 ConditionalField(FieldLenField("nwqid", 0, count_of="wqid", fmt="<H"), lambda pkt:pkt.type in [111]),
-                 ConditionalField(P9lst("wqid", [], P9qid("", None, 13), count_from=lambda pkt:pkt.nwqid), lambda pkt:pkt.type in [111]),
+                 ConditionalField(P9nwqid(count_of="wqid"), lambda pkt:pkt.type in [111]),
+                 ConditionalField(P9Lwqid(count_from="nwqid"), lambda pkt:pkt.type in [111]),
                  # Rstat, Twstat
-                 ConditionalField(P9s("stat", ""), lambda pkt:pkt.type in [125,126]),
+                 ConditionalField(P9Sstat(), lambda pkt:pkt.type in [125,126]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
