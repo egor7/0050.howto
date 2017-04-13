@@ -23,15 +23,13 @@ conf.color_theme=NoTheme()
 # s += '(' + ":".join("{0:02x}".format(ord(c)) for c in v[:]) + ')'
 
 # === QID test
-# a=P9C("test", None, 13, QID)
-# print(repr(a.i2m(None, QID(QID.FILE | QID.TMP, 2003, 40000005))))
-# print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
-# print(":".join("{0:02x}".format(ord(c)) for c in a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32))))
-# print(":".join("{0:02x}".format(ord(c)) for c in a.addfield(None, "", QID(QID.FILE | QID.TMP, 16, 32))))
-# print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
-#
-# c=QID.fromstr(a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))
-# print(repr(c))
+# a = P9C("qid", None, QID)
+# s = a.addfield(None, "", QID(QID.DIR | QID.TMP, 16, 32))
+# s = a.addfield(None, s, QID(QID.FILE | QID.TMP, 64, 128))
+# s,v1 = a.getfield(None, s)
+# s,v2 = a.getfield(None, s)
+# print(a.i2h(None, v1))
+# print(a.i2h(None, v2))
 
 # === Field access
 # p=rdpcap('5640-4.pcap')
@@ -348,8 +346,10 @@ bind_layers(TCP, P9, dport=5640)
 ##p[518][P9].show()
 
 
-class QID:
-    # type
+class P9C(Field):
+    """13-bytes qid"""
+    length  = 13
+
     DIR     = 0x80 # directories
     APPEND  = 0x40 # append only files
     EXCL    = 0x20 # exclusive use files
@@ -359,80 +359,55 @@ class QID:
     SYMLINK = 0x02 # symbolic link
     FILE    = 0x00 # plain file
 
-    length = 13
-
-    def __init__(self, type, vers, path):
-        self.type = type
-        self.vers = vers
-        self.path = path
-
-    @classmethod
-    def fromstr(cls, s):
-        if s == '': return None
-        type = ord(s[0:1])
-        vers = struct.unpack("<I", s[1:5])[0]
-        path = struct.unpack("<Q", s[5:])[0]
-        return cls(type, vers, path)
-
-    # to binary
-    def __str__(self):
-        return struct.pack("<BIQ", self.type, self.vers, self.path)
-
-    # to human
-    def __repr__(self):
-        s = ":".join("{0:02x}".format(ord(c)) for c in str(self))
-        s += ' ('
-        if (QID.DIR & self.type): s += 'DIR'
-        else: s += 'FILE'
-        if (QID.APPEND & self.type): s += '|APPEND'
-        if (QID.EXCL & self.type): s += '|EXCL'
-        if (QID.MOUNT & self.type): s += '|MOUNT'
-        if (QID.AUTH & self.type): s += '|AUTH'
-        if (QID.TMP & self.type): s += '|TMP'
-        if (QID.SYMLINK & self.type): s += '|SYMLINK'
-        s += ',' + str(self.vers)
-        s += ',' + str(self.path)
-        s += ')'
-
-        return s
-
-class P9C(Field):
-    """Container for 9P messages"""
-    def __init__(self, name, default, cls):
-        Field.__init__(self, name, default, "13s") # ???
-        self.cls = cls
+    def __init__(self, name, default):
+        Field.__init__(self, name, default, "13s")
     def i2m(self, pkt, x):
         """Convert internal(class) representation to machine(then packed by fmt) value"""
-        return str(x)
+        (type, vers, path) = x
+        return struct.pack("<BIQ", type, vers, path)
     def m2i(self, pkt, x):
         """Convert unpacked(fmt, from machine value) to internal(class) representation"""
-        return self.cls.fromstr(x)
+        if x == '': return None
+        type = ord(x[0:1])
+        vers = struct.unpack("<I", x[1:5])[0]
+        path = struct.unpack("<Q", x[5:])[0]
+        return (type, vers, path)
     def getfield(self, pkt, s):
-        l = self.cls.length
+        l = self.length
         return s[l:], self.m2i(pkt,s[:l])
     def addfield(self, pkt, s, val):
-        l = self.cls.length
+        l = self.length
         return s+struct.pack("%is"%l,self.i2m(pkt, val))
     def i2h(self, pkt, x):
-        return repr(x)
+        (type, vers, path) = x
+        s = ":".join("{0:02x}".format(ord(c)) for c in self.i2m(pkt, x))
+        s += ' ('
+        if (P9C.DIR & type): s += 'DIR'
+        else: s += 'FILE'
+        if (P9C.APPEND & type): s += '|APPEND'
+        if (P9C.EXCL & type): s += '|EXCL'
+        if (P9C.MOUNT & type): s += '|MOUNT'
+        if (P9C.AUTH & type): s += '|AUTH'
+        if (P9C.TMP & type): s += '|TMP'
+        if (P9C.SYMLINK & type): s += '|SYMLINK'
+        s += ',' + str(vers)
+        s += ',' + str(path)
+        s += ')'
+        return s
 
-a = P9C("qid", None, QID)
-s = a.addfield(None, "", QID(QID.DIR | QID.TMP, 16, 32))
-s = a.addfield(None, s, QID(QID.FILE | QID.TMP, 64, 128))
+a = P9C("qid", None)
+s = a.addfield(None, "", (P9C.DIR | P9C.TMP, 16, 32))
+s = a.addfield(None, s, (P9C.FILE | P9C.TMP, 64, 128))
 s,v1 = a.getfield(None, s)
 s,v2 = a.getfield(None, s)
 print(a.i2h(None, v1))
 print(a.i2h(None, v2))
-
-#b=P9C("name", None, STR)
-
-
 
 
 
 
 #class P92000(Packet):
 #    name = "P92000"
-#    fields_desc=[P9C("qid", None, QID)]
-#p2 = P92000(qid=QID(QID.FILE | QID.TMP, 16, 32))
-#print(repr(QID.fromstr(str(p2))))
+#    fields_desc=[P9C("qid", None, P9C)]
+#p2 = P92000(qid=P9C(P9C.FILE | P9C.TMP, 16, 32))
+#print(repr(P9C.fromstr(str(p2))))
