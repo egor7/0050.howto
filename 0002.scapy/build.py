@@ -22,6 +22,17 @@ conf.color_theme=NoTheme()
 # s += '.' + "{0:0>20}".format(struct.unpack("<Q", v[5:])[0])
 # s += '(' + ":".join("{0:02x}".format(ord(c)) for c in v[:]) + ')'
 
+# === QID test
+# a=P9C("test", None, 13, QID)
+# print(repr(a.i2m(None, QID(QID.FILE | QID.TMP, 2003, 40000005))))
+# print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
+# print(":".join("{0:02x}".format(ord(c)) for c in a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32))))
+# print(":".join("{0:02x}".format(ord(c)) for c in a.addfield(None, "", QID(QID.FILE | QID.TMP, 16, 32))))
+# print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
+#
+# c=QID.fromstr(a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))
+# print(repr(c))
+
 # === Field access
 # p=rdpcap('5640-4.pcap')
 # p=p.filter(lambda x:x.haslayer(P9))[:]
@@ -348,6 +359,8 @@ class QID:
     SYMLINK = 0x02 # symbolic link
     FILE    = 0x00 # plain file
 
+    length = 13
+
     def __init__(self, type, vers, path):
         self.type = type
         self.vers = vers
@@ -369,9 +382,9 @@ class QID:
         return ":".join("{0:02x}".format(ord(c)) for c in str(self))
 
 class P9C(Field):
-    def __init__(self, name, default, length, cls):
-        Field.__init__(self, name, default, "%is"%length)
-        self.length = length
+    """Container for 9P messages"""
+    def __init__(self, name, default, cls):
+        Field.__init__(self, name, default, "13s") # ???
         self.cls = cls
     def i2m(self, pkt, x):
         """Convert internal(class) representation to machine(then packed by fmt) value"""
@@ -379,6 +392,14 @@ class P9C(Field):
     def m2i(self, pkt, x):
         """Convert unpacked(fmt, from machine value) to internal(class) representation"""
         return self.cls.fromstr(x)
+    def getfield(self, pkt, s):
+        print('=== getfield')
+        l = self.cls.length
+        return s[l:], self.m2i(pkt,s[:l])
+    def addfield(self, pkt, s, val):
+        print('=== addfield')
+        l = self.cls.length
+        return s+struct.pack("%is"%l,self.i2m(pkt, val))
     def i2h(self, pkt, x):
         s = '('
         if (QID.DIR & x.type): s += 'DIR'
@@ -401,15 +422,19 @@ class P9C(Field):
 
         return s
 
-a=P9C("test", None, 13, QID)
-#print(a.i2m(None, "0000000000000123"))
-#print(a.addfield(None, "only 13 bytes allowed: ", "0000000000000123"))
-
-print(repr(a.i2m(None, QID(QID.FILE | QID.TMP, 2003, 40000005))))
-print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
+a=P9C("qid", None, QID)
 print(":".join("{0:02x}".format(ord(c)) for c in a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32))))
-print(":".join("{0:02x}".format(ord(c)) for c in a.addfield(None, "", QID(QID.FILE | QID.TMP, 16, 32))))
 print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
+print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
 
-c=QID.fromstr(a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))
-print(repr(c))
+#b=P9C("name", None, STR)
+
+
+
+
+class P92000(Packet):
+    name = "P92000"
+    fields_desc=[P9C("qid", None, QID)]
+
+p2 = P92000(qid=QID(QID.FILE | QID.TMP, 16, 32))
+print(repr(QID.fromstr(str(p2))))
