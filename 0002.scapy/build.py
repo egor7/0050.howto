@@ -15,6 +15,13 @@ conf.color_theme=NoTheme()
 # print bin(int('0f', base=16))[2:].zfill(8)
 # print "{:0>8}".format(bin(int('0f', base=16))[2:])
 
+# === QID
+# s  = "{0:0>8}".format(bin(x.type)[2:])
+# s  = "{0:0>8}".format(bin(ord(v[0:1]))[2:])
+# s += '.' + "{0:0>10}".format(struct.unpack("<I", v[1:5])[0])
+# s += '.' + "{0:0>20}".format(struct.unpack("<Q", v[5:])[0])
+# s += '(' + ":".join("{0:02x}".format(ord(c)) for c in v[:]) + ')'
+
 # === Field access
 # p=rdpcap('5640-4.pcap')
 # p=p.filter(lambda x:x.haslayer(P9))[:]
@@ -330,7 +337,18 @@ bind_layers(TCP, P9, dport=5640)
 ##p[518][P9].show()
 
 
-class P9CQID:
+class QID:
+
+    # type
+    DIR     = 0x80 # directories
+    APPEND  = 0x40 # append only files
+    EXCL    = 0x20 # exclusive use files
+    MOUNT   = 0x10 # mounted channel
+    AUTH    = 0x08 # authentication file
+    TMP     = 0x04 # non-backed-up file
+    SYMLINK = 0x02 # symbolic link
+    FILE    = 0x00 # plain file
+
     def __init__(self, type, vers, path):
         self.type = type
         self.vers = vers
@@ -339,17 +357,42 @@ class P9CQID:
 class P9C(Field):
     def __init__(self, name, default, length, cls):
         Field.__init__(self, name, default, "%is"%length)
+        #TODO Field.__init__(self, name, default, "<B<I<Q") # TODO
         self.length = length
         self.cls = cls
     def i2m(self, pkt, x):
         """Convert internal(class) representation to machine(string) value"""
         if x is None:
             x = "0".zfill(length)
-        return "" + x.type + x.vers + x.path
+        return "" + str(x.type) + str(x.vers) + str(x.path)
+    def i2h(self, pkt, x):
+        s = '('
+        if (QID.DIR & x.type): s += 'DIR'
+        else: s += 'FILE'
+        if (QID.APPEND & x.type): s += '|APPEND'
+        if (QID.EXCL & x.type): s += '|EXCL'
+        if (QID.MOUNT & x.type): s += '|MOUNT'
+        if (QID.AUTH & x.type): s += '|AUTH'
+        if (QID.TMP & x.type): s += '|TMP'
+        if (QID.SYMLINK & x.type): s += '|SYMLINK'
+        s += ',' + str(x.vers)
+        s += ',' + str(x.path) + ')'
 
-a=P9C("test", None, 13, P9CQID)
+        # type[1]
+        s += "=[" + "{0:02x}".format(x.type)
+        # version[4]
+        s += " " + "|".join("{0:02x}".format(ord(c)) for c in struct.pack("<I", x.vers))
+        # path[8]
+        s += " " + "|".join("{0:02x}".format(ord(c)) for c in struct.pack("<Q", x.path)) + "]"
+
+        return s
+
+a=P9C("test", None, 13, QID)
 #print(a.i2m(None, "0000000000000123"))
 #print(a.addfield(None, "only 13 bytes allowed: ", "0000000000000123"))
-print(a.i2m(None, P9CQID("1", "2003", "40000005")))
 
-# gone to create P9Q class
+print(repr(a.i2m(None, QID(QID.FILE | QID.TMP, 2003, 40000005))))
+print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
+
+#print(repr(struct.pack("<I<I", 1, 1))) # ???
+print(repr(struct.pack("<I", 1)))
