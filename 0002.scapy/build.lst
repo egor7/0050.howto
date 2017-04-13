@@ -2,5 +2,9 @@
 (FILE|TMP,16,32)=[04 10|00|00|00 20|00|00|00|00|00|00|00]
 04:10:00:00:00:20:00:00:00:00:00:00:00
 04:10:00:00:00:20:00:00:00:00:00:00:00
-04:10:00:00:00:20:00:00:00:00:00:00:00
-04:10:00:00:00:20:00:00:00:00:00:00:00
+Traceback (most recent call last):
+  File "build.py", line 412, in <module>
+    print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
+  File "build.py", line 381, in m2i
+    return self.cls.fromstr(x)
+TypeError: unbound method fromstr() must be called with QID instance as first argument (got str instance instead)

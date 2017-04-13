@@ -338,7 +338,6 @@ bind_layers(TCP, P9, dport=5640)
 
 
 class QID:
-
     # type
     DIR     = 0x80 # directories
     APPEND  = 0x40 # append only files
@@ -353,10 +352,6 @@ class QID:
         self.type = type
         self.vers = vers
         self.path = path
-    def __str__(self):
-        return struct.pack("<BIQ", self.type, self.vers, self.path)
-    def __repr__(self):
-        return ":".join("{0:02x}".format(ord(c)) for c in str(self))
 
     @classmethod
     def fromstr(cls, s):
@@ -364,6 +359,14 @@ class QID:
         vers = struct.unpack("<I", s[1:5])[0]
         path = struct.unpack("<Q", s[5:])[0]
         return cls(type, vers, path)
+
+    # tostr
+    def __str__(self):
+        return struct.pack("<BIQ", self.type, self.vers, self.path)
+
+    # to human
+    def __repr__(self):
+        return ":".join("{0:02x}".format(ord(c)) for c in str(self))
 
 class P9C(Field):
     def __init__(self, name, default, length, cls):
@@ -374,7 +377,7 @@ class P9C(Field):
         """Convert internal(class) representation to machine(then packed by fmt) value"""
         return str(x)
     def m2i(self, pkt, x):
-        """Convert unpacked(fmt, machine value) to internal(class) representation"""
+        """Convert unpacked(fmt, from machine value) to internal(class) representation"""
         return self.cls.fromstr(x)
     def i2h(self, pkt, x):
         s = '('
