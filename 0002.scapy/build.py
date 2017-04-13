@@ -353,18 +353,29 @@ class QID:
         self.type = type
         self.vers = vers
         self.path = path
+    def __str__(self):
+        return struct.pack("<BIQ", self.type, self.vers, self.path)
+    def __repr__(self):
+        return ":".join("{0:02x}".format(ord(c)) for c in str(self))
+
+    @classmethod
+    def fromstr(cls, s):
+        type = ord(s[0:1])
+        vers = struct.unpack("<I", s[1:5])[0]
+        path = struct.unpack("<Q", s[5:])[0]
+        return cls(type, vers, path)
 
 class P9C(Field):
     def __init__(self, name, default, length, cls):
         Field.__init__(self, name, default, "%is"%length)
-        #TODO Field.__init__(self, name, default, "<B<I<Q") # TODO
         self.length = length
         self.cls = cls
     def i2m(self, pkt, x):
-        """Convert internal(class) representation to machine(string) value"""
-        if x is None:
-            x = "0".zfill(length)
-        return "" + str(x.type) + str(x.vers) + str(x.path)
+        """Convert internal(class) representation to machine(then packed by fmt) value"""
+        return str(x)
+    def m2i(self, pkt, x):
+        """Convert unpacked(fmt, machine value) to internal(class) representation"""
+        return self.cls.fromstr(x)
     def i2h(self, pkt, x):
         s = '('
         if (QID.DIR & x.type): s += 'DIR'
@@ -393,6 +404,9 @@ a=P9C("test", None, 13, QID)
 
 print(repr(a.i2m(None, QID(QID.FILE | QID.TMP, 2003, 40000005))))
 print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
+print(":".join("{0:02x}".format(ord(c)) for c in a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32))))
+print(":".join("{0:02x}".format(ord(c)) for c in a.addfield(None, "", QID(QID.FILE | QID.TMP, 16, 32))))
+print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
 
-#print(repr(struct.pack("<I<I", 1, 1))) # ???
-print(repr(struct.pack("<I", 1)))
+c=QID.fromstr(a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))
+print(repr(c))
