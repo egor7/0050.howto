@@ -374,13 +374,27 @@ class QID:
         path = struct.unpack("<Q", s[5:])[0]
         return cls(type, vers, path)
 
-    # tostr
+    # to binary
     def __str__(self):
         return struct.pack("<BIQ", self.type, self.vers, self.path)
 
     # to human
     def __repr__(self):
-        return ":".join("{0:02x}".format(ord(c)) for c in str(self))
+        s = ":".join("{0:02x}".format(ord(c)) for c in str(self))
+        s += ' ('
+        if (QID.DIR & self.type): s += 'DIR'
+        else: s += 'FILE'
+        if (QID.APPEND & self.type): s += '|APPEND'
+        if (QID.EXCL & self.type): s += '|EXCL'
+        if (QID.MOUNT & self.type): s += '|MOUNT'
+        if (QID.AUTH & self.type): s += '|AUTH'
+        if (QID.TMP & self.type): s += '|TMP'
+        if (QID.SYMLINK & self.type): s += '|SYMLINK'
+        s += ',' + str(self.vers)
+        s += ',' + str(self.path)
+        s += ')'
+
+        return s
 
 class P9C(Field):
     """Container for 9P messages"""
@@ -400,34 +414,13 @@ class P9C(Field):
         l = self.cls.length
         return s+struct.pack("%is"%l,self.i2m(pkt, val))
     def i2h(self, pkt, x):
-        s = '('
-        if (QID.DIR & x.type): s += 'DIR'
-        else: s += 'FILE'
-        if (QID.APPEND & x.type): s += '|APPEND'
-        if (QID.EXCL & x.type): s += '|EXCL'
-        if (QID.MOUNT & x.type): s += '|MOUNT'
-        if (QID.AUTH & x.type): s += '|AUTH'
-        if (QID.TMP & x.type): s += '|TMP'
-        if (QID.SYMLINK & x.type): s += '|SYMLINK'
-        s += ',' + str(x.vers)
-        s += ',' + str(x.path) + ')'
+        return repr(x)
 
-        # type[1]
-        s += "=[" + "{0:02x}".format(x.type)
-        # version[4]
-        s += " " + "|".join("{0:02x}".format(ord(c)) for c in struct.pack("<I", x.vers))
-        # path[8]
-        s += " " + "|".join("{0:02x}".format(ord(c)) for c in struct.pack("<Q", x.path)) + "]"
-
-        return s
-
-a=P9C("qid", None, QID)
+a = P9C("qid", None, QID)
 s = a.addfield(None, "", QID(QID.DIR | QID.TMP, 16, 32))
 s = a.addfield(None, s, QID(QID.FILE | QID.TMP, 64, 128))
 s,v1 = a.getfield(None, s)
 s,v2 = a.getfield(None, s)
-print(repr(v1))
-print(repr(v2))
 print(a.i2h(None, v1))
 print(a.i2h(None, v2))
 
