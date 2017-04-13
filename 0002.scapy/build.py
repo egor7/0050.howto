@@ -368,6 +368,7 @@ class QID:
 
     @classmethod
     def fromstr(cls, s):
+        if s == '': return None
         type = ord(s[0:1])
         vers = struct.unpack("<I", s[1:5])[0]
         path = struct.unpack("<Q", s[5:])[0]
@@ -393,11 +394,9 @@ class P9C(Field):
         """Convert unpacked(fmt, from machine value) to internal(class) representation"""
         return self.cls.fromstr(x)
     def getfield(self, pkt, s):
-        print('=== getfield')
         l = self.cls.length
         return s[l:], self.m2i(pkt,s[:l])
     def addfield(self, pkt, s, val):
-        print('=== addfield')
         l = self.cls.length
         return s+struct.pack("%is"%l,self.i2m(pkt, val))
     def i2h(self, pkt, x):
@@ -423,18 +422,24 @@ class P9C(Field):
         return s
 
 a=P9C("qid", None, QID)
-print(":".join("{0:02x}".format(ord(c)) for c in a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32))))
-print(repr(a.m2i(None, a.i2m(None, QID(QID.FILE | QID.TMP, 16, 32)))))
-print(a.i2h(None, QID(QID.FILE | QID.TMP, 16, 32)))
+s = a.addfield(None, "", QID(QID.DIR | QID.TMP, 16, 32))
+s = a.addfield(None, s, QID(QID.FILE | QID.TMP, 64, 128))
+s,v1 = a.getfield(None, s)
+s,v2 = a.getfield(None, s)
+print(repr(v1))
+print(repr(v2))
+print(a.i2h(None, v1))
+print(a.i2h(None, v2))
 
 #b=P9C("name", None, STR)
 
 
 
 
-class P92000(Packet):
-    name = "P92000"
-    fields_desc=[P9C("qid", None, QID)]
 
-p2 = P92000(qid=QID(QID.FILE | QID.TMP, 16, 32))
-print(repr(QID.fromstr(str(p2))))
+
+#class P92000(Packet):
+#    name = "P92000"
+#    fields_desc=[P9C("qid", None, QID)]
+#p2 = P92000(qid=QID(QID.FILE | QID.TMP, 16, 32))
+#print(repr(QID.fromstr(str(p2))))
