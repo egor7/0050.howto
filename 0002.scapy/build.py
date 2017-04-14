@@ -316,16 +316,39 @@ class P9stat(Field):
         # stop bitching up with defaults, fmt, sz,
         # couse they are used only in get/addfield
         Field.__init__(self, name, None)
-
     def i2m(self, pkt, x):
         """human-touple to byte-str"""
-        (size, type, dev, (type, vers, path), mode, atime, mtime, length, name, uid, gid, muid) = x
-        s = struct.pack("<HHIBIQIIIQ", size, type, dev, type, vers, path, mode, atime, mtime, length)
+        (size, type, dev, (qtype, qvers, qpath), mode, atime, mtime, length, name, uid, gid, muid) = x
+        s = struct.pack("<HHIBIQIIIQ", size, type, dev, qtype, qvers, qpath, mode, atime, mtime, length)
         s += struct.pack("<H", name) + str(name)
         s += struct.pack("<H", uid) + str(uid)
         s += struct.pack("<H", qid) + str(qid)
         s += struct.pack("<H", muid) + str(muid)
         return s
+    def m2i(self, pkt, x):
+        """Convert byte-str to human-touple"""
+        if x == '': return None
+
+        size = struct.unpack("<H", x[0:2])[0]
+        type = struct.unpack("<H", x[2:4])[0]
+        dev  = struct.unpack("<I", x[4:8])[0]
+        qtype = struct.unpack("<B", x[8:9])[0]
+        qvers = struct.unpack("<I", x[9:13])[0]
+        qpath = struct.unpack("<Q", x[13:21])[0]
+        mode = struct.unpack("<I", x[21:25])[0]
+        atime = struct.unpack("<I", x[25:29])[0]
+        mtime = struct.unpack("<I", x[29:33])[0]
+        length = struct.unpack("<Q", x[33:41])[0]
+        name[ s ]:    file name; must be / if the file is the root directory of the server
+        uid[ s ]:     owner name
+        gid[ s ]:     group name
+        muid[ s ]:    name of the user who last modified the file
+
+
+        type = ord(x[0:1])
+        vers = struct.unpack("<I", x[1:5])[0]
+        path = struct.unpack("<Q", x[5:])[0]
+        return (type, vers, path)
 
 
 class P9(Packet):
@@ -395,5 +418,5 @@ bind_layers(TCP, P9, dport=5640)
 
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-p.nsummary()
+p.summary()
 ##p[518][P9].show()
