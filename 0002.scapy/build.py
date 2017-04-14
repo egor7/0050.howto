@@ -44,23 +44,6 @@ conf.color_theme=NoTheme()
 # p[23][P9].show()
 # print(p[23][P9].sprintf("%P9.wqid%"))
 
-#class P9stat(P9s):
-#    pass
-# === stat[n]
-# size[2]:      total byte count of the following data
-# type[2]:      for kernel use
-# dev[4]:       for kernel use
-# qid.type[1]:  the type of the file (directory, etc.)
-# qid.vers[4]:  version number for given path
-# qid.path[8]:  the file servers unique identification for the file
-# mode[4]:      permissions and flags
-# atime[4]:     last access time
-# mtime[4]:     last modification time
-# length[8]:    length of file in bytes
-# name[ s ]:    file name; must be / if the file is the root directory of the server
-# uid[ s ]:     owner name
-# gid[ s ]:     group name
-# muid[ s ]:    name of the user who last modified the file
 
 p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[s]
             101: "Rversion",  # size[4] Rversion tag[2]        msize[4] version[s]
@@ -309,6 +292,40 @@ class P9Lwname(P9L):
 class P9Lwqid(P9L):
     def __init__(self, count_from):
         P9L.__init__(self, "wqid", P9qid(""), count_from=count_from)
+
+# TODO: like P9S - first 2 bytes contains size
+class P9stat(Field):
+    """compound stat[n]"""
+
+    # size[2]:H      total byte count of the following data
+    # type[2]:H      for kernel use
+    # dev[4]:I       for kernel use
+    # qid.type[1]:B  the type of the file (directory, etc.)
+    # qid.vers[4]:I  version number for given path
+    # qid.path[8]:Q  the file servers unique identification for the file
+    # mode[4]:I      permissions and flags
+    # atime[4]:I     last access time
+    # mtime[4]:I     last modification time
+    # length[8]:Q    length of file in bytes
+    # name[ s ]:    file name; must be / if the file is the root directory of the server
+    # uid[ s ]:     owner name
+    # gid[ s ]:     group name
+    # muid[ s ]:    name of the user who last modified the file
+
+    def __init__(self, name):
+        # stop bitching up with defaults, fmt, sz,
+        # couse they are used only in get/addfield
+        Field.__init__(self, name, None)
+
+    def i2m(self, pkt, x):
+        """human-touple to byte-str"""
+        (size, type, dev, (type, vers, path), mode, atime, mtime, length, name, uid, gid, muid) = x
+        s = struct.pack("<HHIBIQIIIQ", size, type, dev, type, vers, path, mode, atime, mtime, length)
+        s += struct.pack("<H", name) + str(name)
+        s += struct.pack("<H", uid) + str(uid)
+        s += struct.pack("<H", qid) + str(qid)
+        s += struct.pack("<H", muid) + str(muid)
+        return s
 
 
 class P9(Packet):
