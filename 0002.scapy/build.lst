@@ -1,531 +1,531 @@
-Ether / IP / TCP / 65535 Tversion '9P2000'
-Ether / IP / TCP / 65535 Rversion '9P2000'
-Ether / IP / TCP /  0 Tattach 'chrx'
-Ether / IP / TCP /  0 Rattach (DIR,1488271900,181589)
-Ether / IP / TCP /  0 Twalk 1 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Twalk 2 1 ['.xdg-volume-info']
-Ether / IP / TCP /  1 Rerror 'No such file or directory'
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 2 1 ['autorun.inf']
-Ether / IP / TCP /  1 Rerror 'No such file or directory'
-Ether / IP / TCP /  1 Twalk 2 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Twalk 2 1 ['dejavu.tgz']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,361145924,137095)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat 'A\x00\x00\x00\x00\x00\x00\x00\x00D\xa6\x86\x15\x87\x17\x02\x00\x00\x00\x00\x00\xb4\x01\x00\x00\xe6\xe9\x90XD\x17TX\xb1\xd2M\x00\x00\x00\x00\x00\n\x00dejavu.tgz\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 3 1 ['tcp.cap']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,1488323023,145590)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat ">\x00\x00\x00\x00\x00\x00\x00\x00\xcf\x01\xb6X\xb68\x02\x00\x00\x00\x00\x00\xa4\x01\x00\x00\xb8'\xb5X\xcfc\xb1Xb\x07\x00\x00\x00\x00\x00\x00\x07\x00tcp.cap\x04\x00root\x04\x00root\x00\x00"
-Ether / IP / TCP /  1 Twalk 4 1 ['conf.tgz']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,1482861318,148609)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat "?\x00\x00\x00\x00\x00\x00\x00\x00\x06\xabbX\x81D\x02\x00\x00\x00\x00\x00\xb4\x01\x00\x00\xe6\xe9\x90X\x06\x8cvX'\x14\x00\x00\x00\x00\x00\x00\x08\x00conf.tgz\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  1 Twalk 5 1 ['DejaVu Sans Mono']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1480857343,162777)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat 'G\x00\x00\x00\x00\x00\x00\x00\x80\xff\x16TX\xd9{\x02\x00\x00\x00\x00\x00m\x01\x00\x80c\xf7\xc2X\xff\x16TX\x00\x00\x00\x00\x00\x00\x00\x00\x10\x00DejaVu Sans Mono\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 6 1 ['report.xml']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,1484920415,181349)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat 'A\x00\x00\x00\x00\x00\x00\x00\x00_\x16\x82Xe\xc4\x02\x00\x00\x00\x00\x00\xa4\x01\x00\x00O&\x9aX_&\x9aX0\x18\x00\x00\x00\x00\x00\x00\n\x00report.xml\x04\x00root\x04\x00root\x00\x00'
-Ether / IP / TCP /  1 Twalk 7 1 ['fuse.txt']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,1491609955,183092)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '?\x00\x00\x00\x00\x00\x00\x00\x00c)\xe8X4\xcb\x02\x00\x00\x00\x00\x00\xb4\x01\x00\x00%-\xb5Xc$XX\r\xb0\x00\x00\x00\x00\x00\x00\x08\x00fuse.txt\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 8 1 ['tf']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1487218616,235803)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat "9\x00\x00\x00\x00\x00\x00\x00\x80\xb8'\xb5X\x1b\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80c\xf7\xc2X\xb8'\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00tf\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  1 Twalk 9 1 ['hello-world']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1489336366,235815)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat "B\x00\x00\x00\x00\x00\x00\x00\x80.x\xd5X'\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80yx\xd5X.x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x0b\x00hello-world\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  1 Twalk 10 1 ['diff']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1485101792,236211)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat ';\x00\x00\x00\x00\x00\x00\x00\x80\xe0\xda\x94X\xb3\x9a\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80#x\xd5X\xe0\xda\x94X\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00diff\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  0 Rclunk / Raw
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tread / Raw
-Ether / IP / TCP /  0 Rread / Raw
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  1 Twalk 1 0 []
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 11 1 ['autorun.inf']
-Ether / IP / TCP /  0 Rerror 'No such file or directory'
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 11 0 []
-Ether / IP / TCP /  0 Rwalk 0 []
-Ether / IP / TCP /  0 Topen / Raw
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 11 1 ['hello-world']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336366,235815)]
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat "B\x00\x00\x00\x00\x00\x00\x00\x80.x\xd5X'\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80yx\xd5X.x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x0b\x00hello-world\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Twalk 9 1 ['hello-world']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336366,235815)]
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat "B\x00\x00\x00\x00\x00\x00\x00\x80.x\xd5X'\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80yx\xd5X.x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x0b\x00hello-world\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  0 Twalk 11 1 ['hi']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336378,235843)]
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat '9\x00\x00\x00\x00\x00\x00\x00\x80:x\xd5XC\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80.x\xd5X:x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00hi\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 1 1 ['sun']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336472,235842)]
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat ':\x00\x00\x00\x00\x00\x00\x00\x80\x98x\xd5XB\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x90x\xd5X\x98x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00sun\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  0 Twalk 12 1 ['777']
-Ether / IP / TCP /  0 Rerror 'No such file or directory'
-Ether / IP / TCP /  0 Twalk 12 1 ['hello-world']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336366,235815)]
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat "B\x00\x00\x00\x00\x00\x00\x00\x80.x\xd5X'\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80yx\xd5X.x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x0b\x00hello-world\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Tclunk
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Twalk 1 1 ['hello-world']
-Ether / IP / TCP /  0 Rwalk 1 [(DIR,1489336366,235815)]
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Tstat
-Ether / IP / TCP /  0 Rstat "B\x00\x00\x00\x00\x00\x00\x00\x80.x\xd5X'\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80yx\xd5X.x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x0b\x00hello-world\x04\x00chrx\x04\x00chrx\x00\x00"
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  1 Twalk 9 1 ['hi']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1489336378,235843)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '9\x00\x00\x00\x00\x00\x00\x00\x80:x\xd5XC\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80.x\xd5X:x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00hi\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 11 1 ['sun']
-Ether / IP / TCP /  1 Rwalk 1 [(DIR,1489336472,235842)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat ':\x00\x00\x00\x00\x00\x00\x00\x80\x98x\xd5XB\x99\x03\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x90x\xd5X\x98x\xd5X\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00sun\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 12 1 ['777.txt']
-Ether / IP / TCP /  1 Rwalk 1 [(FILE,1490386072,149854)]
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '>\x00\x00\x00\x00\x00\x00\x00\x00\x98|\xd5X^I\x02\x00\x00\x00\x00\x00\xb4\x01\x00\x00\x98x\xd5X\x98x\xd5X\x04\x00\x00\x00\x00\x00\x00\x00\x07\x00777.txt\x04\x00chrx\x04\x00chrx\x00\x00'
-Ether / IP / TCP /  1 Twalk 13 0 []
-Ether / IP / TCP /  1 Rwalk 0 []
-Ether / IP / TCP /  1 Topen / Raw
-Ether / IP / TCP /  1 Ropen (FILE,1490386072,149854) 0
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tread / Raw
-Ether / IP / TCP /  1 Rread / Raw
-Ether / IP / TCP /  1 Tclunk
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  1 Tstat
-Ether / IP / TCP /  1 Rstat '7\x00\x00\x00\x00\x00\x00\x00\x80\x1c:\xb5XU\xc5\x02\x00\x00\x00\x00\x00\xfd\x01\x00\x80\x1dx\xd5X\x1c:\xb5X\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00chrx\x04\x00chrx\x00\x00'
+0000 Ether / IP / TCP / 65535 Tversion '9P2000'
+0001 Ether / IP / TCP / 65535 Rversion '9P2000'
+0002 Ether / IP / TCP /  0 Tattach 0:fid 'chrx'
+0003 Ether / IP / TCP /  0 Rattach (DIR,1488271900,181589)
+0004 Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+0005 Ether / IP / TCP /  0 Rwalk []
+0006 Ether / IP / TCP /  0 Topen 1:fid / Raw
+0007 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0008 Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['.xdg-volume-info']
+0009 Ether / IP / TCP /  1 Rerror 'No such file or directory'
+0010 Ether / IP / TCP /  0 Tstat 0:fid
+0011 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0012 Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['autorun.inf']
+0013 Ether / IP / TCP /  1 Rerror 'No such file or directory'
+0014 Ether / IP / TCP /  1 Twalk 1:fid 2:fidnew ['..']
+0015 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0016 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0017 Ether / IP / TCP /  1 Rread / Raw
+0018 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0019 Ether / IP / TCP /  1 Rread / Raw
+0020 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0021 Ether / IP / TCP /  1 Rread / Raw
+0022 Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['dejavu.tgz']
+0023 Ether / IP / TCP /  1 Rwalk [(FILE,361145924,137095)]
+0024 Ether / IP / TCP /  1 Tstat 2:fid
+0025 Ether / IP / TCP /  1 Rstat (FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50)
+0026 Ether / IP / TCP /  1 Twalk 0:fid 3:fidnew ['tcp.cap']
+0027 Ether / IP / TCP /  1 Rwalk [(FILE,1488323023,145590)]
+0028 Ether / IP / TCP /  1 Tstat 3:fid
+0029 Ether / IP / TCP /  1 Rstat (FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12)
+0030 Ether / IP / TCP /  1 Twalk 0:fid 4:fidnew ['conf.tgz']
+0031 Ether / IP / TCP /  1 Rwalk [(FILE,1482861318,148609)]
+0032 Ether / IP / TCP /  1 Tstat 4:fid
+0033 Ether / IP / TCP /  1 Rstat (FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50)
+0034 Ether / IP / TCP /  1 Twalk 0:fid 5:fidnew ['DejaVu Sans Mono']
+0035 Ether / IP / TCP /  1 Rwalk [(DIR,1480857343,162777)]
+0036 Ether / IP / TCP /  1 Tstat 5:fid
+0037 Ether / IP / TCP /  1 Rstat (DIR,1481905919,162777) DIR-0555 "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43)
+0038 Ether / IP / TCP /  1 Twalk 0:fid 6:fidnew ['report.xml']
+0039 Ether / IP / TCP /  1 Rwalk [(FILE,1484920415,181349)]
+0040 Ether / IP / TCP /  1 Tstat 6:fid
+0041 Ether / IP / TCP /  1 Rstat (FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59)
+0042 Ether / IP / TCP /  1 Twalk 0:fid 7:fidnew ['fuse.txt']
+0043 Ether / IP / TCP /  1 Rwalk [(FILE,1491609955,183092)]
+0044 Ether / IP / TCP /  1 Tstat 7:fid
+0045 Ether / IP / TCP /  1 Rstat (FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21)
+0046 Ether / IP / TCP /  1 Twalk 0:fid 8:fidnew ['tf']
+0047 Ether / IP / TCP /  1 Rwalk [(DIR,1487218616,235803)]
+0048 Ether / IP / TCP /  1 Tstat 8:fid
+0049 Ether / IP / TCP /  1 Rstat (DIR,1488267192,235803) DIR-0775 "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43)
+0050 Ether / IP / TCP /  1 Twalk 0:fid 9:fidnew ['hello-world']
+0051 Ether / IP / TCP /  1 Rwalk [(DIR,1489336366,235815)]
+0052 Ether / IP / TCP /  1 Tstat 9:fid
+0053 Ether / IP / TCP /  1 Rstat (DIR,1490384942,235815) DIR-0775 "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+0054 Ether / IP / TCP /  1 Twalk 0:fid 10:fidnew ['diff']
+0055 Ether / IP / TCP /  1 Rwalk [(DIR,1485101792,236211)]
+0056 Ether / IP / TCP /  1 Tstat 10:fid
+0057 Ether / IP / TCP /  1 Rstat (DIR,1486150368,236211) DIR-0775 "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)
+0058 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0059 Ether / IP / TCP /  1 Rread / Raw
+0060 Ether / IP / TCP /  1 Tclunk 1:fid
+0061 Ether / IP / TCP /  1 Rclunk
+0062 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0063 Ether / IP / TCP /  0 Rwalk []
+0064 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0065 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0066 Ether / IP / TCP /  0 Tstat 0:fid
+0067 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0068 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0069 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0070 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0071 Ether / IP / TCP /  0 Rread / Raw
+0072 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0073 Ether / IP / TCP /  0 Rread / Raw
+0074 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0075 Ether / IP / TCP /  0 Rread / Raw
+0076 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0077 Ether / IP / TCP /  0 Rread / Raw
+0078 Ether / IP / TCP /  0 Tclunk 11:fid
+0079 Ether / IP / TCP /  0 Rclunk
+0080 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0081 Ether / IP / TCP /  1 Rwalk []
+0082 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0083 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0084 Ether / IP / TCP /  1 Tstat 0:fid
+0085 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0086 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0087 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0088 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0089 Ether / IP / TCP /  1 Rread / Raw
+0090 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0091 Ether / IP / TCP /  1 Rread / Raw
+0092 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0093 Ether / IP / TCP /  1 Rread / Raw
+0094 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0095 Ether / IP / TCP /  1 Rread / Raw
+0096 Ether / IP / TCP /  1 Tclunk 1:fid
+0097 Ether / IP / TCP /  1 Rclunk
+0098 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0099 Ether / IP / TCP /  0 Rwalk []
+0100 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0101 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0102 Ether / IP / TCP /  0 Tstat 0:fid
+0103 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0104 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0105 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0106 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0107 Ether / IP / TCP /  0 Rread / Raw
+0108 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0109 Ether / IP / TCP /  0 Rread / Raw
+0110 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0111 Ether / IP / TCP /  0 Rread / Raw
+0112 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0113 Ether / IP / TCP /  0 Rread / Raw
+0114 Ether / IP / TCP /  0 Tclunk 11:fid
+0115 Ether / IP / TCP /  0 Rclunk
+0116 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0117 Ether / IP / TCP /  1 Rwalk []
+0118 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0119 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0120 Ether / IP / TCP /  1 Tstat 0:fid
+0121 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0122 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0123 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0124 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0125 Ether / IP / TCP /  1 Rread / Raw
+0126 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0127 Ether / IP / TCP /  1 Rread / Raw
+0128 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0129 Ether / IP / TCP /  1 Rread / Raw
+0130 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0131 Ether / IP / TCP /  1 Rread / Raw
+0132 Ether / IP / TCP /  1 Tclunk 1:fid
+0133 Ether / IP / TCP /  1 Rclunk
+0134 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0135 Ether / IP / TCP /  0 Rwalk []
+0136 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0137 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0138 Ether / IP / TCP /  0 Tstat 0:fid
+0139 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0140 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0141 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0142 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0143 Ether / IP / TCP /  0 Rread / Raw
+0144 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0145 Ether / IP / TCP /  0 Rread / Raw
+0146 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0147 Ether / IP / TCP /  0 Rread / Raw
+0148 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0149 Ether / IP / TCP /  0 Rread / Raw
+0150 Ether / IP / TCP /  0 Tclunk 11:fid
+0151 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0152 Ether / IP / TCP /  0 Rclunk / Raw
+0153 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0154 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0155 Ether / IP / TCP /  1 Tstat 0:fid
+0156 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0157 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0158 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0159 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0160 Ether / IP / TCP /  1 Rread / Raw
+0161 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0162 Ether / IP / TCP /  1 Rread / Raw
+0163 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0164 Ether / IP / TCP /  1 Rread / Raw
+0165 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0166 Ether / IP / TCP /  1 Rread / Raw
+0167 Ether / IP / TCP /  1 Tclunk 1:fid
+0168 Ether / IP / TCP /  1 Rclunk
+0169 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0170 Ether / IP / TCP /  0 Rwalk []
+0171 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0172 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0173 Ether / IP / TCP /  0 Tstat 0:fid
+0174 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0175 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0176 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0177 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0178 Ether / IP / TCP /  0 Rread / Raw
+0179 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0180 Ether / IP / TCP /  0 Rread / Raw
+0181 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0182 Ether / IP / TCP /  0 Rread / Raw
+0183 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0184 Ether / IP / TCP /  0 Rread / Raw
+0185 Ether / IP / TCP /  0 Tclunk 11:fid
+0186 Ether / IP / TCP /  0 Rclunk
+0187 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0188 Ether / IP / TCP /  1 Rwalk []
+0189 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0190 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0191 Ether / IP / TCP /  1 Tstat 0:fid
+0192 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0193 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0194 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0195 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0196 Ether / IP / TCP /  1 Rread / Raw
+0197 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0198 Ether / IP / TCP /  1 Rread / Raw
+0199 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0200 Ether / IP / TCP /  1 Rread / Raw
+0201 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0202 Ether / IP / TCP /  1 Rread / Raw
+0203 Ether / IP / TCP /  1 Tclunk 1:fid
+0204 Ether / IP / TCP /  1 Rclunk
+0205 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0206 Ether / IP / TCP /  0 Rwalk []
+0207 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0208 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0209 Ether / IP / TCP /  0 Tstat 0:fid
+0210 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0211 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0212 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0213 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0214 Ether / IP / TCP /  0 Rread / Raw
+0215 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0216 Ether / IP / TCP /  0 Rread / Raw
+0217 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0218 Ether / IP / TCP /  0 Rread / Raw
+0219 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0220 Ether / IP / TCP /  0 Rread / Raw
+0221 Ether / IP / TCP /  0 Tclunk 11:fid
+0222 Ether / IP / TCP /  0 Rclunk
+0223 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0224 Ether / IP / TCP /  1 Rwalk []
+0225 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0226 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0227 Ether / IP / TCP /  1 Tstat 0:fid
+0228 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0229 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0230 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0231 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0232 Ether / IP / TCP /  1 Rread / Raw
+0233 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0234 Ether / IP / TCP /  1 Rread / Raw
+0235 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0236 Ether / IP / TCP /  1 Rread / Raw
+0237 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0238 Ether / IP / TCP /  1 Rread / Raw
+0239 Ether / IP / TCP /  1 Tclunk 1:fid
+0240 Ether / IP / TCP /  1 Rclunk
+0241 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0242 Ether / IP / TCP /  0 Rwalk []
+0243 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0244 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0245 Ether / IP / TCP /  0 Tstat 0:fid
+0246 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0247 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0248 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0249 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0250 Ether / IP / TCP /  0 Rread / Raw
+0251 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0252 Ether / IP / TCP /  0 Rread / Raw
+0253 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0254 Ether / IP / TCP /  0 Rread / Raw
+0255 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0256 Ether / IP / TCP /  0 Rread / Raw
+0257 Ether / IP / TCP /  0 Tclunk 11:fid
+0258 Ether / IP / TCP /  0 Rclunk
+0259 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0260 Ether / IP / TCP /  1 Rwalk []
+0261 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0262 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0263 Ether / IP / TCP /  1 Tstat 0:fid
+0264 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0265 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0266 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0267 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0268 Ether / IP / TCP /  1 Rread / Raw
+0269 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0270 Ether / IP / TCP /  1 Rread / Raw
+0271 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0272 Ether / IP / TCP /  1 Rread / Raw
+0273 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0274 Ether / IP / TCP /  1 Rread / Raw
+0275 Ether / IP / TCP /  1 Tclunk 1:fid
+0276 Ether / IP / TCP /  1 Rclunk
+0277 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0278 Ether / IP / TCP /  0 Rwalk []
+0279 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0280 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0281 Ether / IP / TCP /  0 Tstat 0:fid
+0282 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0283 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0284 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0285 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0286 Ether / IP / TCP /  0 Rread / Raw
+0287 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0288 Ether / IP / TCP /  0 Rread / Raw
+0289 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0290 Ether / IP / TCP /  0 Rread / Raw
+0291 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0292 Ether / IP / TCP /  0 Rread / Raw
+0293 Ether / IP / TCP /  0 Tclunk 11:fid
+0294 Ether / IP / TCP /  0 Rclunk
+0295 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0296 Ether / IP / TCP /  1 Rwalk []
+0297 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0298 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0299 Ether / IP / TCP /  1 Tstat 0:fid
+0300 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0301 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0302 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0303 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0304 Ether / IP / TCP /  1 Rread / Raw
+0305 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0306 Ether / IP / TCP /  1 Rread / Raw
+0307 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0308 Ether / IP / TCP /  1 Rread / Raw
+0309 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0310 Ether / IP / TCP /  1 Rread / Raw
+0311 Ether / IP / TCP /  1 Tclunk 1:fid
+0312 Ether / IP / TCP /  1 Rclunk
+0313 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0314 Ether / IP / TCP /  0 Rwalk []
+0315 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0316 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0317 Ether / IP / TCP /  0 Tstat 0:fid
+0318 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0319 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0320 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0321 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0322 Ether / IP / TCP /  0 Rread / Raw
+0323 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0324 Ether / IP / TCP /  0 Rread / Raw
+0325 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0326 Ether / IP / TCP /  0 Rread / Raw
+0327 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0328 Ether / IP / TCP /  0 Rread / Raw
+0329 Ether / IP / TCP /  0 Tclunk 11:fid
+0330 Ether / IP / TCP /  0 Rclunk
+0331 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0332 Ether / IP / TCP /  1 Rwalk []
+0333 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0334 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0335 Ether / IP / TCP /  1 Tstat 0:fid
+0336 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0337 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0338 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0339 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0340 Ether / IP / TCP /  1 Rread / Raw
+0341 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0342 Ether / IP / TCP /  1 Rread / Raw
+0343 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0344 Ether / IP / TCP /  1 Rread / Raw
+0345 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0346 Ether / IP / TCP /  1 Rread / Raw
+0347 Ether / IP / TCP /  1 Tclunk 1:fid
+0348 Ether / IP / TCP /  1 Rclunk
+0349 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0350 Ether / IP / TCP /  0 Rwalk []
+0351 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0352 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0353 Ether / IP / TCP /  0 Tstat 0:fid
+0354 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0355 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0356 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0357 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0358 Ether / IP / TCP /  0 Rread / Raw
+0359 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0360 Ether / IP / TCP /  0 Rread / Raw
+0361 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0362 Ether / IP / TCP /  0 Rread / Raw
+0363 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0364 Ether / IP / TCP /  0 Rread / Raw
+0365 Ether / IP / TCP /  0 Tclunk 11:fid
+0366 Ether / IP / TCP /  0 Rclunk
+0367 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0368 Ether / IP / TCP /  1 Rwalk []
+0369 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0370 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0371 Ether / IP / TCP /  1 Tstat 0:fid
+0372 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0373 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0374 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0375 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0376 Ether / IP / TCP /  1 Rread / Raw
+0377 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0378 Ether / IP / TCP /  1 Rread / Raw
+0379 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0380 Ether / IP / TCP /  1 Rread / Raw
+0381 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0382 Ether / IP / TCP /  1 Rread / Raw
+0383 Ether / IP / TCP /  1 Tclunk 1:fid
+0384 Ether / IP / TCP /  1 Rclunk
+0385 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0386 Ether / IP / TCP /  0 Rwalk []
+0387 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0388 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0389 Ether / IP / TCP /  0 Tstat 0:fid
+0390 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0391 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0392 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0393 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0394 Ether / IP / TCP /  0 Rread / Raw
+0395 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0396 Ether / IP / TCP /  0 Rread / Raw
+0397 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0398 Ether / IP / TCP /  0 Rread / Raw
+0399 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0400 Ether / IP / TCP /  0 Rread / Raw
+0401 Ether / IP / TCP /  0 Tclunk 11:fid
+0402 Ether / IP / TCP /  0 Rclunk
+0403 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0404 Ether / IP / TCP /  1 Rwalk []
+0405 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0406 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0407 Ether / IP / TCP /  1 Tstat 0:fid
+0408 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0409 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0410 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0411 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0412 Ether / IP / TCP /  1 Rread / Raw
+0413 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0414 Ether / IP / TCP /  1 Rread / Raw
+0415 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0416 Ether / IP / TCP /  1 Rread / Raw
+0417 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0418 Ether / IP / TCP /  1 Rread / Raw
+0419 Ether / IP / TCP /  1 Tclunk 1:fid
+0420 Ether / IP / TCP /  1 Rclunk
+0421 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0422 Ether / IP / TCP /  0 Rwalk []
+0423 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0424 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0425 Ether / IP / TCP /  0 Tstat 0:fid
+0426 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0427 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
+0428 Ether / IP / TCP /  0 Rerror 'bad use of fid'
+0429 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0430 Ether / IP / TCP /  0 Rread / Raw
+0431 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0432 Ether / IP / TCP /  0 Rread / Raw
+0433 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0434 Ether / IP / TCP /  0 Rread / Raw
+0435 Ether / IP / TCP /  0 Tread 11:fid / Raw
+0436 Ether / IP / TCP /  0 Rread / Raw
+0437 Ether / IP / TCP /  0 Tclunk 11:fid
+0438 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
+0439 Ether / IP / TCP /  0 Rclunk
+0440 Ether / IP / TCP /  1 Rwalk []
+0441 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0442 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+0443 Ether / IP / TCP /  1 Tstat 0:fid
+0444 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0445 Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
+0446 Ether / IP / TCP /  1 Rerror 'bad use of fid'
+0447 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0448 Ether / IP / TCP /  1 Rread / Raw
+0449 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0450 Ether / IP / TCP /  1 Rread / Raw
+0451 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0452 Ether / IP / TCP /  1 Rread / Raw
+0453 Ether / IP / TCP /  1 Tread 1:fid / Raw
+0454 Ether / IP / TCP /  1 Rread / Raw
+0455 Ether / IP / TCP /  1 Tclunk 1:fid
+0456 Ether / IP / TCP /  1 Rclunk
+0457 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew ['autorun.inf']
+0458 Ether / IP / TCP /  0 Rerror 'No such file or directory'
+0459 Ether / IP / TCP /  0 Tstat 0:fid
+0460 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0461 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+0462 Ether / IP / TCP /  0 Rwalk []
+0463 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0464 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+0465 Ether / IP / TCP /  0 Tclunk 11:fid
+0466 Ether / IP / TCP /  0 Rclunk
+0467 Ether / IP / TCP /  0 Tstat 0:fid
+0468 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+0469 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew ['hello-world']
+0470 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+0471 Ether / IP / TCP /  0 Tstat 11:fid
+0472 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775 "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+0473 Ether / IP / TCP /  0 Tclunk 11:fid
+0474 Ether / IP / TCP /  0 Rclunk
+0475 Ether / IP / TCP /  0 Tclunk 9:fid
+0476 Ether / IP / TCP /  0 Rclunk
+0477 Ether / IP / TCP /  0 Twalk 0:fid 9:fidnew ['hello-world']
+0478 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+0479 Ether / IP / TCP /  0 Tstat 9:fid
+0480 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775 "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+0481 Ether / IP / TCP /  0 Twalk 9:fid 11:fidnew ['hi']
+0482 Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235843)]
+0483 Ether / IP / TCP /  0 Tstat 11:fid
+0484 Ether / IP / TCP /  0 Rstat (DIR,1490384954,235843) DIR-0775 "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
+0485 Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['sun']
+0486 Ether / IP / TCP /  0 Rwalk [(DIR,1489336472,235842)]
+0487 Ether / IP / TCP /  0 Tstat 1:fid
+0488 Ether / IP / TCP /  0 Rstat (DIR,1490385048,235842) DIR-0775 "sun","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:40)
+0489 Ether / IP / TCP /  0 Twalk 1:fid 12:fidnew ['777']
+0490 Ether / IP / TCP /  0 Rerror 'No such file or directory'
+0491 Ether / IP / TCP /  0 Twalk 0:fid 12:fidnew ['hello-world']
+0492 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+0493 Ether / IP / TCP /  0 Tstat 12:fid
+0494 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775 "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+0495 Ether / IP / TCP /  0 Tclunk 12:fid
+0496 Ether / IP / TCP /  0 Rclunk
+0497 Ether / IP / TCP /  0 Tclunk 1:fid
+0498 Ether / IP / TCP /  0 Rclunk
+0499 Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['hello-world']
+0500 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+0501 Ether / IP / TCP /  1 Tclunk 11:fid
+0502 Ether / IP / TCP /  1 Rclunk
+0503 Ether / IP / TCP /  0 Tstat 1:fid
+0504 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775 "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+0505 Ether / IP / TCP /  1 Tclunk 9:fid
+0506 Ether / IP / TCP /  1 Rclunk
+0507 Ether / IP / TCP /  1 Twalk 1:fid 9:fidnew ['hi']
+0508 Ether / IP / TCP /  1 Rwalk [(DIR,1489336378,235843)]
+0509 Ether / IP / TCP /  1 Tstat 9:fid
+0510 Ether / IP / TCP /  1 Rstat (DIR,1490384954,235843) DIR-0775 "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
+0511 Ether / IP / TCP /  1 Twalk 9:fid 11:fidnew ['sun']
+0512 Ether / IP / TCP /  1 Rwalk [(DIR,1489336472,235842)]
+0513 Ether / IP / TCP /  1 Tstat 11:fid
+0514 Ether / IP / TCP /  1 Rstat (DIR,1490385048,235842) DIR-0775 "sun","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:40)
+0515 Ether / IP / TCP /  1 Twalk 11:fid 12:fidnew ['777.txt']
+0516 Ether / IP / TCP /  1 Rwalk [(FILE,1490386072,149854)]
+0517 Ether / IP / TCP /  1 Tstat 12:fid
+0518 Ether / IP / TCP /  1 Rstat (FILE,1490386072,149854) 0664 "777.txt","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:48)
+0519 Ether / IP / TCP /  1 Twalk 12:fid 13:fidnew []
+0520 Ether / IP / TCP /  1 Rwalk []
+0521 Ether / IP / TCP /  1 Topen 13:fid / Raw
+0522 Ether / IP / TCP /  1 Ropen (FILE,1490386072,149854) 0
+0523 Ether / IP / TCP /  1 Tread 13:fid / Raw
+0524 Ether / IP / TCP /  1 Rread / Raw
+0525 Ether / IP / TCP /  1 Tread 13:fid / Raw
+0526 Ether / IP / TCP /  1 Rread / Raw
+0527 Ether / IP / TCP /  1 Tclunk 13:fid
+0528 Ether / IP / TCP /  1 Rclunk
+0529 Ether / IP / TCP /  1 Tstat 0:fid
+0530 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
