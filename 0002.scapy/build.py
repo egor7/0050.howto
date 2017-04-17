@@ -89,7 +89,9 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
 # === param[n]: n-const
 class P9N(Field):
     def __init__(self, name, size, default=-1):
-        if size == 2:
+        if size == 1:
+            Field.__init__(self, name, default, "<B")
+        elif size == 2:
             Field.__init__(self, name, default, "<H")
         elif size == 4:
             Field.__init__(self, name, default, "<I")
@@ -103,11 +105,43 @@ class P9Ntag(P9N):
     def __init__(self):
         P9N.__init__(self, "tag", 2)
 
+class P9Nmode(P9N):
+    # 112:Topen, 114:Tcreate
+    OREAD     = 0   # open for read
+    OWRITE    = 1   # write
+    ORDWR     = 2   # read and write
+    OEXEC     = 3   # execute, == read but check execute permission
+    OTRUNC    = 16  # or'ed in (except for exec), truncate file first
+    OCEXEC    = 32  # or'ed in, close on exec
+    ORCLOSE   = 64  # or'ed in, remove on close
+    ODIRECT   = 128 # or'ed in, direct access
+    ONONBLOCK = 256 # or'ed in, non-blocking call
+    def __init__(self):
+        P9N.__init__(self, "mode", 1)
+    def i2repr(self, pkt, x):
+        """Convert internal value to a nice representation"""
+        s = ""
+        if (x == self.OREAD    ): s += "|OREAD"
+        if (x == self.OWRITE   ): s += "|OWRITE"
+        if (x == self.ORDWR    ): s += "|ORDWR"
+        if (x == self.OEXEC    ): s += "|OEXEC"
+        if (x == self.OTRUNC   ): s += "|OTRUNC"
+        if (x == self.OCEXEC   ): s += "|OCEXEC"
+        if (x == self.ORCLOSE  ): s += "|ORCLOSE"
+        if (x == self.ODIRECT  ): s += "|ODIRECT"
+        if (x == self.ONONBLOCK): s += "|ONONBLOCK"
+        return s[1:]
+
 class P9Noldtag(P9N):
     # 108:Tflush
     # force tag to be free
     def __init__(self):
         P9N.__init__(self, "oldtag", 2)
+
+class P9Nperm(P9N):
+    # 114:Tcreate
+    def __init__(self):
+        P9N.__init__(self, "perm", 4)
 
 class P9Nsize(P9N):
     # all
@@ -440,6 +474,8 @@ class P9(Packet):
                  ConditionalField(P9Lwqid(count_from="nwqid"), lambda pkt:pkt.type in [111]),
                  # Rstat, Twstat
                  ConditionalField(P9Sstat(), lambda pkt:pkt.type in [125,126]),
+                 # Topen, Tcreate
+                 ConditionalField(P9Nmode(), lambda pkt:pkt.type in [112,114]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
@@ -449,6 +485,8 @@ class P9(Packet):
             s += self.sprintf(" %P9.fid%:fid")
         if self.type in [102,104]:
             s += self.sprintf(" %P9.uname%")
+        if self.type in [112,114]:
+            s += self.sprintf(" %P9.mode%")
         if self.type in [107]:
             s += self.sprintf(" %P9.ename%")
         if self.type in [108]:

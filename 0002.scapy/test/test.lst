@@ -4,7 +4,7 @@
 0003 Ether / IP / TCP /  0 Rattach (DIR,1488271900,181589)
 0004 Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
 0005 Ether / IP / TCP /  0 Rwalk []
-0006 Ether / IP / TCP /  0 Topen 1:fid / Raw
+0006 Ether / IP / TCP /  0 Topen 1:fid OREAD
 0007 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0008 Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['.xdg-volume-info']
 0009 Ether / IP / TCP /  1 Rerror 'No such file or directory'
@@ -62,7 +62,7 @@
 0061 Ether / IP / TCP /  1 Rclunk
 0062 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0063 Ether / IP / TCP /  0 Rwalk []
-0064 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0064 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0065 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0066 Ether / IP / TCP /  0 Tstat 0:fid
 0067 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -80,7 +80,7 @@
 0079 Ether / IP / TCP /  0 Rclunk
 0080 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0081 Ether / IP / TCP /  1 Rwalk []
-0082 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0082 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0083 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0084 Ether / IP / TCP /  1 Tstat 0:fid
 0085 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -98,7 +98,7 @@
 0097 Ether / IP / TCP /  1 Rclunk
 0098 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0099 Ether / IP / TCP /  0 Rwalk []
-0100 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0100 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0101 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0102 Ether / IP / TCP /  0 Tstat 0:fid
 0103 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -116,7 +116,7 @@
 0115 Ether / IP / TCP /  0 Rclunk
 0116 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0117 Ether / IP / TCP /  1 Rwalk []
-0118 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0118 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0119 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0120 Ether / IP / TCP /  1 Tstat 0:fid
 0121 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -134,7 +134,7 @@
 0133 Ether / IP / TCP /  1 Rclunk
 0134 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0135 Ether / IP / TCP /  0 Rwalk []
-0136 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0136 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0137 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0138 Ether / IP / TCP /  0 Tstat 0:fid
 0139 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -151,7 +151,7 @@
 0150 Ether / IP / TCP /  0 Tclunk 11:fid
 0151 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0152 Ether / IP / TCP /  0 Rclunk / Raw
-0153 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0153 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0154 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0155 Ether / IP / TCP /  1 Tstat 0:fid
 0156 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -169,7 +169,7 @@
 0168 Ether / IP / TCP /  1 Rclunk
 0169 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0170 Ether / IP / TCP /  0 Rwalk []
-0171 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0171 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0172 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0173 Ether / IP / TCP /  0 Tstat 0:fid
 0174 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -187,7 +187,7 @@
 0186 Ether / IP / TCP /  0 Rclunk
 0187 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0188 Ether / IP / TCP /  1 Rwalk []
-0189 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0189 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0190 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0191 Ether / IP / TCP /  1 Tstat 0:fid
 0192 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -205,7 +205,7 @@
 0204 Ether / IP / TCP /  1 Rclunk
 0205 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0206 Ether / IP / TCP /  0 Rwalk []
-0207 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0207 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0208 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0209 Ether / IP / TCP /  0 Tstat 0:fid
 0210 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -223,7 +223,7 @@
 0222 Ether / IP / TCP /  0 Rclunk
 0223 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0224 Ether / IP / TCP /  1 Rwalk []
-0225 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0225 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0226 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0227 Ether / IP / TCP /  1 Tstat 0:fid
 0228 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -241,7 +241,7 @@
 0240 Ether / IP / TCP /  1 Rclunk
 0241 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0242 Ether / IP / TCP /  0 Rwalk []
-0243 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0243 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0244 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0245 Ether / IP / TCP /  0 Tstat 0:fid
 0246 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -259,7 +259,7 @@
 0258 Ether / IP / TCP /  0 Rclunk
 0259 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0260 Ether / IP / TCP /  1 Rwalk []
-0261 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0261 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0262 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0263 Ether / IP / TCP /  1 Tstat 0:fid
 0264 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -277,7 +277,7 @@
 0276 Ether / IP / TCP /  1 Rclunk
 0277 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0278 Ether / IP / TCP /  0 Rwalk []
-0279 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0279 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0280 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0281 Ether / IP / TCP /  0 Tstat 0:fid
 0282 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -295,7 +295,7 @@
 0294 Ether / IP / TCP /  0 Rclunk
 0295 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0296 Ether / IP / TCP /  1 Rwalk []
-0297 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0297 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0298 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0299 Ether / IP / TCP /  1 Tstat 0:fid
 0300 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -313,7 +313,7 @@
 0312 Ether / IP / TCP /  1 Rclunk
 0313 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0314 Ether / IP / TCP /  0 Rwalk []
-0315 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0315 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0316 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0317 Ether / IP / TCP /  0 Tstat 0:fid
 0318 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -331,7 +331,7 @@
 0330 Ether / IP / TCP /  0 Rclunk
 0331 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0332 Ether / IP / TCP /  1 Rwalk []
-0333 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0333 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0334 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0335 Ether / IP / TCP /  1 Tstat 0:fid
 0336 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -349,7 +349,7 @@
 0348 Ether / IP / TCP /  1 Rclunk
 0349 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0350 Ether / IP / TCP /  0 Rwalk []
-0351 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0351 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0352 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0353 Ether / IP / TCP /  0 Tstat 0:fid
 0354 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -367,7 +367,7 @@
 0366 Ether / IP / TCP /  0 Rclunk
 0367 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0368 Ether / IP / TCP /  1 Rwalk []
-0369 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0369 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0370 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0371 Ether / IP / TCP /  1 Tstat 0:fid
 0372 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -385,7 +385,7 @@
 0384 Ether / IP / TCP /  1 Rclunk
 0385 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0386 Ether / IP / TCP /  0 Rwalk []
-0387 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0387 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0388 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0389 Ether / IP / TCP /  0 Tstat 0:fid
 0390 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -403,7 +403,7 @@
 0402 Ether / IP / TCP /  0 Rclunk
 0403 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0404 Ether / IP / TCP /  1 Rwalk []
-0405 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0405 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0406 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0407 Ether / IP / TCP /  1 Tstat 0:fid
 0408 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -421,7 +421,7 @@
 0420 Ether / IP / TCP /  1 Rclunk
 0421 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0422 Ether / IP / TCP /  0 Rwalk []
-0423 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0423 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0424 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0425 Ether / IP / TCP /  0 Tstat 0:fid
 0426 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -439,7 +439,7 @@
 0438 Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
 0439 Ether / IP / TCP /  0 Rclunk
 0440 Ether / IP / TCP /  1 Rwalk []
-0441 Ether / IP / TCP /  1 Topen 1:fid / Raw
+0441 Ether / IP / TCP /  1 Topen 1:fid OREAD
 0442 Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
 0443 Ether / IP / TCP /  1 Tstat 0:fid
 0444 Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
@@ -461,7 +461,7 @@
 0460 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775 "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
 0461 Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
 0462 Ether / IP / TCP /  0 Rwalk []
-0463 Ether / IP / TCP /  0 Topen 11:fid / Raw
+0463 Ether / IP / TCP /  0 Topen 11:fid OREAD
 0464 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 0465 Ether / IP / TCP /  0 Tclunk 11:fid
 0466 Ether / IP / TCP /  0 Rclunk
@@ -519,7 +519,7 @@
 0518 Ether / IP / TCP /  1 Rstat (FILE,1490386072,149854) 0664 "777.txt","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:48)
 0519 Ether / IP / TCP /  1 Twalk 12:fid 13:fidnew []
 0520 Ether / IP / TCP /  1 Rwalk []
-0521 Ether / IP / TCP /  1 Topen 13:fid / Raw
+0521 Ether / IP / TCP /  1 Topen 13:fid OREAD
 0522 Ether / IP / TCP /  1 Ropen (FILE,1490386072,149854) 0
 0523 Ether / IP / TCP /  1 Tread 13:fid / Raw
 0524 Ether / IP / TCP /  1 Rread / Raw
