@@ -606,13 +606,13 @@ Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew ['777.txt']
 Ether / IP / TCP /  0 Rerror 'No such file or directory'
 Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew []
 Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Tcreate 15:fid OUNKNOWN EXCL-MOUNT-TMP-SYMLINK-033400 / Raw
+Ether / IP / TCP /  0 Tcreate 15:fid OWRITE '777.txt' 0664
 Ether / IP / TCP /  0 Rcreate (FILE,1490385048,149854) 0
 Ether / IP / TCP /  0 Tstat 15:fid
 Ether / IP / TCP /  0 Rstat (FILE,1490385048,149854) 0664 "777.txt","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:48)
 Ether / IP / TCP /  0 Twalk 14:fid 16:fidnew ['777.txt']
 Ether / IP / TCP /  0 Rwalk [(FILE,1490385048,149854)]
-Ether / IP / TCP /  0 Twrite 15:fid / Raw
+Ether / IP / TCP /  0 Twrite 15:fid [4]:['555\n']
 Ether / IP / TCP /  0 Rwrite [4]
 Ether / IP / TCP /  0 Tclunk 15:fid
 Ether / IP / TCP /  0 Rclunk

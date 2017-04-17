@@ -279,6 +279,9 @@ class P9Saname(P9S):
 class P9Sename(P9S):
     def __init__(self, default=""):
         P9S.__init__(self, "ename", default)
+class P9Scname(P9S):
+    def __init__(self, default=""):
+        P9S.__init__(self, "cname", default)
 
 class P9qid(Field):
     """13-bytes qid"""
@@ -554,10 +557,11 @@ class P9(Packet):
                  ConditionalField(P9Lwqid(count_from="nwqid"), lambda pkt:pkt.type in [111]),
                  # Rstat, Twstat
                  ConditionalField(P9Sstat(), lambda pkt:pkt.type in [125,126]),
+                 # Tcreate
+                 ConditionalField(P9Scname(), lambda pkt:pkt.type in [114]),
+                 ConditionalField(P9Nperm(), lambda pkt:pkt.type in [114]),
                  # Topen, Tcreate
                  ConditionalField(P9Nmode(), lambda pkt:pkt.type in [112,114]),
-                 # Tcreate
-                 ConditionalField(P9Nperm(), lambda pkt:pkt.type in [114]),
                  # Tread, Twrite
                  ConditionalField(P9Noffset(), lambda pkt:pkt.type in [116, 118]),
                  # Tread, Rwrite
@@ -565,11 +569,9 @@ class P9(Packet):
                  # Rread
                  ConditionalField(P9Ncount(length_of="data"), lambda pkt:pkt.type in [117]),
                  ConditionalField(P9Sdata(), lambda pkt:pkt.type in [117]),
-#                 ConditionalField(P9Ncount(count_of="data"), lambda pkt:pkt.type in [117]),
-#                 ConditionalField(P9Ldata(count_from="count"), lambda pkt:pkt.type in [117]),
-#                 # Twrite
-#                 ConditionalField(P9Ncount(count_of="data"), lambda pkt:pkt.type in [118]),
-#                 ConditionalField(P9Ldata(count_from="count"), lambda pkt:pkt.type in [118]),
+                 # Twrite
+                 ConditionalField(P9Ncount(length_of="data"), lambda pkt:pkt.type in [118]),
+                 ConditionalField(P9Sdata(), lambda pkt:pkt.type in [118]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
@@ -583,11 +585,12 @@ class P9(Packet):
             s += self.sprintf(" %P9.mode%")
         if self.type in [116]:
             s += self.sprintf(" [%P9.offset%..%P9.offset%+%P9.count%]")
-        if self.type in [117]:
+        if self.type in [117,118]:
             s += self.sprintf(" [%P9.count%]:%P9.data%")
         if self.type in [119]:
             s += self.sprintf(" [%P9.count%]")
         if self.type in [114]:
+            s += self.sprintf(" %P9.cname%")
             s += self.sprintf(" %P9.perm%")
         if self.type in [107]:
             s += self.sprintf(" %P9.ename%")
@@ -618,7 +621,7 @@ class P9(Packet):
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 # because of tow P9 messages inside one TCP
-bind_layers(P9, P9)
+# bind_layers(P9, P9)
 
 p=rdpcap('5640-3.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
