@@ -338,8 +338,9 @@ class P9qid(Field):
         return s
 
 # === list
-# TODO: pack into one field
 class P9L(Field):
+    islist = 1
+
     def __init__(self, name, field, count_from):
         default = []
         Field.__init__(self, name, default)
@@ -380,6 +381,14 @@ class P9L(Field):
             s,v = self.field.getfield(pkt, s)
             val.append(v)
         return s, val
+    def self_build(self, field_pos_list=None):
+        # why not executed
+        print 123
+        p=""
+        for f in self.fields_desc:
+            val = self.getfieldval(f.name)
+            p = f.addfield(self, p, val)
+        return p
 
 class P9Lwname(P9L):
     def __init__(self, count_from):
@@ -628,21 +637,5 @@ bind_layers(P9, P9)
 
 p=rdpcap('5640-1.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-#p.summary()
-
-#hexdump(p[11][P9])
-#hexdump(p[518][P9])
-#p[11][P9].show()
-#p[518][P9].show()
-
-#hexdump(p[16][P9])
-#p[16][P9].show()
-
-#p[152][P9].show()
-#hexdump(p[152][P9])
-
-#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
-
-#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p[22:23])
-p[22][P9].show()
-hexdump(p[22][P9])
+#p.nsummary()
+print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
