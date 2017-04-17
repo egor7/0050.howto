@@ -620,7 +620,7 @@ bind_layers(TCP, P9, dport=5640)
 # because of tow P9 messages inside one TCP
 bind_layers(P9, P9)
 
-p=rdpcap('5640-4.pcap')
+p=rdpcap('5640-3.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
 p.summary()
 

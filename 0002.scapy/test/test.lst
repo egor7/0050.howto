@@ -2,467 +2,536 @@ Ether / IP / TCP / 65535 Tversion '9P2000'
 Ether / IP / TCP / 65535 Rversion '9P2000'
 Ether / IP / TCP /  0 Tattach 0:fid 'chrx'
 Ether / IP / TCP /  0 Rattach (DIR,1488271900,181589)
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['.xdg-volume-info']
+Ether / IP / TCP /  0 Rerror 'No such file or directory'
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['autorun.inf']
+Ether / IP / TCP /  0 Rerror 'No such file or directory'
 Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
 Ether / IP / TCP /  0 Rwalk []
 Ether / IP / TCP /  0 Topen 1:fid OREAD
 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['.xdg-volume-info']
-Ether / IP / TCP /  1 Rerror 'No such file or directory'
 Ether / IP / TCP /  0 Tstat 0:fid
 Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['autorun.inf']
-Ether / IP / TCP /  1 Rerror 'No such file or directory'
-Ether / IP / TCP /  1 Twalk 1:fid 2:fidnew ['..']
+Ether / IP / TCP /  0 Twalk 1:fid 2:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Twalk 0:fid 2:fidnew ['dejavu.tgz']
+Ether / IP / TCP /  0 Rwalk [(FILE,361145924,137095)]
+Ether / IP / TCP /  0 Tstat 2:fid
+Ether / IP / TCP /  0 Rstat (FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50)
+Ether / IP / TCP /  0 Twalk 0:fid 3:fidnew ['tcp.cap']
+Ether / IP / TCP /  0 Rwalk [(FILE,1488323023,145590)]
+Ether / IP / TCP /  0 Tstat 3:fid
+Ether / IP / TCP /  0 Rstat (FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12)
+Ether / IP / TCP /  0 Twalk 0:fid 4:fidnew ['conf.tgz']
+Ether / IP / TCP /  0 Rwalk [(FILE,1482861318,148609)]
+Ether / IP / TCP /  0 Tstat 4:fid
+Ether / IP / TCP /  0 Rstat (FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50)
+Ether / IP / TCP /  0 Twalk 0:fid 5:fidnew ['DejaVu Sans Mono']
+Ether / IP / TCP /  0 Rwalk [(DIR,1480857343,162777)]
+Ether / IP / TCP /  0 Tstat 5:fid
+Ether / IP / TCP /  0 Rstat (DIR,1481905919,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43)
+Ether / IP / TCP /  0 Twalk 0:fid 6:fidnew ['report.xml']
+Ether / IP / TCP /  0 Rwalk [(FILE,1484920415,181349)]
+Ether / IP / TCP /  0 Tstat 6:fid
+Ether / IP / TCP /  0 Rstat (FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59)
+Ether / IP / TCP /  0 Twalk 0:fid 7:fidnew ['fuse.txt']
+Ether / IP / TCP /  0 Rwalk [(FILE,1491609955,183092)]
+Ether / IP / TCP /  0 Tstat 7:fid
+Ether / IP / TCP /  0 Rstat (FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21)
+Ether / IP / TCP /  0 Twalk 0:fid 8:fidnew ['tf']
+Ether / IP / TCP /  0 Rwalk [(DIR,1487218616,235803)]
+Ether / IP / TCP /  0 Tstat 8:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488267192,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43)
+Ether / IP / TCP /  0 Twalk 0:fid 9:fidnew ['hello-world']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+Ether / IP / TCP /  0 Tstat 9:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55)
+Ether / IP / TCP /  0 Twalk 0:fid 10:fidnew ['diff']
+Ether / IP / TCP /  0 Rwalk [(DIR,1485101792,236211)]
+Ether / IP / TCP /  0 Tstat 10:fid
+Ether / IP / TCP /  0 Rstat (DIR,1486150368,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
 Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
 Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
 Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Twalk 0:fid 2:fidnew ['dejavu.tgz']
-Ether / IP / TCP /  1 Rwalk [(FILE,361145924,137095)]
-Ether / IP / TCP /  1 Tstat 2:fid
-Ether / IP / TCP /  1 Rstat (FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50)
-Ether / IP / TCP /  1 Twalk 0:fid 3:fidnew ['tcp.cap']
-Ether / IP / TCP /  1 Rwalk [(FILE,1488323023,145590)]
-Ether / IP / TCP /  1 Tstat 3:fid
-Ether / IP / TCP /  1 Rstat (FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12)
-Ether / IP / TCP /  1 Twalk 0:fid 4:fidnew ['conf.tgz']
-Ether / IP / TCP /  1 Rwalk [(FILE,1482861318,148609)]
-Ether / IP / TCP /  1 Tstat 4:fid
-Ether / IP / TCP /  1 Rstat (FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50)
-Ether / IP / TCP /  1 Twalk 0:fid 5:fidnew ['DejaVu Sans Mono']
-Ether / IP / TCP /  1 Rwalk [(DIR,1480857343,162777)]
-Ether / IP / TCP /  1 Tstat 5:fid
-Ether / IP / TCP /  1 Rstat (DIR,1481905919,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43)
-Ether / IP / TCP /  1 Twalk 0:fid 6:fidnew ['report.xml']
-Ether / IP / TCP /  1 Rwalk [(FILE,1484920415,181349)]
-Ether / IP / TCP /  1 Tstat 6:fid
-Ether / IP / TCP /  1 Rstat (FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59)
-Ether / IP / TCP /  1 Twalk 0:fid 7:fidnew ['fuse.txt']
-Ether / IP / TCP /  1 Rwalk [(FILE,1491609955,183092)]
-Ether / IP / TCP /  1 Tstat 7:fid
-Ether / IP / TCP /  1 Rstat (FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21)
-Ether / IP / TCP /  1 Twalk 0:fid 8:fidnew ['tf']
-Ether / IP / TCP /  1 Rwalk [(DIR,1487218616,235803)]
-Ether / IP / TCP /  1 Tstat 8:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488267192,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43)
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 1:fid 11:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 1:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 1:fid [589..589+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 11:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 11:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tread 11:fid [589..589+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 11:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['autorun.inf']
+Ether / IP / TCP /  0 Rerror 'No such file or directory'
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 1:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['hello-world']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
+Ether / IP / TCP /  0 Tstat 1:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55)
+Ether / IP / TCP /  0 Tclunk 1:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Twalk 0:fid 11:fidnew ['hello-world']
+Ether / IP / TCP /  1 Rwalk [(DIR,1489336366,235815)]
+Ether / IP / TCP /  0 Tclunk 9:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  1 Tstat 11:fid
+Ether / IP / TCP /  1 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55)
+Ether / IP / TCP /  1 Twalk 11:fid 9:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 9:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1490384942,235815) 0
+Ether / IP / TCP /  1 Tclunk 9:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  1 Tstat 11:fid
+Ether / IP / TCP /  1 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:48:55)
+Ether / IP / TCP /  1 Twalk 11:fid 9:fidnew []
+Ether / IP / TCP /  1 Rwalk []
+Ether / IP / TCP /  1 Topen 9:fid OREAD
+Ether / IP / TCP /  1 Ropen (DIR,1490384942,235815) 0
+Ether / IP / TCP /  1 Twalk 9:fid 1:fidnew ['..']
+Ether / IP / TCP /  1 Rerror 'bad use of fid'
+Ether / IP / TCP /  1 Tread 9:fid [0..0+8168]
+Ether / IP / TCP /  1 Rread [125]:[(FILE,1489992940,170265) 0664 "77777.txt","chrx","chrx","" (2017.03.20-06:47:08),(2017.03.20-06:47:08);(DIR,1489336378,235843) DIR-0775L "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)]
+Ether / IP / TCP /  1 Tread 9:fid [125..125+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Twalk 11:fid 1:fidnew ['77777.txt']
+Ether / IP / TCP /  1 Rwalk [(FILE,1489992940,170265)]
+Ether / IP / TCP /  1 Tstat 1:fid
+Ether / IP / TCP /  1 Rstat (FILE,1489992940,170265) 0664 "77777.txt","chrx","chrx","" (2017.03.20-06:47:08),(2017.03.20-06:47:08)
+Ether / IP / TCP /  1 Twalk 11:fid 12:fidnew ['hi']
+Ether / IP / TCP /  1 Rwalk [(DIR,1489336378,235843)]
+Ether / IP / TCP /  1 Tstat 12:fid
+Ether / IP / TCP /  1 Rstat (DIR,1490384954,235843) DIR-0775L "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
+Ether / IP / TCP /  1 Tread 9:fid [125..125+8168]
+Ether / IP / TCP /  1 Rread [0]:['']
+Ether / IP / TCP /  1 Tclunk 9:fid
+Ether / IP / TCP /  1 Rclunk
+Ether / IP / TCP /  1 Tstat 0:fid
+Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
 Ether / IP / TCP /  1 Twalk 0:fid 9:fidnew ['hello-world']
 Ether / IP / TCP /  1 Rwalk [(DIR,1489336366,235815)]
 Ether / IP / TCP /  1 Tstat 9:fid
 Ether / IP / TCP /  1 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
-Ether / IP / TCP /  1 Twalk 0:fid 10:fidnew ['diff']
-Ether / IP / TCP /  1 Rwalk [(DIR,1485101792,236211)]
-Ether / IP / TCP /  1 Tstat 10:fid
-Ether / IP / TCP /  1 Rstat (DIR,1486150368,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
+Ether / IP / TCP /  1 Tclunk 9:fid
 Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
+Ether / IP / TCP /  1 Twalk 0:fid 9:fidnew ['hello-world']
+Ether / IP / TCP /  1 Rwalk [(DIR,1489336366,235815)]
+Ether / IP / TCP /  0 Tclunk 12:fid
 Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
+Ether / IP / TCP /  1 Tstat 9:fid
+Ether / IP / TCP /  1 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+Ether / IP / TCP /  0 Tclunk 1:fid
 Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
+Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew []
 Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
+Ether / IP / TCP /  0 Topen 1:fid OREAD
 Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  0 Rclunk /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
+Ether / IP / TCP /  0 Tclunk 1:fid
 Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['..']
-Ether / IP / TCP /  0 Rerror 'bad use of fid'
-Ether / IP / TCP /  0 Tread 11:fid [0..0+8168]
-Ether / IP / TCP /  0 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tread 11:fid [589..589+8168]
-Ether / IP / TCP /  0 Rread [0]:['']
-Ether / IP / TCP /  0 Tclunk 11:fid
-Ether / IP / TCP /  1 Twalk 0:fid 1:fidnew []
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 1:fid OREAD
-Ether / IP / TCP /  1 Ropen (DIR,1488271900,181589) 0
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  1 Twalk 1:fid 11:fidnew ['..']
-Ether / IP / TCP /  1 Rerror 'bad use of fid'
-Ether / IP / TCP /  1 Tread 1:fid [0..0+8168]
-Ether / IP / TCP /  1 Rread [589]:[(FILE,1491609955,183092) 0664 "fuse.txt","chrx","chrx","" (2016.12.19-18:18:11),(2017.02.28-07:56:21);(FILE,1484920415,181349) 0644 "report.xml","root","root","" (2017.02.07-19:56:15),(2017.02.07-19:55:59);(DIR,1489336366,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17);(DIR,1480857343,162777) DIR-0555L "DejaVu Sans Mono","chrx","chrx","" (2016.12.16-16:31:59),(2017.03.10-18:58:43);(DIR,1487218616,235803) DIR-0775L "tf","chrx","chrx","" (2017.02.28-07:33:12),(2017.03.10-18:58:43);(FILE,1482861318,148609) 0664 "conf.tgz","chrx","chrx","" (2017.01.11-19:48:22),(2017.01.31-19:47:50);(FILE,361145924,137095) 0664 "dejavu.tgz","chrx","chrx","" (2016.12.16-16:33:08),(2017.01.31-19:47:50);(FILE,1488323023,145590) 0644 "tcp.cap","root","root","" (2017.02.25-11:00:31),(2017.02.28-07:33:12);(DIR,1485101792,236211) DIR-0775L "diff","chrx","chrx","" (2017.02.03-19:32:48),(2017.03.24-19:48:51)]
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tread 1:fid [589..589+8168]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 1:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew ['autorun.inf']
-Ether / IP / TCP /  0 Rerror 'No such file or directory'
-Ether / IP / TCP /  0 Tstat 0:fid
-Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
-Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew []
-Ether / IP / TCP /  0 Rwalk []
-Ether / IP / TCP /  0 Topen 11:fid OREAD
-Ether / IP / TCP /  0 Ropen (DIR,1488271900,181589) 0
 Ether / IP / TCP /  0 Tclunk 11:fid
 Ether / IP / TCP /  0 Rclunk
 Ether / IP / TCP /  0 Tstat 0:fid
@@ -473,59 +542,79 @@ Ether / IP / TCP /  0 Tstat 11:fid
 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
 Ether / IP / TCP /  0 Tclunk 11:fid
 Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Tclunk 9:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 9:fidnew ['hello-world']
+Ether / IP / TCP /  0 Twalk 0:fid 11:fidnew ['hello-world']
 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
-Ether / IP / TCP /  0 Tstat 9:fid
-Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
-Ether / IP / TCP /  0 Twalk 9:fid 11:fidnew ['hi']
-Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235843)]
+Ether / IP / TCP /  1 Tclunk 9:fid
+Ether / IP / TCP /  1 Rclunk
 Ether / IP / TCP /  0 Tstat 11:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
+Ether / IP / TCP /  0 Twalk 11:fid 9:fidnew ['hi']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235843)]
+Ether / IP / TCP /  0 Tstat 9:fid
 Ether / IP / TCP /  0 Rstat (DIR,1490384954,235843) DIR-0775L "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
-Ether / IP / TCP /  0 Twalk 11:fid 1:fidnew ['sun']
-Ether / IP / TCP /  0 Rwalk [(DIR,1489336472,235842)]
+Ether / IP / TCP /  0 Twalk 9:fid 1:fidnew ['sun']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235842)]
 Ether / IP / TCP /  0 Tstat 1:fid
-Ether / IP / TCP /  0 Rstat (DIR,1490385048,235842) DIR-0775L "sun","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:40)
-Ether / IP / TCP /  0 Twalk 1:fid 12:fidnew ['777']
-Ether / IP / TCP /  0 Rerror 'No such file or directory'
+Ether / IP / TCP /  0 Rstat (DIR,1490384954,235842) DIR-0775L "sun","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:14)
+Ether / IP / TCP /  0 Twalk 1:fid 12:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 12:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1490384954,235842) 0
+Ether / IP / TCP /  0 Tclunk 12:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Tstat 0:fid
+Ether / IP / TCP /  0 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
 Ether / IP / TCP /  0 Twalk 0:fid 12:fidnew ['hello-world']
 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
 Ether / IP / TCP /  0 Tstat 12:fid
 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
 Ether / IP / TCP /  0 Tclunk 12:fid
 Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Tclunk 1:fid
-Ether / IP / TCP /  0 Rclunk
-Ether / IP / TCP /  0 Twalk 0:fid 1:fidnew ['hello-world']
+Ether / IP / TCP /  0 Twalk 0:fid 12:fidnew ['hello-world']
 Ether / IP / TCP /  0 Rwalk [(DIR,1489336366,235815)]
-Ether / IP / TCP /  1 Tclunk 11:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  0 Tstat 1:fid
+Ether / IP / TCP /  0 Tstat 12:fid
 Ether / IP / TCP /  0 Rstat (DIR,1490384942,235815) DIR-0775L "hello-world","chrx","chrx","" (2017.03.24-19:49:02),(2017.03.24-19:50:17)
-Ether / IP / TCP /  1 Tclunk 9:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  1 Twalk 1:fid 9:fidnew ['hi']
-Ether / IP / TCP /  1 Rwalk [(DIR,1489336378,235843)]
-Ether / IP / TCP /  1 Tstat 9:fid
-Ether / IP / TCP /  1 Rstat (DIR,1490384954,235843) DIR-0775L "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
-Ether / IP / TCP /  1 Twalk 9:fid 11:fidnew ['sun']
-Ether / IP / TCP /  1 Rwalk [(DIR,1489336472,235842)]
-Ether / IP / TCP /  1 Tstat 11:fid
-Ether / IP / TCP /  1 Rstat (DIR,1490385048,235842) DIR-0775L "sun","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:40)
-Ether / IP / TCP /  1 Twalk 11:fid 12:fidnew ['777.txt']
-Ether / IP / TCP /  1 Rwalk [(FILE,1490386072,149854)]
-Ether / IP / TCP /  1 Tstat 12:fid
-Ether / IP / TCP /  1 Rstat (FILE,1490386072,149854) 0664 "777.txt","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:48)
-Ether / IP / TCP /  1 Twalk 12:fid 13:fidnew []
-Ether / IP / TCP /  1 Rwalk []
-Ether / IP / TCP /  1 Topen 13:fid OREAD
-Ether / IP / TCP /  1 Ropen (FILE,1490386072,149854) 0
-Ether / IP / TCP /  1 Tread 13:fid [0..0+4096]
-Ether / IP / TCP /  1 Rread [4]:['555\n']
-Ether / IP / TCP /  1 Tread 13:fid [4..4+4096]
-Ether / IP / TCP /  1 Rread [0]:['']
-Ether / IP / TCP /  1 Tclunk 13:fid
-Ether / IP / TCP /  1 Rclunk
-Ether / IP / TCP /  1 Tstat 0:fid
-Ether / IP / TCP /  1 Rstat (DIR,1488271900,181589) DIR-0775L "","chrx","chrx","" (2017.02.28-08:51:40),(2017.03.24-19:48:45)
+Ether / IP / TCP /  0 Twalk 12:fid 13:fidnew ['hi']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235843)]
+Ether / IP / TCP /  0 Tstat 13:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384954,235843) DIR-0775L "hi","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:02)
+Ether / IP / TCP /  0 Twalk 13:fid 14:fidnew ['sun']
+Ether / IP / TCP /  0 Rwalk [(DIR,1489336378,235842)]
+Ether / IP / TCP /  0 Tstat 14:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384954,235842) DIR-0775L "sun","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:14)
+Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 15:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1490384954,235842) 0
+Ether / IP / TCP /  0 Tclunk 15:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Topen 15:fid OREAD
+Ether / IP / TCP /  0 Ropen (DIR,1490384954,235842) 0
+Ether / IP / TCP /  0 Tstat 14:fid
+Ether / IP / TCP /  0 Rstat (DIR,1490384954,235842) DIR-0775L "sun","chrx","chrx","" (2017.03.24-19:49:14),(2017.03.24-19:49:14)
+Ether / IP / TCP /  0 Twalk 15:fid 16:fidnew ['..']
+Ether / IP / TCP /  0 Rerror 'bad use of fid'
+Ether / IP / TCP /  0 Tread 15:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tread 15:fid [0..0+8168]
+Ether / IP / TCP /  0 Rread [0]:['']
+Ether / IP / TCP /  0 Tclunk 15:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew ['777.txt']
+Ether / IP / TCP /  0 Rerror 'No such file or directory'
+Ether / IP / TCP /  0 Twalk 14:fid 15:fidnew []
+Ether / IP / TCP /  0 Rwalk []
+Ether / IP / TCP /  0 Tcreate 15:fid OUNKNOWN EXCL-MOUNT-TMP-SYMLINK-033400 /  1 180 / Raw
+Ether / IP / TCP /  0 Rcreate (FILE,1490385048,149854) 0
+Ether / IP / TCP /  0 Tstat 15:fid
+Ether / IP / TCP /  0 Rstat (FILE,1490385048,149854) 0664 "777.txt","chrx","chrx","" (2017.03.24-19:50:48),(2017.03.24-19:50:48)
+Ether / IP / TCP /  0 Twalk 14:fid 16:fidnew ['777.txt']
+Ether / IP / TCP /  0 Rwalk [(FILE,1490385048,149854)]
+Ether / IP / TCP /  0 Twrite 15:fid / 13621 53 / Raw
+Ether / IP / TCP /  0 Rwrite [4]
+Ether / IP / TCP /  0 Tclunk 15:fid
+Ether / IP / TCP /  0 Rclunk
+Ether / IP / TCP /  0 Tclunk 16:fid
+Ether / IP / TCP /  0 Rclunk
