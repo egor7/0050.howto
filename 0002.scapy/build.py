@@ -56,6 +56,12 @@ conf.color_theme=NoTheme()
 # p[23][P9].show()
 # print(p[23][P9].sprintf("%P9.wqid%"))
 
+# === Build/dissect
+# 1.#p=p.filter(lambda x:x.haslayer(Raw))[:]
+# 2. #p=p.filter(lambda x:x.haslayer(P9))[:]
+# 1.#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[Raw])) for pkt in p)
+# 2. #print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
+
 
 p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[s]
             101: "Rversion",  # size[4] Rversion tag[2]        msize[4] version[s]
@@ -632,10 +638,12 @@ class P9(Packet):
 
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
-# because of tow P9 messages inside one TCP
 bind_layers(P9, P9)
 
 p=rdpcap('5640-1.pcap')
+#p=p.filter(lambda x:x.haslayer(Raw))[:]
 p=p.filter(lambda x:x.haslayer(P9))[:]
-#p.nsummary()
+#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[Raw])) for pkt in p)
 print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
+
+#p.nsummary()
