@@ -69,9 +69,9 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             109: "Rflush",    # size[4] Rflush   tag[2]
             110: "Twalk",     # size[4] Twalk    tag[2] fid[4]          newfid[4] nwname[2] nwname*(wname[s])
             111: "Rwalk",     # size[4] Rwalk    tag[2]                 nwqid[2] nwqid*(wqid[13])
-            112 : "Topen",     # size[4] Topen    tag[2] fid[4]          mode[1]
+            112: "Topen",     # size[4] Topen    tag[2] fid[4]          mode[1]
             113: "Ropen",     # size[4] Ropen    tag[2]                 qid[13] iounit[4]
-            114 : "Tcreate",   # size[4] Tcreate  tag[2] fid[4]          name[s] perm[4] mode[1]
+            114: "Tcreate",   # size[4] Tcreate  tag[2] fid[4]          name[s] perm[4] mode[1]
             115: "Rcreate",   # size[4] Rcreate  tag[2]                 qid[13] iounit[4]
             116 : "Tread",     # size[4] Tread    tag[2] fid[4]          offset[8] count[4]
             117 : "Rread",     # size[4] Rread    tag[2]                           count[4] data[count]
@@ -130,6 +130,7 @@ class P9Nmode(P9N):
         if (x == self.ORCLOSE  ): s += "|ORCLOSE"
         if (x == self.ODIRECT  ): s += "|ODIRECT"
         if (x == self.ONONBLOCK): s += "|ONONBLOCK"
+        if (x!=self.OREAD and x!=self.OWRITE and x!=self.ORDWR and x!=self.OEXEC and x!=self.OTRUNC and x!=self.OCEXEC and x!=self.ORCLOSE and x!=self.ODIRECT and x!=self.ONONBLOCK): s += "|OUNKNOWN"
         return s[1:]
 
 class P9Noldtag(P9N):
@@ -140,8 +141,28 @@ class P9Noldtag(P9N):
 
 class P9Nperm(P9N):
     # 114:Tcreate
+    DIR     = 0x80 # directories
+    APPEND  = 0x40 # append only files
+    EXCL    = 0x20 # exclusive use files
+    MOUNT   = 0x10 # mounted channel
+    AUTH    = 0x08 # authentication file
+    TMP     = 0x04 # non-backed-up file
+    SYMLINK = 0x02 # symbolic link
+    FILE    = 0x00 # plain file
     def __init__(self):
         P9N.__init__(self, "perm", 4)
+    def i2repr(self, pkt, mode):
+        """Convert internal value to a nice representation"""
+        s = ""
+        if (P9qid.DIR     & (mode & 0xFF000000)>>3*8): s += 'DIR-'
+        if (P9qid.APPEND  & (mode & 0xFF000000)>>3*8): s += 'APPEND-'
+        if (P9qid.EXCL    & (mode & 0xFF000000)>>3*8): s += 'EXCL-'
+        if (P9qid.MOUNT   & (mode & 0xFF000000)>>3*8): s += 'MOUNT-'
+        if (P9qid.AUTH    & (mode & 0xFF000000)>>3*8): s += 'AUTH-'
+        if (P9qid.TMP     & (mode & 0xFF000000)>>3*8): s += 'TMP-'
+        if (P9qid.SYMLINK & (mode & 0xFF000000)>>3*8): s += 'SYMLINK-'
+        s += str(oct(mode & 0x0000FFFF))
+        return s
 
 class P9Nsize(P9N):
     # all
@@ -444,6 +465,38 @@ class P9Sstat(P9stat):
 
 class P9(Packet):
     name = "P9"
+#    def __init__(self):
+#        Packet.__init__(self) #, post_transform=lambda pkt:self.build())
+
+    def __init__(self):#, _pkt="", post_transform=None, _internal=0, _underlayer=None, **fields):
+        Packet.__init__(self) #, post_transform=lambda pkt:self.build())
+#        self.time  = time.time()
+#        self.sent_time = 0
+#        if self.name is None:
+#            self.name = self.__class__.__name__
+#        self.aliastypes = [ self.__class__ ] + self.aliastypes
+#        self.default_fields = {}
+#        self.overloaded_fields = {}
+#        self.fields={}
+#        self.fieldtype={}
+#        self.packetfields=[]
+#        self.__dict__["payload"] = NoPayload()
+#        self.init_fields()
+#        self.underlayer = _underlayer
+#        self.initialized = 1
+#        if _pkt:
+#            self.dissect(_pkt)
+#            if not _internal:
+#                self.dissection_done(self)
+#        for f in fields.keys():
+#            self.fields[f] = self.get_field(f).any2i(self,fields[f])
+#        if type(post_transform) is list:
+#            self.post_transforms = post_transform
+#        elif post_transform is None:
+#            self.post_transforms = []
+#        else:
+#            self.post_transforms = [post_transform]
+
     fields_desc=[P9Nsize(),
                  ByteEnumField("type",106,p9types),
                  P9Ntag(),
@@ -476,6 +529,8 @@ class P9(Packet):
                  ConditionalField(P9Sstat(), lambda pkt:pkt.type in [125,126]),
                  # Topen, Tcreate
                  ConditionalField(P9Nmode(), lambda pkt:pkt.type in [112,114]),
+                 # Tcreate
+                 ConditionalField(P9Nperm(), lambda pkt:pkt.type in [114]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
@@ -487,6 +542,8 @@ class P9(Packet):
             s += self.sprintf(" %P9.uname%")
         if self.type in [112,114]:
             s += self.sprintf(" %P9.mode%")
+        if self.type in [114]:
+            s += self.sprintf(" %P9.perm%")
         if self.type in [107]:
             s += self.sprintf(" %P9.ename%")
         if self.type in [108]:
@@ -511,6 +568,9 @@ class P9(Packet):
 
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
+# because of tow P9 messages inside one TCP
+# bind_layers(P9, P9)
+# bind_layers(P9, P9)
 
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
@@ -523,3 +583,6 @@ p.nsummary()
 
 #hexdump(p[16][P9])
 #p[16][P9].show()
+
+#p[152][P9].show()
+#hexdump(p[152][P9])
