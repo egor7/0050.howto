@@ -163,7 +163,9 @@ class P9Nperm(P9N):
         if (P9qid.AUTH    & (mode & 0xFF000000)>>3*8): s += 'AUTH-'
         if (P9qid.TMP     & (mode & 0xFF000000)>>3*8): s += 'TMP-'
         if (P9qid.SYMLINK & (mode & 0xFF000000)>>3*8): s += 'SYMLINK-'
-        s += str(oct(mode & 0x0000FFFF))
+        #s += str(oct(mode & 0x0000FFFF))
+        s += "%04o" % (mode & 0x0000FFFF)
+        #s += '{0:4o}'.format(int((mode & 0x0000FFFF)))
         return s
 
 class P9Nsize(P9N):
@@ -488,7 +490,8 @@ class P9stat(Field):
         if (P9qid.AUTH    & (mode & 0xFF000000)>>3*8): s += 'AUTH-'
         if (P9qid.TMP     & (mode & 0xFF000000)>>3*8): s += 'TMP-'
         if (P9qid.SYMLINK & (mode & 0xFF000000)>>3*8): s += 'SYMLINK-'
-        s += str(oct(mode & 0x0000FFFF))
+        # s += str(oct(mode & 0x0000FFFF))
+        s += "%04o" % (mode & 0x0000FFFF)
         s += ' "' + name
         s += '","' + uid
         s += '","' + gid
@@ -621,9 +624,9 @@ class P9(Packet):
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 # because of tow P9 messages inside one TCP
-# bind_layers(P9, P9)
+bind_layers(P9, P9)
 
-p=rdpcap('5640-3.pcap')
+p=rdpcap('5640-1.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
 p.summary()
 
