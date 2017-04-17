@@ -527,7 +527,7 @@ class P9(Packet):
     name = "P9"
 
     def __init__(self, _pkt="", post_transform=None, _internal=0, _underlayer=None, **fields):
-        post_transform = lambda pkt:self.build(pkt)
+        # post_transform = lambda pkt:self.build(pkt)
         Packet.__init__(self, _pkt, post_transform, _internal, _underlayer, **fields)
 
     fields_desc=[P9Nsize(),
@@ -628,7 +628,7 @@ bind_layers(P9, P9)
 
 p=rdpcap('5640-1.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-p.summary()
+#p.summary()
 
 #hexdump(p[11][P9])
 #hexdump(p[518][P9])
@@ -640,3 +640,9 @@ p.summary()
 
 #p[152][P9].show()
 #hexdump(p[152][P9])
+
+#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
+
+#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p[22:23])
+p[22][P9].show()
+hexdump(p[22][P9])
