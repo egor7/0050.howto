@@ -1,4 +1,4 @@
-import struct
+import struct,string,re
 from scapy.all import *
 from time import strftime,gmtime
 conf.color_theme=NoTheme()
@@ -73,10 +73,10 @@ p9types = { 100: "Tversion",  # size[4] Tversion tag[2]        msize[4] version[
             113: "Ropen",     # size[4] Ropen    tag[2]                 qid[13] iounit[4]
             114: "Tcreate",   # size[4] Tcreate  tag[2] fid[4]          name[s] perm[4] mode[1]
             115: "Rcreate",   # size[4] Rcreate  tag[2]                 qid[13] iounit[4]
-            116 : "Tread",     # size[4] Tread    tag[2] fid[4]          offset[8] count[4]
+            116: "Tread",     # size[4] Tread    tag[2] fid[4]          offset[8] count[4]
             117 : "Rread",     # size[4] Rread    tag[2]                           count[4] data[count]
             118 : "Twrite",    # size[4] Twrite   tag[2] fid[4]          offset[8] count[4] data[count]
-            119 : "Rwrite",    # size[4] Rwrite   tag[2]                           count[4]
+            119: "Rwrite",    # size[4] Rwrite   tag[2]                           count[4]
             120: "Tclunk",    # size[4] Tclunk   tag[2] fid[4]
             121: "Rclunk",    # size[4] Rclunk   tag[2]
             122: "Tremove",   # size[4] Tremove  tag[2] fid[4]
@@ -95,6 +95,8 @@ class P9N(Field):
             Field.__init__(self, name, default, "<H")
         elif size == 4:
             Field.__init__(self, name, default, "<I")
+        elif size == 8:
+            Field.__init__(self, name, default, "<Q")
         else:
             warning("This type is not handled")
             Field.__init__(self, name, default)
@@ -200,6 +202,11 @@ class P9Niounit(P9N):
     def __init__(self):
         P9N.__init__(self, "iounit", 4)
 
+class P9Noffset(P9N):
+    # 116:Tread, 118:Twrite
+    def __init__(self):
+        P9N.__init__(self, "offset", 8)
+
 class P9Nnwname(P9N):
     # 110:Twalk
     # size
@@ -224,8 +231,28 @@ class P9Nnwqid(P9N):
             x = fld.i2count(pkt, fval)
         return x
 
+class P9Ncount(P9N):
+    # 116:Tread, 117:Rread, 118:Twrite, 119:Rwrite
+    # size
+    def __init__(self, length_of=None, count_of=None):
+        P9N.__init__(self, "count", 4, 0)
+        # TODO: move to parent
+        self.length_of=length_of
+        self.count_of=count_of
+    def i2m(self, pkt, x):
+        if x is None:
+            if self.length_of is not None:
+                fld,fval = pkt.getfield_and_val(self.length_of)
+                x = fld.i2len(pkt, fval)
+            if self.count_of is not None:
+                fld,fval = pkt.getfield_and_val(self.count_of)
+                x = fld.i2count(pkt, fval)
+        return x
+
 # === string[s]: s[2] + s bytes
 class P9S(Field):
+    def i2len(self, pkt, s):
+        return len(s)
     def i2m(self, pkt, x):
         if x is None:
             x = ""
@@ -357,6 +384,10 @@ class P9Lwqid(P9L):
     def __init__(self, count_from):
         P9L.__init__(self, "wqid", P9qid(""), count_from=count_from)
 
+class P9Ldata(P9L):
+    def __init__(self, count_from):
+        P9L.__init__(self, "data", P9S("", ""), count_from=count_from)
+
 class P9stat(Field):
     """compound stat[n]"""
 
@@ -394,28 +425,35 @@ class P9stat(Field):
         s += struct.pack("<H", len(gid)) + str(gid)
         s += struct.pack("<H", len(muid)) + str(muid)
         return s
+    @staticmethod
+    def gm2i(x):
+        if x == '': return None
+        try:
+            n = 0
+            size = struct.unpack("<H", x[n:n+2])[0]; n+=2
+            type = struct.unpack("<H", x[n:n+2])[0]; n+=2
+            dev  = struct.unpack("<I", x[n:n+4])[0]; n+=4
+            qtype = struct.unpack("<B", x[n:n+1])[0]; n+=1
+            qvers = struct.unpack("<I", x[n:n+4])[0]; n+=4
+            qpath = struct.unpack("<Q", x[n:n+8])[0]; n+=8
+            #(qtype, qvers, qpath) = P9qid("").m2i(None, x[8:21])
+            mode = struct.unpack("<I", x[n:n+4])[0]; n+=4
+            atime = struct.unpack("<I", x[n:n+4])[0]; n+=4
+            mtime = struct.unpack("<I", x[n:n+4])[0]; n+=4
+            length = struct.unpack("<Q", x[n:n+8])[0]; n+=8
+            # name = P9S[41:43+struct.unpack("<H", x[41:43])[0]]
+            name = P9S("","").m2i(None, x[n:]); n+=2+len(name)
+            uid = P9S("","").m2i(None, x[n:]); n+=2+len(uid)
+            gid = P9S("","").m2i(None, x[n:]); n+=2+len(gid)
+            muid = P9S("","").m2i(None, x[n:]);
+            return ((qtype, qvers, qpath), mode, atime, mtime, length, name, uid, gid, muid)
+        except:
+            return None
     def m2i(self, pkt, x):
         """Convert byte-str to human-touple"""
         if x == '': return None
-        n = 0
-        ssize = struct.unpack("<H", x[n:n+2])[0]; n+=2
-        size = struct.unpack("<H", x[n:n+2])[0]; n+=2
-        type = struct.unpack("<H", x[n:n+2])[0]; n+=2
-        dev  = struct.unpack("<I", x[n:n+4])[0]; n+=4
-        qtype = struct.unpack("<B", x[n:n+1])[0]; n+=1
-        qvers = struct.unpack("<I", x[n:n+4])[0]; n+=4
-        qpath = struct.unpack("<Q", x[n:n+8])[0]; n+=8
-        #(qtype, qvers, qpath) = P9qid("").m2i(pkt, x[8:21])
-        mode = struct.unpack("<I", x[n:n+4])[0]; n+=4
-        atime = struct.unpack("<I", x[n:n+4])[0]; n+=4
-        mtime = struct.unpack("<I", x[n:n+4])[0]; n+=4
-        length = struct.unpack("<Q", x[n:n+8])[0]; n+=8
-        # name = P9S[41:43+struct.unpack("<H", x[41:43])[0]]
-        name = P9S("","").m2i(pkt, x[n:]); n+=2+len(name)
-        uid = P9S("","").m2i(pkt, x[n:]); n+=2+len(uid)
-        gid = P9S("","").m2i(pkt, x[n:]); n+=2+len(gid)
-        muid = P9S("","").m2i(pkt, x[n:]);
-        return ((qtype, qvers, qpath), mode, atime, mtime, length, name, uid, gid, muid)
+        ssize = struct.unpack("<H", x[0:2])[0];
+        return P9stat.gm2i(x[2:])
     def getfield(self, pkt, s):
         x = self.m2i(pkt,s)
         return s[2+self.i2len(pkt, x):], x
@@ -461,41 +499,30 @@ class P9Sstat(P9stat):
     def __init__(self):
         P9stat.__init__(self, "stat")
 
+class P9Sdata(StrFixedLenField):
+    def __init__(self):
+        StrFixedLenField.__init__(self, "data", "", length_from=lambda pkt:pkt.count)
+    def i2repr(self, pkt, x):
+        """Convert internal value to a nice representation"""
+        s = ""
+        s_ = P9stat.gm2i(x)
 
+        if s_ is None:
+            s = ';' + repr(x)
+
+        while s_ is not None:
+            s += ';' + P9stat("").i2repr(None, s_)
+            x = x[P9stat("").i2len(None, s_):]
+            s_ = P9stat.gm2i(x)
+
+        return "[" + s[1:] + "]"
 
 class P9(Packet):
     name = "P9"
-#    def __init__(self):
-#        Packet.__init__(self) #, post_transform=lambda pkt:self.build())
 
-    def __init__(self):#, _pkt="", post_transform=None, _internal=0, _underlayer=None, **fields):
-        Packet.__init__(self) #, post_transform=lambda pkt:self.build())
-#        self.time  = time.time()
-#        self.sent_time = 0
-#        if self.name is None:
-#            self.name = self.__class__.__name__
-#        self.aliastypes = [ self.__class__ ] + self.aliastypes
-#        self.default_fields = {}
-#        self.overloaded_fields = {}
-#        self.fields={}
-#        self.fieldtype={}
-#        self.packetfields=[]
-#        self.__dict__["payload"] = NoPayload()
-#        self.init_fields()
-#        self.underlayer = _underlayer
-#        self.initialized = 1
-#        if _pkt:
-#            self.dissect(_pkt)
-#            if not _internal:
-#                self.dissection_done(self)
-#        for f in fields.keys():
-#            self.fields[f] = self.get_field(f).any2i(self,fields[f])
-#        if type(post_transform) is list:
-#            self.post_transforms = post_transform
-#        elif post_transform is None:
-#            self.post_transforms = []
-#        else:
-#            self.post_transforms = [post_transform]
+    def __init__(self, _pkt="", post_transform=None, _internal=0, _underlayer=None, **fields):
+        post_transform = lambda pkt:self.build(pkt)
+        Packet.__init__(self, _pkt, post_transform, _internal, _underlayer, **fields)
 
     fields_desc=[P9Nsize(),
                  ByteEnumField("type",106,p9types),
@@ -531,6 +558,18 @@ class P9(Packet):
                  ConditionalField(P9Nmode(), lambda pkt:pkt.type in [112,114]),
                  # Tcreate
                  ConditionalField(P9Nperm(), lambda pkt:pkt.type in [114]),
+                 # Tread, Twrite
+                 ConditionalField(P9Noffset(), lambda pkt:pkt.type in [116, 118]),
+                 # Tread, Rwrite
+                 ConditionalField(P9Ncount(), lambda pkt:pkt.type in [116, 119]),
+                 # Rread
+                 ConditionalField(P9Ncount(length_of="data"), lambda pkt:pkt.type in [117]),
+                 ConditionalField(P9Sdata(), lambda pkt:pkt.type in [117]),
+#                 ConditionalField(P9Ncount(count_of="data"), lambda pkt:pkt.type in [117]),
+#                 ConditionalField(P9Ldata(count_from="count"), lambda pkt:pkt.type in [117]),
+#                 # Twrite
+#                 ConditionalField(P9Ncount(count_of="data"), lambda pkt:pkt.type in [118]),
+#                 ConditionalField(P9Ldata(count_from="count"), lambda pkt:pkt.type in [118]),
                 ]
     def mysummary(self):
         s = self.sprintf("%2s,P9.tag% %P9.type%")
@@ -542,6 +581,12 @@ class P9(Packet):
             s += self.sprintf(" %P9.uname%")
         if self.type in [112,114]:
             s += self.sprintf(" %P9.mode%")
+        if self.type in [116]:
+            s += self.sprintf(" [%P9.offset%..%P9.offset%+%P9.count%]")
+        if self.type in [117]:
+            s += self.sprintf(" [%P9.count%]:%P9.data%")
+        if self.type in [119]:
+            s += self.sprintf(" [%P9.count%]")
         if self.type in [114]:
             s += self.sprintf(" %P9.perm%")
         if self.type in [107]:
@@ -563,18 +608,21 @@ class P9(Packet):
             s += self.sprintf(" %P9.wqid%")
         if self.type in [125,126]:
             s += self.sprintf(" %P9.stat%")
+
+        if isinstance(self.underlayer, P9):
+            return s,[P9]
+
         return s
 
 
 bind_layers(TCP, P9, sport=5640)
 bind_layers(TCP, P9, dport=5640)
 # because of tow P9 messages inside one TCP
-# bind_layers(P9, P9)
-# bind_layers(P9, P9)
+bind_layers(P9, P9)
 
 p=rdpcap('5640-4.pcap')
 p=p.filter(lambda x:x.haslayer(P9))[:]
-p.nsummary()
+p.summary()
 
 #hexdump(p[11][P9])
 #hexdump(p[518][P9])
