@@ -1,1 +1,2 @@
 http://man.cat-v.org/inferno/5/stat
+https://blog.aqwari.net/9p/server/
