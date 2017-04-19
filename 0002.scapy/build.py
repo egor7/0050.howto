@@ -641,9 +641,10 @@ bind_layers(TCP, P9, dport=5640)
 bind_layers(P9, P9)
 
 p=rdpcap('5640-1.pcap')
-#p=p.filter(lambda x:x.haslayer(Raw))[:]
 p=p.filter(lambda x:x.haslayer(P9))[:]
-#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[Raw])) for pkt in p)
-print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
-
+#print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
 #p.nsummary()
+
+print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p[:10])
+b = bytearray("".join("".join(c for c in str(pkt[P9])) for pkt in p[:10]))
+f = open("5640-1.9p", "wb"); f.write(b); f.close()
