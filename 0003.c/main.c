@@ -12,11 +12,11 @@ int main() {
     }
 
     char *tail;
-    char ssize[4];
+    unsigned char ssize[4];
     long size;
-    fread(&ssize, 4, 1, f);
-    size = strtol(ssize, &tail, 10);
-    printf("%s=%d|%s\n", ssize, size, tail);
+    fread(ssize, 4, 1, f);
+    size = ssize[0] | (ssize[1]<<8) | (ssize[2]<<16) | (ssize[3]<<24);
+    printf("%d\n", size);
 
     fclose(f);
 
