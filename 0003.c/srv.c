@@ -16,16 +16,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-void ok(char* str)
-{
-    printf("s: %s\n", str);
-}
-
-int err(char* str)
-{
-    printf("s: %s\n", str);
-    return 1;
-}
+void ok(char* str) {printf("s: %s\n", str);}
+int err(char* str) {printf("s: %s\n", str); return 1;}
 
 int main(int argc , char *argv[])
 {
@@ -37,24 +29,22 @@ int main(int argc , char *argv[])
     socket_desc = socket(AF_INET , SOCK_STREAM , 0);
     if (socket_desc == -1)
         return err("could not create socket");
-    ok("socket created");
+        ok("socket created");
 
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons( 8888 );
 
-    if( bind(socket_desc, (struct sockaddr*)&server, sizeof(server)) < 0)
+    if(bind(socket_desc, (struct sockaddr*)&server, sizeof(server)) < 0)
         return err("bind failed");
-    ok("bind done");
+        ok("bind done");
 
     listen(socket_desc , 3);
-    ok("waiting for incoming connections...");
     c = sizeof(struct sockaddr_in);
-
     client_sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c);
     if (client_sock < 0)
         return err("accept failed");
-    ok("connection accepted");
+        ok("connection accepted");
 
     while((read_size = recv(client_sock , client_message , 2000 , 0)) > 0)
     {
@@ -62,7 +52,6 @@ int main(int argc , char *argv[])
         ok(client_message);
         write(client_sock, message, strlen(message));
     }
-
     if(read_size == 0)
     {
         ok("client disconnected");
