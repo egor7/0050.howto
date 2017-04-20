@@ -2,5 +2,7 @@ s: socket created
 s: bind done
 s: connection accepted
 s: client send:
-s: 123
+s: 13:00:00:00:64:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+s: client send:
+s: 13:00:00:00:64:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
 s: client disconnected

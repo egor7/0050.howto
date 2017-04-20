@@ -16,9 +16,9 @@ int err(const char* str) {FILE *o; o = fopen("srv.lst", "a+"); fprintf(o, "s: %s
 
 int main(int argc , char *argv[])
 {
-    int socket_desc, client_sock, c, read_size;
+    int socket_desc, client_sock, c, msize;
     struct sockaddr_in server , client;
-    char client_message[2000];
+    uint8_t client_message[8192];
     char message[] = "321";
 
     socket_desc = socket(AF_INET , SOCK_STREAM , 0);
@@ -41,19 +41,27 @@ int main(int argc , char *argv[])
         return err("accept failed");
         ok("connection accepted");
 
-    while((read_size = recv(client_sock , client_message , 2000 , 0)) > 0)
+    while((msize = recv(client_sock , client_message , 2000 , 0)) > 0)
     {
         ok("client send:");
-        client_message[read_size] = '\0';
-        ok(client_message);
+
+        int i;
+        char s[8192] = "";
+        for (i = 0; i < msize; i++)
+        {
+            if (i > 0) sprintf(s, "%s:", s);
+            sprintf(s, "%s%02x", s, client_message[i]);
+        }
+        ok(s);
+
         write(client_sock, message, strlen(message));
     }
-    if(read_size == 0)
+    if(msize == 0)
     {
         ok("client disconnected");
         fflush(stdout);
     }
-    else if(read_size == -1)
+    else if(msize == -1)
         return err("recv failed");
 
     return 0;
