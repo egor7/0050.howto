@@ -16,8 +16,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-void ok(const char* str) {FILE *o; o = fopen("build.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o);}
-int err(const char* str) {FILE *o; o = fopen("build.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o); return 1;}
+void ok(const char* str) {FILE *o; o = fopen("srv.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o);}
+int err(const char* str) {FILE *o; o = fopen("srv.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o); return 1;}
 
 int main(int argc , char *argv[])
 {
@@ -48,6 +48,7 @@ int main(int argc , char *argv[])
 
     while((read_size = recv(client_sock , client_message , 2000 , 0)) > 0)
     {
+        ok("client send:");
         client_message[read_size] = '\0';
         ok(client_message);
         write(client_sock, message, strlen(message));

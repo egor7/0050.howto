@@ -7,8 +7,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-void ok(char* str) {printf("c: %s\n", str);}
-int err(char* str) {printf("c: %s\n", str); return 1;}
+void ok(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c: %s\n", str); fclose(o);}
+int err(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c: %s\n", str); fclose(o); return 1;}
 
 int main(int argc , char *argv[])
 {

@@ -1,16 +1,10 @@
-main/BEG
-19
-19
-23
-20
-35
-17
-34
-9
-12
-30
-24
-main/sum = 242
-main/END
 s: socket created
 s: bind done
+s: connection accepted
+s: client send:
+s: 123
+s: client disconnected
+c: socket created
+c: connected
+c: server reply:
+c: 321

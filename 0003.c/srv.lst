@@ -1,0 +1,6 @@
+s: socket created
+s: bind done
+s: connection accepted
+s: client send:
+s: 123
+s: client disconnected

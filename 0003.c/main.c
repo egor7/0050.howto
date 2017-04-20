@@ -2,14 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "c9.h"
+#include <time.h>
 
 void o(const char* fmt, ...)
 {
     FILE *o;
     o = fopen("build.lst", "a+");
 
+    clock_t uptime = clock();// / (CLOCKS_PER_SEC / 1000);
+    time_t now = time(NULL);
+
     va_list args;
     va_start(args, fmt);
+    fprintf(o, "%d ", now);
     vfprintf(o, fmt, args);
     va_end(args);
 

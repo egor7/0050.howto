@@ -1,2 +1,4 @@
 c: socket created
-c: connect failed
+c: connected
+c: server reply:
+c: 321
