@@ -25,29 +25,34 @@ int err(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c: %s
 //         C9ctx.begin() -- create b(TAG) buffer
 //     C9ctx.end() -- apply b buffer
 
-uint8_t *message = NULL;
-int msize = 0;
+typedef struct aux aux;
+struct aux {
+    uint8_t *message;
+    int msize;
+};
 
 uint8_t *begin(C9ctx *ctx, uint32_t size)
 {
-    message = (uint8_t *)malloc(size*sizeof(uint8_t));
-    msize = size;
-    return message;
+    aux *a = ((aux*)ctx->aux);
+    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
+    a->msize = size;
+    return a->message;
 }
 
 int end(C9ctx *ctx)
 {
+    aux *a = ((aux*)ctx->aux);
     char s[200] = "";
     int i;
-    for (i = 0; i < msize; i++)
+    for (i = 0; i < a->msize; i++)
     {
         if (i > 0) sprintf(s, "%s:", s);
-        sprintf(s, "%s%02X", s, message[i]);
+        sprintf(s, "%s%02X", s, a->message[i]);
     }
     ok(s);
 
-    free(message);
-    msize = 0;
+    free(a->message);
+    a->msize = 0;
     return 0;
 }
 
@@ -73,8 +78,13 @@ int main(int argc , char *argv[])
 
     C9tag tag;
     C9ctx c;
+    aux a;
+    a.message = NULL;
+    a.msize = 0;
+
     c.begin = &begin;
     c.end = &end;
+    c.aux = &a;
     c9version(&c, &tag, 8192);
 
 
