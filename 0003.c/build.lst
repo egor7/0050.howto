@@ -12,3 +12,5 @@ main/BEG
 24
 main/sum = 242
 main/END
+s: socket created
+s: bind done

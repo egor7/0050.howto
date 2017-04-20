@@ -16,8 +16,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-void ok(char* str) {printf("s: %s\n", str);}
-int err(char* str) {printf("s: %s\n", str); return 1;}
+void ok(const char* str) {FILE *o; o = fopen("build.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o);}
+int err(const char* str) {FILE *o; o = fopen("build.lst", "a+"); fprintf(o, "s: %s\n", str); fclose(o); return 1;}
 
 int main(int argc , char *argv[])
 {
