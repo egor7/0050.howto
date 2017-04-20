@@ -24,16 +24,17 @@ int main() {
         unsigned char *sbody = malloc(sizeof(unsigned char)*size);
         fread(sbody, size, 1, f);
 
-        -- prepare internal C9t/C9r
-        c/s9proc()
+        -- client Receive
+        c9proc()
             C9ctx.read(size)
             C9ctx.read(body)
-          C9t.t()/C9r.r() -- вешаем callback работать с приходящими сообщениями
+          C9r.r() -- вешаем callback работать с подготовленным сообщением
 
-        c/s9_type_()
-            R/T()
-                C9ctx.begin()
-            C9ctx.end
+        -- client Transmit
+        c9_type_(_custom__fields_)
+            T() -- common part
+                C9ctx.begin() -- create b(TAG) buffer
+            C9ctx.end() -- apply b buffer
 
 
 	free(sbody);
