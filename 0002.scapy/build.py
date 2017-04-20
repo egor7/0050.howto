@@ -645,6 +645,9 @@ p=p.filter(lambda x:x.haslayer(P9))[:]
 #print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p)
 #p.nsummary()
 
+p[0][P9].show()
+hexdump(p[0][P9])
+
 print "\n".join(":".join("{0:02x}".format(ord(c)) for c in str(pkt[P9])) for pkt in p[:10])
 b = bytearray("".join("".join(c for c in str(pkt[P9])) for pkt in p[:10]))
 f = open("5640-1.9p", "wb"); f.write(b); f.close()

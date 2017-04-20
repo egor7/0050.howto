@@ -1,11 +1,6 @@
 /*
     C socket server example
 
-    1. Create socket
-    2. Bind to address and port
-    3. Put in listening mode
-    4. Accept connections and process there after.
-
     http://www.binarytides.com/server-client-example-c-sockets-linux
     http://stackoverflow.com/questions/28027937/cross-platform-sockets
 */
