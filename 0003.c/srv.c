@@ -46,7 +46,7 @@ uint8_t *read_(C9ctx *ctx, uint32_t size, int *err)
     C9aux *a = ((C9aux*)ctx->aux);
 
     // todo free
-    if (a->msize>0) {
+    if (a->msize > 0) {
         free(a->message);
         a->msize = 0;
     }
@@ -55,12 +55,15 @@ uint8_t *read_(C9ctx *ctx, uint32_t size, int *err)
     a->msize = size;
     int msize = recv(a->sock, a->message, size, 0);
 
-    int i;
-    uint8_t s[8192] = "";
-    for (i = 0; i < msize; i++)
+    int i,j;
+    uint8_t s[8192] = "", buf[10];
+    for (i = 0, j = 0; i < msize; i++)
     {
-        if (i > 0) sprintf(s, "%s:", s);
-        sprintf(s, "%s%02x", s, a->message[i]);
+        //if (i > 0) sprintf(s, "%s:", s);
+        //sprintf(s, "%s%02x", s, a->message[i]);
+        if (i > 0) strcat(s, ":");
+        sprintf(buf, "%02x", a->message[i]);
+        strcat(s, buf);
     }
     ok(s);
 
@@ -73,7 +76,7 @@ void t_(C9ctx *ctx, C9t *t)
     ok("t_/BEG");
     C9aux *a = ((C9aux*)ctx->aux);
 
-    a->t = t;
+    a->t = *t;
 
     ok("t_/END");
 }
@@ -117,15 +120,20 @@ int main(int argc, char *argv[])
     ctx.aux = &aux;
     ctx.t = &t_;
     ctx.msize = 8192;
+    ctx.svflags = 0;
 
     C9error err;
     while((err = s9proc(&ctx)) == 0)
     {
-        ok("client send:%d", aux.t->type);
+        ok("client send:%d", (int)aux.t.type);
         //write(client_sock, server_message, strlen(server_message));
     }
     ok("client disconnected");
-    fflush(stdout);
+
+    if (aux.msize > 0) {
+        free(aux.message);
+        aux.msize = 0;
+    }
 
     // custom
     // close(client_sock);

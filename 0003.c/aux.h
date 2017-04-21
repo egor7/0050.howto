@@ -6,5 +6,6 @@ struct C9aux {
 
     int sock;
 
-    C9t *t;
+    // not ptr
+    C9t t;
 };

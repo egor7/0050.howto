@@ -82,6 +82,7 @@ int main(int argc , char *argv[])
     ctx.aux = &aux;
 
     c9version(&ctx, &tag, 8192);
+    ok("sent Tversion");
 
     // if((read_size = recv(sock, server_reply, 2000, 0)) < 0)
     //     return err("recv failed");

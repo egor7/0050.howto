@@ -12,6 +12,7 @@ enum
 #define maxwrite(c) maxread(c)
 
 #include <stdio.h>
+#include <stdarg.h>
 void okk(const char *fmt, ...)
 {
     va_list args;

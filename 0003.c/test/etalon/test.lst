@@ -17,6 +17,7 @@ s:s9proc: invalid packet size !(7 <= 0 <= 8192)
 s:client disconnected
 c:socket created
 c:connected
+c:sent Tversion
 c9:s9proc1
 c9:s9proc2
 c9:s9proc3
