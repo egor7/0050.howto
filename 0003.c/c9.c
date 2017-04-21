@@ -11,6 +11,22 @@ enum
 #define maxread(c) (c->msize-4-4-1-2)
 #define maxwrite(c) maxread(c)
 
+#include <stdio.h>
+void okk(const char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+
+    FILE *o;
+    o = fopen("c9.lst", "a+");
+    fprintf(o, "c9:");
+    vfprintf(o, fmt, args);
+    fprintf(o, "\n");
+    fclose(o);
+
+    va_end(args);
+}
+
 static void
 w08(uint8_t **p, uint8_t x)
 {
@@ -943,25 +959,35 @@ s9proc(C9ctx *c)
   C9error err;
   C9t t;
 
+  okk("s9proc1");
   readerr = -1;
   if((b = c->read(c, 4, &readerr)) == NULL){
-		if(readerr != 0)
+        okk("s9proc1.1");
+		if(readerr != 0) {
+          okk("s9proc1.2");
 		  c->error("s9proc: short read");
+        }
+        okk("s9proc1.3");
 		return readerr == 0 ? 0 : C9Epkt;
   }
+
+  okk("s9proc2");
 
   sz = r32(&b);
   if(sz < 7 || sz > c->msize){
     c->error("s9proc: invalid packet size !(7 <= %u <= %u)", sz, c->msize);
     return C9Epkt;
   }
+  okk("s9proc3");
   sz -= 4;
   readerr = -1;
   if((b = c->read(c, sz, &readerr)) == NULL){
+        okk("s9proc4");
 		if(readerr != 0)
 		  c->error("s9proc: short read");
 		return readerr == 0 ? 0 : C9Epkt;
   }
+  okk("s9proc5");
 
   t.type = r08(&b);
   t.tag = r16(&b);
@@ -1080,6 +1106,7 @@ s9proc(C9ctx *c)
 		break;
 
 	case Tversion:
+        okk("Tversion1");
 		if(sz < 4+2 || (msize = r32(&b)) < C9minmsize || (cnt = r16(&b)) > sz-4-2)
 		  goto error;
 		if(cnt < 6 || memcmp(b, "9P2000", 6) != 0){
@@ -1094,6 +1121,7 @@ s9proc(C9ctx *c)
 		if(msize < c->msize)
 		  c->msize = msize;
 		c->svflags |= Svver;
+        okk("Tversion9");
 		c->t(c, &t);
 		break;
 

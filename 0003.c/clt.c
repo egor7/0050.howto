@@ -9,26 +9,12 @@
 #include <unistd.h>
 
 #include "c9.h"
+#include "aux.h"
 
-void ok(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c: %s\n", str); fclose(o);}
-int err(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c: %s\n", str); fclose(o); return 1;}
+void ok(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c:%s\n", str); fclose(o);}
+int err(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c:%s\n", str); fclose(o); return 1;}
 
-// -- client Receive
-// c9proc()
-//     C9ctx.read(size)
-//     C9ctx.read(body)
-//   C9r.r() -- вешаем callback работать с подготовленным сообщением
-
-
-typedef struct C9aux C9aux;
-struct C9aux {
-    uint8_t *message;
-    int msize;
-
-    int sock;
-};
-
-uint8_t *begin(C9ctx *ctx, uint32_t size)
+uint8_t *begin_(C9ctx *ctx, uint32_t size)
 {
     C9aux *a = ((C9aux*)ctx->aux);
     a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
@@ -36,7 +22,7 @@ uint8_t *begin(C9ctx *ctx, uint32_t size)
     return a->message;
 }
 
-int end(C9ctx *ctx)
+int end_(C9ctx *ctx)
 {
     C9aux *a = ((C9aux*)ctx->aux);
 
@@ -48,11 +34,25 @@ int end(C9ctx *ctx)
     return 0;
 }
 
+void error_(const char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+
+    //vprintf(fmt, args);
+    FILE *o;
+    o = fopen("clt.lst", "a+");
+    vfprintf(o, fmt, args);
+    fclose(o);
+
+    va_end(args);
+}
+
 int main(int argc , char *argv[])
 {
     int sock, read_size;
     struct sockaddr_in server;
-    char message[] = "123", server_reply[2000];
+    uint8_t message[] = "123", server_reply[2000];
 
     sock = socket(AF_INET , SOCK_STREAM , 0);
     if (sock == -1)
@@ -76,18 +76,18 @@ int main(int argc , char *argv[])
     aux.sock = sock;
 
     C9ctx ctx;
-    ctx.begin = &begin;
-    ctx.end = &end;
+    ctx.error = &error_;
+    ctx.begin = &begin_;
+    ctx.end = &end_;
     ctx.aux = &aux;
 
     c9version(&ctx, &tag, 8192);
-    c9version(&ctx, &tag, 8192);
 
-    if((read_size = recv(sock, server_reply, 2000, 0)) < 0)
-        return err("recv failed");
-    server_reply[read_size] = '\0';
-        ok("server reply:");
-        ok(server_reply);
+    // if((read_size = recv(sock, server_reply, 2000, 0)) < 0)
+    //     return err("recv failed");
+    // server_reply[read_size] = '\0';
+    //     ok("server reply:");
+    //     ok(server_reply);
 
     close(sock);
     return 0;

@@ -7,9 +7,14 @@ echo -n > build.lst
 
 echo -n > srv.lst
 echo -n > clt.lst
-tcc -run srv.c &
+echo -n > c9.lst
+
+tcc c9.c -run srv.c &
 sleep 1
 tcc c9.c -run clt.c
 wait
 cat srv.lst >> build.lst
 cat clt.lst >> build.lst
+cat c9.lst >> build.lst
+
+#netstat -pnat | grep 8888

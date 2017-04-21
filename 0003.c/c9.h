@@ -17,6 +17,7 @@ typedef uint16_t C9tag;
 /* Special fid used with auth/attach to basically avoid authentication. */
 #define C9nofid ((C9fid)~0)
 
+
 /* C9modes for opening a file. */
 enum C9mode
   {

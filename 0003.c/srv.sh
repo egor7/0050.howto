@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tcc -run srv.c
+tcc c9.c -run srv.c

@@ -1,10 +1,27 @@
-s: socket created
-s: bind done
-s: connection accepted
-s: client send:
-s: 13:00:00:00:64:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-s: client disconnected
-c: socket created
-c: connected
-c: server reply:
-c: 321
+s:socket created
+s:bind done
+s:connection accepted
+s:read_/BEG
+s:13:00:00:00
+s:read_/END
+s:read_/BEG
+s:64:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+s:read_/END
+s:t_/BEG
+s:t_/END
+s:client send:100
+s:read_/BEG
+s:
+s:read_/END
+s:s9proc: invalid packet size !(7 <= 0 <= 8192)
+s:client disconnected
+c:socket created
+c:connected
+c9:s9proc1
+c9:s9proc2
+c9:s9proc3
+c9:s9proc5
+c9:Tversion1
+c9:Tversion9
+c9:s9proc1
+c9:s9proc2

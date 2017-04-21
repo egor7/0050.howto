@@ -1,3 +1,3 @@
 #!/bin/bash
 
-tcc -run clt.c
+tcc c9.c -run clt.c
