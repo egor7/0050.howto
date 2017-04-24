@@ -25,7 +25,8 @@ void tlog(const char *fmt, ...) {
     FILE *o;
     o = fopen("srv.lst", "a+");
     fprintf(o, "s:");
-    for (int i = 0; i < tlvl; i++) {
+    int i;
+    for (i = 0; i < tlvl; i++) {
         fprintf(o, "    ");
     }
     vfprintf(o, fmt, args);
@@ -51,32 +52,33 @@ int terr(const char* str) {
 uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
 {
     tbeg("readbuf");
+    tlog("size = %d", size);
     C9aux *a = ((C9aux*)ctx->aux);
 
-    if (a->msize > 0) {
-        tlog("free: %d bytes", a->msize);
-        free(a->message);
-        a->msize = 0;
+    if (a->nrecv > 0) {
+        tlog("free (recv): %d bytes", a->nrecv);
+        free(a->recv);
+        a->nrecv = 0;
     }
-    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
-    memset(a->message, 0, size*sizeof(uint8_t));
-    a->msize = size;
-    tlog("alloc: %d bytes", a->msize);
+    a->recv = (uint8_t *)malloc(size*sizeof(uint8_t));
+    memset(a->recv, 0, size*sizeof(uint8_t));
+    a->nrecv = size;
+    tlog("alloc (recv): %d bytes", a->nrecv);
 
-    int msize = recv(a->sock, a->message, size, 0);
+    int n = recv(a->sock, a->recv, size, 0);
 
     int i,j;
     uint8_t s[8192] = "", buf[10];
-    for (i = 0, j = 0; i < msize; i++)
+    for (i = 0, j = 0; i < n; i++)
     {
         if (i > 0) strcat(s, ":");
-        sprintf(buf, "%02x", a->message[i]);
+        sprintf(buf, "%02x", a->recv[i]);
         strcat(s, buf);
     }
     tlog(s);
 
     tend("readbuf");
-    return a->message;
+    return a->recv;
 }
 
 void t_(C9ctx *ctx, C9t *t9)
@@ -84,10 +86,10 @@ void t_(C9ctx *ctx, C9t *t9)
     tbeg("t_");
     C9aux *a = ((C9aux*)ctx->aux);
 
-    if (a->msize > 0) {
-        tlog("free: %d bytes", a->msize);
-        free(a->message);
-        a->msize = 0;
+    if (a->nrecv > 0) {
+        tlog("free (recv): %d bytes", a->nrecv);
+        free(a->recv);
+        a->nrecv = 0;
     }
 
     tlog("client send:%d", (int)t9->type);
@@ -106,17 +108,17 @@ uint8_t *makebuf(C9ctx *ctx, uint32_t size)
     tbeg("makebuf");
     C9aux *a = ((C9aux*)ctx->aux);
 
-    if (a->msize > 0) {
-        tlog("free: %d bytes", a->msize);
-        free(a->message);
-        a->msize = 0;
+    if (a->nsend > 0) {
+        tlog("free (send): %d bytes", a->nsend);
+        free(a->send);
+        a->nsend = 0;
     }
-    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
-    a->msize = size;
-    tlog("alloc: %d bytes", a->msize);
+    a->send = (uint8_t *)malloc(size*sizeof(uint8_t));
+    a->nsend = size;
+    tlog("alloc (send): %d bytes", a->nsend);
 
     tend("makebuf");
-    return a->message;
+    return a->send;
 }
 
 int sendbuf(C9ctx *ctx)
@@ -124,12 +126,12 @@ int sendbuf(C9ctx *ctx)
     tbeg("sendbuf");
     C9aux *a = ((C9aux*)ctx->aux);
 
-    if(send(a->sock, a->message, a->msize, 0) < 0)
+    if(send(a->sock, a->send, a->nsend, 0) < 0)
         return terr("send failed");
 
-    tlog("free: %d bytes", a->msize);
-    free(a->message);
-    a->msize = 0;
+    tlog("free (send): %d bytes", a->nsend);
+    free(a->send);
+    a->nsend = 0;
 
     tend("sendbuf");
     return 0;
@@ -141,8 +143,6 @@ int main(int argc, char *argv[])
 
     int socket_desc, client_sock, c;
     struct sockaddr_in server, client;
-    uint8_t client_message[8192];
-    uint8_t server_message[] = "321";
 
     socket_desc = socket(AF_INET, SOCK_STREAM, 0);
     if (socket_desc == -1)
@@ -165,8 +165,10 @@ int main(int argc, char *argv[])
         tlog("connection accepted");
 
     C9aux aux;
-    aux.message = NULL;
-    aux.msize = 0;
+    aux.send = NULL;
+    aux.recv = NULL;
+    aux.nsend = 0;
+    aux.nrecv = 0;
     aux.sock = client_sock;
 
     C9ctx ctx;
@@ -186,10 +188,10 @@ int main(int argc, char *argv[])
 
     tlog("client disconnected");
 
-    if (aux.msize > 0) {
-        tlog("free: %d bytes", aux.msize);
-        free(aux.message);
-        aux.msize = 0;
+    if (aux.nrecv > 0) {
+        tlog("free (recv): %d bytes", aux.nrecv);
+        free(aux.recv);
+        aux.nrecv = 0;
     }
 
     // custom
