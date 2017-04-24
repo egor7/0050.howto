@@ -2,6 +2,8 @@
 #include <stdint.h>
 #include "c9.h"
 
+#include "trace.h"
+
 enum
   {
     Svver = 1<<0,
@@ -10,23 +12,6 @@ enum
 #define safestrlen(s) (s == NULL ? 0 : (uint32_t)strlen(s))
 #define maxread(c) (c->msize-4-4-1-2)
 #define maxwrite(c) maxread(c)
-
-#include <stdio.h>
-#include <stdarg.h>
-void okk(const char *fmt, ...)
-{
-    va_list args;
-    va_start(args, fmt);
-
-    FILE *o;
-    o = fopen("c9.lst", "a+");
-    fprintf(o, "c9:");
-    vfprintf(o, fmt, args);
-    fprintf(o, "\n");
-    fclose(o);
-
-    va_end(args);
-}
 
 static void
 w08(uint8_t **p, uint8_t x)
@@ -954,41 +939,45 @@ s9wstat(C9ctx *c, C9tag tag)
 C9error
 s9proc(C9ctx *c)
 {
+  tbeg("s9proc");
   uint32_t i, sz, cnt, n, msize;
   int readerr;
   uint8_t *b;
   C9error err;
   C9t t;
 
-  okk("s9proc1");
+  tlog("s9proc1");
   readerr = -1;
   if((b = c->read(c, 4, &readerr)) == NULL){
-        okk("s9proc1.1");
+        tlog("s9proc1.1");
 		if(readerr != 0) {
-          okk("s9proc1.2");
+          tlog("s9proc1.2");
 		  c->error("s9proc: short read");
         }
-        okk("s9proc1.3");
+        tlog("s9proc1.3");
+        tend("s9proc");
 		return readerr == 0 ? 0 : C9Epkt;
   }
 
-  okk("s9proc2");
+  tlog("s9proc2");
 
   sz = r32(&b);
   if(sz < 7 || sz > c->msize){
     c->error("s9proc: invalid packet size !(7 <= %u <= %u)", sz, c->msize);
+    tend("s9proc");
     return C9Epkt;
   }
-  okk("s9proc3");
+  tlog("s9proc3");
   sz -= 4;
   readerr = -1;
   if((b = c->read(c, sz, &readerr)) == NULL){
-        okk("s9proc4");
+        tlog("s9proc4");
 		if(readerr != 0)
 		  c->error("s9proc: short read");
+        tend("s9proc");
 		return readerr == 0 ? 0 : C9Epkt;
   }
-  okk("s9proc5");
+  tlog("s9proc5");
 
   t.type = r08(&b);
   t.tag = r16(&b);
@@ -996,6 +985,7 @@ s9proc(C9ctx *c)
 
   if((c->svflags & Svver) == 0 && t.type != Tversion){
     c->error("s9proc: expected Tversion, got %d", t.type);
+    tend("s9proc");
     return C9Epkt;
   }
 
@@ -1040,6 +1030,7 @@ s9proc(C9ctx *c)
 		t.walk.newfid = r32(&b);
 		if((n = r16(&b)) > 16){
 		  c->error("s9proc: Twalk !(%d <= 16)", n);
+          tend("s9proc");
 		  return C9Epath;
 		}
 		sz -= 4+4+2;
@@ -1049,6 +1040,7 @@ s9proc(C9ctx *c)
 				  goto error;
 				if(cnt < 1){
 				  c->error("s9proc: Twalk invalid element [%d]", i);
+                  tend("s9proc");
 				  return C9Epath;
 				}
 				b[-2] = 0;
@@ -1081,6 +1073,7 @@ s9proc(C9ctx *c)
 		  goto error;
 		if((err = c9parsedir(c, &t.wstat, &b, &cnt)) != 0){
 		  c->error("s9proc");
+          tend("s9proc");
 		  return err;
 		}
 		c->t(c, &t);
@@ -1107,7 +1100,7 @@ s9proc(C9ctx *c)
 		break;
 
 	case Tversion:
-        okk("Tversion1");
+        tlog("Tversion1");
 		if(sz < 4+2 || (msize = r32(&b)) < C9minmsize || (cnt = r16(&b)) > sz-4-2)
 		  goto error;
 		if(cnt < 6 || memcmp(b, "9P2000", 6) != 0){
@@ -1117,12 +1110,13 @@ s9proc(C9ctx *c)
 		    err = c->end(c);
 		    c->error("s9proc: invalid version");
 		  }
+          tend("s9proc");
 		  return C9Ever;
 		}
 		if(msize < c->msize)
 		  c->msize = msize;
 		c->svflags |= Svver;
-        okk("Tversion9");
+        tlog("Tversion9");
 		c->t(c, &t);
 		break;
 
@@ -1172,8 +1166,10 @@ s9proc(C9ctx *c)
 	default:
 	  goto error;
   }
+  tend("s9proc");
   return 0;
 error:
   c->error("s9proc: invalid packet (type=%d)", t.type);
+  tend("s9proc");
   return C9Epkt;
 }

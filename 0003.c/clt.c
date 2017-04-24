@@ -7,65 +7,147 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 #include "c9.h"
 #include "aux.h"
+#include "trace.h"
 
-void ok(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c:%s\n", str); fclose(o);}
-int err(const char* str) {FILE *o; o = fopen("clt.lst", "a+"); fprintf(o, "c:%s\n", str); fclose(o); return 1;}
-
-uint8_t *begin_(C9ctx *ctx, uint32_t size)
-{
-    C9aux *a = ((C9aux*)ctx->aux);
-    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
-    a->msize = size;
-    return a->message;
-}
-
-int end_(C9ctx *ctx)
-{
-    C9aux *a = ((C9aux*)ctx->aux);
-
-    if(send(a->sock, a->message, a->msize, 0) < 0)
-        return err("send failed");
-
-    free(a->message);
-    a->msize = 0;
-    return 0;
-}
-
-void error_(const char *fmt, ...)
-{
+int tlvl = 0;
+void tlog(const char *fmt, ...) {
     va_list args;
     va_start(args, fmt);
 
-    //vprintf(fmt, args);
     FILE *o;
     o = fopen("clt.lst", "a+");
+    fprintf(o, "c:");
+    for (int i = 0; i < tlvl; i++) {
+        fprintf(o, "    ");
+    }
     vfprintf(o, fmt, args);
+    fprintf(o, "\n");
     fclose(o);
 
     va_end(args);
 }
+void tbeg(const char* str) {
+    tlog("%s/BEG", str);
+    tlvl++;
+}
+void tend(const char* str) {
+    tlvl--;
+    tlog("%s/END", str);
+}
+int terr(const char* str) {
+    tlvl--;
+    tlog("%s/ERR", str);
+    return 1;
+}
+
+uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
+{
+    tbeg("readbuf");
+    C9aux *a = ((C9aux*)ctx->aux);
+
+    if (a->msize > 0) {
+        tlog("free: %d bytes", a->msize);
+        free(a->message);
+        a->msize = 0;
+    }
+    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
+    memset(a->message, 0, size*sizeof(uint8_t));
+    a->msize = size;
+    tlog("alloc: %d bytes", a->msize);
+
+    int msize = recv(a->sock, a->message, size, 0);
+
+    int i,j;
+    uint8_t s[8192] = "", buf[10];
+    for (i = 0, j = 0; i < msize; i++)
+    {
+        if (i > 0) strcat(s, ":");
+        sprintf(buf, "%02x", a->message[i]);
+        strcat(s, buf);
+    }
+    tlog(s);
+
+    tend("readbuf");
+    return a->message;
+}
+
+void r_(C9ctx *ctx, C9r *r9)
+{
+    tbeg("r_");
+    C9aux *a = ((C9aux*)ctx->aux);
+
+    if (a->msize > 0) {
+        tlog("free: %d bytes", a->msize);
+        free(a->message);
+        a->msize = 0;
+    }
+
+    switch (r9->type){
+        case Rversion:
+            tlog("Rversion");
+            break;
+    }
+
+    tend("r_");
+}
+
+uint8_t *makebuf(C9ctx *ctx, uint32_t size)
+{
+    tbeg("makebuf");
+    C9aux *a = ((C9aux*)ctx->aux);
+
+    if (a->msize > 0) {
+        tlog("free: %d bytes", a->msize);
+        free(a->message);
+        a->msize = 0;
+    }
+    a->message = (uint8_t *)malloc(size*sizeof(uint8_t));
+    a->msize = size;
+    tlog("alloc: %d bytes", a->msize);
+
+    tend("makebuf");
+    return a->message;
+}
+
+int sendbuf(C9ctx *ctx)
+{
+    tbeg("sendbuf");
+    C9aux *a = ((C9aux*)ctx->aux);
+
+    if(send(a->sock, a->message, a->msize, 0) < 0)
+        return terr("send failed");
+
+    tlog("free: %d bytes", a->msize);
+    free(a->message);
+    a->msize = 0;
+
+    tend("sendbuf");
+    return 0;
+}
 
 int main(int argc , char *argv[])
 {
+    tbeg("main");
     int sock, read_size;
     struct sockaddr_in server;
-    uint8_t message[] = "123", server_reply[2000];
+    uint8_t message[] = "123";
 
     sock = socket(AF_INET , SOCK_STREAM , 0);
     if (sock == -1)
-        return err("could not create socket");
-        ok("socket created");
+        return terr("could not create socket");
+        tlog("socket created");
 
     server.sin_addr.s_addr = inet_addr("127.0.0.1");
     server.sin_family = AF_INET;
     server.sin_port = htons( 8888 );
 
     if (connect(sock , (struct sockaddr*)&server , sizeof(server)) < 0)
-        return err("connect failed");
-        ok("connected");
+        return terr("connect failed");
+        tlog("connected");
 
 
     C9tag tag;
@@ -76,20 +158,22 @@ int main(int argc , char *argv[])
     aux.sock = sock;
 
     C9ctx ctx;
-    ctx.error = &error_;
-    ctx.begin = &begin_;
-    ctx.end = &end_;
     ctx.aux = &aux;
+    ctx.error = &tlog;
+    ctx.msize = 8192;
+    ctx.svflags = 0;
+    // receive
+    ctx.read = &readbuf;
+    ctx.r = &r_;
+    // send
+    ctx.begin = &makebuf;
+    ctx.end = &sendbuf;
 
     c9version(&ctx, &tag, 8192);
-    ok("sent Tversion");
-
-    // if((read_size = recv(sock, server_reply, 2000, 0)) < 0)
-    //     return err("recv failed");
-    // server_reply[read_size] = '\0';
-    //     ok("server reply:");
-    //     ok(server_reply);
+    c9proc(&ctx);
 
     close(sock);
+
+    tend("main");
     return 0;
 }
