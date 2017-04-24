@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 {
     tbeg("main");
 
-    int socket_desc, client_sock, c, msize;
+    int socket_desc, client_sock, c;
     struct sockaddr_in server, client;
     uint8_t client_message[8192];
     uint8_t server_message[] = "321";
@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
     C9ctx ctx;
     ctx.aux = &aux;
     ctx.error = &tlog;
-    ctx.msize = 8192;
+    ctx.msize = 8192 + 1;
     ctx.svflags = 0;
     // receive
     ctx.read = &readbuf;

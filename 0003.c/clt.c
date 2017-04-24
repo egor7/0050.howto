@@ -77,26 +77,6 @@ uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
     return a->message;
 }
 
-void r_(C9ctx *ctx, C9r *r9)
-{
-    tbeg("r_");
-    C9aux *a = ((C9aux*)ctx->aux);
-
-    if (a->msize > 0) {
-        tlog("free: %d bytes", a->msize);
-        free(a->message);
-        a->msize = 0;
-    }
-
-    switch (r9->type){
-        case Rversion:
-            tlog("Rversion");
-            break;
-    }
-
-    tend("r_");
-}
-
 uint8_t *makebuf(C9ctx *ctx, uint32_t size)
 {
     tbeg("makebuf");
@@ -131,23 +111,33 @@ int sendbuf(C9ctx *ctx)
     return 0;
 }
 
-void *threadf(void *arg)
+void r_(C9ctx *ctx, C9r *r9)
 {
-    tbeg("threadf");
-    char *str;
-    int i = 0;
+    tbeg("r_");
+    C9aux *a = ((C9aux*)ctx->aux);
 
-    str=(char*)arg;
-
-    while(i < 10 )
-    {
-        usleep(1);
-        tlog("threadFunc says: %s\n", str);
-        ++i;
+    if (a->msize > 0) {
+        tlog("free: %d bytes", a->msize);
+        free(a->message);
+        a->msize = 0;
     }
 
-    tend("threadf");
-    return NULL;
+    switch (r9->type){
+        case Rversion:
+            tlog("Rversion");
+            // how to get full message unpacked info?
+            break;
+    }
+
+    tend("r_");
+}
+
+void *threadf(void *arg)
+{
+    C9ctx *ctx = ((C9ctx*)arg);
+    int i = 0;
+    while(i++ < 3) c9proc(ctx);
+    pthread_exit(NULL);
 }
 
 int main(int argc , char *argv[])
@@ -190,14 +180,15 @@ int main(int argc , char *argv[])
     ctx.begin = &makebuf;
     ctx.end = &sendbuf;
 
-    // pthread_t pth;
-    // pthread_create(&pth, NULL, threadf, "processing...");
-    // pthread_join(pth, NULL);
+    pthread_t pth;
+    pthread_create(&pth, NULL, threadf, &ctx);
 
-
+    c9version(&ctx, &tag, 8192 + 2);
     c9version(&ctx, &tag, 8192);
-    c9proc(&ctx);
+    c9version(&ctx, &tag, 8192 + 1); // why only 8192 in the reply?
 
+    // sleep(1);
+    pthread_join(pth, NULL);
     close(sock);
 
     tend("main");
