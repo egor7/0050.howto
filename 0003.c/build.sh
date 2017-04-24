@@ -10,7 +10,7 @@ echo -n > clt.lst
 
 tcc c9.c -run srv.c &
 sleep 1
-tcc c9.c -run clt.c
+tcc c9.c -run clt.c -lpthread
 wait
 cat srv.lst >> build.lst
 cat clt.lst >> build.lst

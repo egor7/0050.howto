@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#include <pthread.h>
+
 #include "c9.h"
 #include "aux.h"
 #include "trace.h"
@@ -129,6 +131,25 @@ int sendbuf(C9ctx *ctx)
     return 0;
 }
 
+void *threadf(void *arg)
+{
+    tbeg("threadf");
+    char *str;
+    int i = 0;
+
+    str=(char*)arg;
+
+    while(i < 10 )
+    {
+        usleep(1);
+        tlog("threadFunc says: %s\n", str);
+        ++i;
+    }
+
+    tend("threadf");
+    return NULL;
+}
+
 int main(int argc , char *argv[])
 {
     tbeg("main");
@@ -168,6 +189,11 @@ int main(int argc , char *argv[])
     // send
     ctx.begin = &makebuf;
     ctx.end = &sendbuf;
+
+    // pthread_t pth;
+    // pthread_create(&pth, NULL, threadf, "processing...");
+    // pthread_join(pth, NULL);
+
 
     c9version(&ctx, &tag, 8192);
     c9proc(&ctx);
