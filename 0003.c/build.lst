@@ -107,6 +107,12 @@ s:        readbuf/END
 s:        s9proc5
 s:        t_/BEG
 s:            Tauth: (7) user/password instance
+s:            makebuf/BEG
+s:                alloc (send): 20 bytes
+s:            makebuf/END
+s:            sendbuf/BEG
+s:                free (send): 20 bytes
+s:            sendbuf/END
 s:            free (recv): 32 bytes
 s:        t_/END
 s:    s9proc/END
@@ -123,6 +129,7 @@ s:    s9proc/END
 s:    client disconnected
 s:    free (recv): 4 bytes
 s:main/END
+
 c:main/BEG
 c:    socket created
 c:    connected
@@ -150,43 +157,56 @@ c:    makebuf/END
 c:    sendbuf/BEG
 c:        free (send): 36 bytes
 c:    sendbuf/END
-c:    readbuf/BEG
-c:        alloc (recv): 4 bytes
-c:        13:00:00:00
-c:    readbuf/END
-c:    readbuf/BEG
-c:        free (recv): 4 bytes
-c:        alloc (recv): 15 bytes
-c:        65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
-c:    readbuf/END
-c:    r_/BEG
-c:        free (recv): 15 bytes
-c:        Rversion
-c:    r_/END
-c:    readbuf/BEG
-c:        alloc (recv): 4 bytes
-c:        13:00:00:00
-c:    readbuf/END
-c:    readbuf/BEG
-c:        free (recv): 4 bytes
-c:        alloc (recv): 15 bytes
-c:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c:    readbuf/END
-c:    r_/BEG
-c:        free (recv): 15 bytes
-c:        Rversion
-c:    r_/END
-c:    readbuf/BEG
-c:        alloc (recv): 4 bytes
-c:        13:00:00:00
-c:    readbuf/END
-c:    readbuf/BEG
-c:        free (recv): 4 bytes
-c:        alloc (recv): 15 bytes
-c:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c:    readbuf/END
-c:    r_/BEG
-c:        free (recv): 15 bytes
-c:        Rversion
-c:    r_/END
 c:main/END
+
+c2:readbuf/BEG
+c2:    alloc (recv): 4 bytes
+c2:    13:00:00:00
+c2:readbuf/END
+c2:readbuf/BEG
+c2:    free (recv): 4 bytes
+c2:    alloc (recv): 15 bytes
+c2:    65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
+c2:readbuf/END
+c2:r_/BEG
+c2:    free (recv): 15 bytes
+c2:    Rversion
+c2:r_/END
+c2:readbuf/BEG
+c2:    alloc (recv): 4 bytes
+c2:    13:00:00:00
+c2:readbuf/END
+c2:readbuf/BEG
+c2:    free (recv): 4 bytes
+c2:    alloc (recv): 15 bytes
+c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:readbuf/END
+c2:r_/BEG
+c2:    free (recv): 15 bytes
+c2:    Rversion
+c2:r_/END
+c2:readbuf/BEG
+c2:    alloc (recv): 4 bytes
+c2:    13:00:00:00
+c2:readbuf/END
+c2:readbuf/BEG
+c2:    free (recv): 4 bytes
+c2:    alloc (recv): 15 bytes
+c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:readbuf/END
+c2:r_/BEG
+c2:    free (recv): 15 bytes
+c2:    Rversion
+c2:r_/END
+c2:readbuf/BEG
+c2:    alloc (recv): 4 bytes
+c2:    14:00:00:00
+c2:readbuf/END
+c2:readbuf/BEG
+c2:    free (recv): 4 bytes
+c2:    alloc (recv): 16 bytes
+c2:    67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+c2:readbuf/END
+c2:r_/BEG
+c2:    free (recv): 16 bytes
+c2:r_/END

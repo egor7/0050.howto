@@ -47,20 +47,52 @@ int terr(const char* str) {
     return 1;
 }
 
+int t2lvl = 0;
+void t2log(const char *fmt, ...) {
+    va_list args;
+    va_start(args, fmt);
+
+    FILE *o;
+    o = fopen("clt2.lst", "a+");
+    fprintf(o, "c2:");
+    int i;
+    for (i = 0; i < t2lvl; i++) {
+        fprintf(o, "    ");
+    }
+    vfprintf(o, fmt, args);
+    fprintf(o, "\n");
+    fclose(o);
+
+    va_end(args);
+}
+void t2beg(const char* str) {
+    t2log("%s/BEG", str);
+    t2lvl++;
+}
+void t2end(const char* str) {
+    t2lvl--;
+    t2log("%s/END", str);
+}
+int t2err(const char* str) {
+    t2lvl--;
+    t2log("%s/ERR", str);
+    return 1;
+}
+
 uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
 {
-    tbeg("readbuf");
+    t2beg("readbuf");
     C9aux *a = ((C9aux*)ctx->aux);
 
     if (a->nrecv > 0) {
-        tlog("free (recv): %d bytes", a->nrecv);
+        t2log("free (recv): %d bytes", a->nrecv);
         free(a->recv);
         a->nrecv = 0;
     }
     a->recv = (uint8_t *)malloc(size*sizeof(uint8_t));
     memset(a->recv, 0, size*sizeof(uint8_t));
     a->nrecv = size;
-    tlog("alloc (recv): %d bytes", a->nrecv);
+    t2log("alloc (recv): %d bytes", a->nrecv);
 
     int nrecv = recv(a->sock, a->recv, size, 0);
 
@@ -72,31 +104,31 @@ uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
         sprintf(buf, "%02x", a->recv[i]);
         strcat(s, buf);
     }
-    tlog(s);
+    t2log(s);
 
-    tend("readbuf");
+    t2end("readbuf");
     return a->recv;
 }
 
 void r_(C9ctx *ctx, C9r *r9)
 {
-    tbeg("r_");
+    t2beg("r_");
     C9aux *a = ((C9aux*)ctx->aux);
 
     if (a->nrecv > 0) {
-        tlog("free (recv): %d bytes", a->nrecv);
+        t2log("free (recv): %d bytes", a->nrecv);
         free(a->recv);
         a->nrecv = 0;
     }
 
     switch (r9->type){
         case Rversion:
-            tlog("Rversion");
+            t2log("Rversion");
             // how to get full message unpacked info?
             break;
     }
 
-    tend("r_");
+    t2end("r_");
 }
 
 uint8_t *makebuf(C9ctx *ctx, uint32_t size)
@@ -137,7 +169,7 @@ void *threadf(void *arg)
 {
     C9ctx *ctx = ((C9ctx*)arg);
     int i = 0;
-    while(i++ < 3) c9proc(ctx);
+    while(i++ < 4) c9proc(ctx);
     pthread_exit(NULL);
 }
 

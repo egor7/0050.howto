@@ -94,6 +94,11 @@ void t_(C9ctx *ctx, C9t *t9)
 
         case Tauth:
             tlog("Tauth: (%d) %s %s", t9->auth.afid, t9->auth.uname, t9->auth.aname);
+            C9qid q;
+            q.path = 0;
+            q.version = 0;
+            q.type = C9qtfile;
+            s9auth(ctx, t9->tag, &q);
             break;
 
         default:
