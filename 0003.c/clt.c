@@ -187,7 +187,10 @@ int main(int argc , char *argv[])
 
     c9version(&ctx, &tag, 8192 + 2);
     c9version(&ctx, &tag, 8192);
-    c9version(&ctx, &tag, 8192 + 1); // why only 8192 in the reply?
+    c9version(&ctx, &tag, 8192 + 1);
+    C9fid afid = 7;
+    c9auth(&ctx, &tag, afid, "user/password", "instance");
+
 
     // sleep(1);
     pthread_join(pth, NULL);

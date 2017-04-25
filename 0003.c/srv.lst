@@ -21,14 +21,14 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG
@@ -50,14 +50,14 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG
@@ -79,14 +79,35 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
+s:        t_/END
+s:    s9proc/END
+s:    s9proc/BEG
+s:        s9proc1
+s:        readbuf/BEG
+s:            size = 4
+s:            alloc (recv): 4 bytes
+s:            24:00:00:00
+s:        readbuf/END
+s:        s9proc2
+s:        s9proc3
+s:        readbuf/BEG
+s:            size = 32
+s:            free (recv): 4 bytes
+s:            alloc (recv): 32 bytes
+s:            66:00:00:07:00:00:00:0d:00:75:73:65:72:2f:70:61:73:73:77:6f:72:64:08:00:69:6e:73:74:61:6e:63:65
+s:        readbuf/END
+s:        s9proc5
+s:        t_/BEG
+s:            Tauth: (7) user/password instance
+s:            free (recv): 32 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG
@@ -125,14 +146,14 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG
@@ -154,14 +175,14 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG
@@ -183,14 +204,35 @@ s:        s9proc5
 s:        Tversion1
 s:        Tversion9
 s:        t_/BEG
-s:            free (recv): 15 bytes
-s:            client send:100
+s:            Tversion
 s:            makebuf/BEG
 s:                alloc (send): 19 bytes
 s:            makebuf/END
 s:            sendbuf/BEG
 s:                free (send): 19 bytes
 s:            sendbuf/END
+s:            free (recv): 15 bytes
+s:        t_/END
+s:    s9proc/END
+s:    s9proc/BEG
+s:        s9proc1
+s:        readbuf/BEG
+s:            size = 4
+s:            alloc (recv): 4 bytes
+s:            24:00:00:00
+s:        readbuf/END
+s:        s9proc2
+s:        s9proc3
+s:        readbuf/BEG
+s:            size = 32
+s:            free (recv): 4 bytes
+s:            alloc (recv): 32 bytes
+s:            66:00:00:07:00:00:00:0d:00:75:73:65:72:2f:70:61:73:73:77:6f:72:64:08:00:69:6e:73:74:61:6e:63:65
+s:        readbuf/END
+s:        s9proc5
+s:        t_/BEG
+s:            Tauth: (7) user/password instance
+s:            free (recv): 32 bytes
 s:        t_/END
 s:    s9proc/END
 s:    s9proc/BEG

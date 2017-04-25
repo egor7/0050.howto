@@ -19,6 +19,12 @@ c:    makebuf/END
 c:    sendbuf/BEG
 c:        free (send): 19 bytes
 c:    sendbuf/END
+c:    makebuf/BEG
+c:        alloc (send): 36 bytes
+c:    makebuf/END
+c:    sendbuf/BEG
+c:        free (send): 36 bytes
+c:    sendbuf/END
 c:    readbuf/BEG
 c:        alloc (recv): 4 bytes
 c:        13:00:00:00
@@ -63,13 +69,7 @@ c:main/BEG
 c:    socket created
 c:    connected
 c:    readbuf/BEG
-c:        makebuf/BEG
-c:            alloc (send): 19 bytes
-c:        makebuf/END
 c:        alloc (recv): 4 bytes
-c:        sendbuf/BEG
-c:            free (send): 19 bytes
-c:        sendbuf/END
 c:        makebuf/BEG
 c:            alloc (send): 19 bytes
 c:        makebuf/END
@@ -81,6 +81,18 @@ c:            alloc (send): 19 bytes
 c:        makebuf/END
 c:        sendbuf/BEG
 c:            free (send): 19 bytes
+c:        sendbuf/END
+c:        makebuf/BEG
+c:            alloc (send): 19 bytes
+c:        makebuf/END
+c:        sendbuf/BEG
+c:            free (send): 19 bytes
+c:        sendbuf/END
+c:        makebuf/BEG
+c:            alloc (send): 36 bytes
+c:        makebuf/END
+c:        sendbuf/BEG
+c:            free (send): 36 bytes
 c:        sendbuf/END
 c:        13:00:00:00
 c:    readbuf/END

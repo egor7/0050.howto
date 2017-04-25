@@ -86,17 +86,24 @@ void t_(C9ctx *ctx, C9t *t9)
     tbeg("t_");
     C9aux *a = ((C9aux*)ctx->aux);
 
+    switch (t9->type){
+        case Tversion:
+            tlog("Tversion");
+            s9version(ctx);
+            break;
+
+        case Tauth:
+            tlog("Tauth: (%d) %s %s", t9->auth.afid, t9->auth.uname, t9->auth.aname);
+            break;
+
+        default:
+            tlog("%d", (int)t9->type);
+    }
+
     if (a->nrecv > 0) {
         tlog("free (recv): %d bytes", a->nrecv);
         free(a->recv);
         a->nrecv = 0;
-    }
-
-    tlog("client send:%d", (int)t9->type);
-    switch (t9->type){
-        case Tversion:
-            s9version(ctx);
-            break;
     }
 
     tend("t_");
