@@ -13,6 +13,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#include <pthread.h>
+
 #include "c9.h"
 #include "aux.h"
 #include "trace.h"
@@ -81,19 +83,18 @@ uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
     return a->recv;
 }
 
-void t_(C9ctx *ctx, C9t *t9)
+void *threadf(void *arg)
 {
-    tbeg("t_");
+    tbeg("threadf");
+    C9ctx *ctx = ((C9ctx*)arg);
     C9aux *a = ((C9aux*)ctx->aux);
+    C9t *t9 = a->t9;
+
+//printf("=== %d\n", ((C9aux*)ctx->aux)->t9->type);
 
     switch (t9->type){
-        case Tversion:
-            tlog("Tversion");
-            s9version(ctx);
-            break;
-
         case Tauth:
-            tlog("Tauth: (%d) %s %s", t9->auth.afid, t9->auth.uname, t9->auth.aname);
+            tlog("Tauth: [%d] (%d) %s %s", t9->tag, t9->auth.afid, t9->auth.uname, t9->auth.aname);
             C9qid q;
             q.path = 0;
             q.version = 0;
@@ -105,11 +106,29 @@ void t_(C9ctx *ctx, C9t *t9)
             tlog("%d", (int)t9->type);
     }
 
-    if (a->nrecv > 0) {
-        tlog("free (recv): %d bytes", a->nrecv);
-        free(a->recv);
-        a->nrecv = 0;
+    tend("threadf");
+//    pthread_exit(NULL);
+}
+
+void t_(C9ctx *ctx, C9t *t9)
+{
+    tbeg("t_");
+    C9aux *a = ((C9aux*)ctx->aux);
+
+    a->t9 = t9;
+
+    switch (t9->type){
+        case Tversion:
+            tlog("Tversion: [%d]", t9->tag);
+            s9version(ctx);
+            break;
+
+        default:
+            //pthread_t pth;
+            //pthread_create(&pth, NULL, threadf, ctx);
+            threadf(ctx);
     }
+
 
     tend("t_");
 }
@@ -207,7 +226,7 @@ int main(int argc, char *argv[])
     }
 
     // custom
-    // close(client_sock);
+    close(client_sock);
 
     tend("main");
     return 0;

@@ -1,141 +1,53 @@
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    14:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 16 bytes
-c2:    67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 16 bytes
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    13:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 15 bytes
-c2:    65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 15 bytes
-c2:    Rversion
-c2:r_/END
-c2:readbuf/BEG
-c2:    alloc (recv): 4 bytes
-c2:    14:00:00:00
-c2:readbuf/END
-c2:readbuf/BEG
-c2:    free (recv): 4 bytes
-c2:    alloc (recv): 16 bytes
-c2:    67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
-c2:readbuf/END
-c2:r_/BEG
-c2:    free (recv): 16 bytes
-c2:r_/END
+c2:threadf/BEG
+c2:    readbuf/BEG
+c2:        alloc (recv): 4 bytes
+c2:        13:00:00:00
+c2:    readbuf/END
+c2:    readbuf/BEG
+c2:        free (recv): 4 bytes
+c2:        alloc (recv): 15 bytes
+c2:        65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
+c2:    readbuf/END
+c2:    r_/BEG
+c2:        free (recv): 15 bytes
+c2:        Rversion
+c2:    r_/END
+c2:    readbuf/BEG
+c2:        alloc (recv): 4 bytes
+c2:        13:00:00:00
+c2:    readbuf/END
+c2:    readbuf/BEG
+c2:        free (recv): 4 bytes
+c2:        alloc (recv): 15 bytes
+c2:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:    readbuf/END
+c2:    r_/BEG
+c2:        free (recv): 15 bytes
+c2:        Rversion
+c2:    r_/END
+c2:    readbuf/BEG
+c2:        alloc (recv): 4 bytes
+c2:        13:00:00:00
+c2:    readbuf/END
+c2:    readbuf/BEG
+c2:        free (recv): 4 bytes
+c2:        alloc (recv): 15 bytes
+c2:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:    readbuf/END
+c2:    r_/BEG
+c2:        free (recv): 15 bytes
+c2:        Rversion
+c2:    r_/END
+c2:    readbuf/BEG
+c2:        alloc (recv): 4 bytes
+c2:        14:00:00:00
+c2:    readbuf/END
+c2:    readbuf/BEG
+c2:        free (recv): 4 bytes
+c2:        alloc (recv): 16 bytes
+c2:        67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+c2:    readbuf/END
+c2:    r_/BEG
+c2:        free (recv): 16 bytes
+c2:    r_/END
+c2:threadf/END

@@ -148,6 +148,8 @@ freetag(C9ctx *c, C9tag tag)
 static uint8_t *
 T(C9ctx *c, uint32_t size, C9ttype type, C9tag *tag, C9error *err)
 {
+  tbeg("T");
+
   uint8_t *p = NULL;
 
   if(size > c->msize-4-1-2){
@@ -166,12 +168,15 @@ T(C9ctx *c, uint32_t size, C9ttype type, C9tag *tag, C9error *err)
       w16(&p, *tag);
     }
   }
+
+  tend("T");
   return p;
 }
 
 static uint8_t *
 R(C9ctx *c, uint32_t size, C9rtype type, C9tag tag, C9error *err)
 {
+  tbeg("R");
   uint8_t *p = NULL;
 
   if(size > c->msize-4-1-2){
@@ -189,6 +194,7 @@ R(C9ctx *c, uint32_t size, C9rtype type, C9tag tag, C9error *err)
       w16(&p, tag);
     }
   }
+  tend("R");
   return p;
 }
 
@@ -232,11 +238,13 @@ error:
 C9error
 c9version(C9ctx *c, C9tag *tag, uint32_t msize)
 {
+  tbeg("c9version");
   uint8_t *b;
   C9error err;
 
   if(msize < C9minmsize){
     c->error("c9version: msize too small");
+    terr("c9version");
     return C9Einit;
   }
   memset(c->tags, 0xff, sizeof(c->tags));
@@ -249,18 +257,21 @@ c9version(C9ctx *c, C9tag *tag, uint32_t msize)
     wcs(&b, "9P2000", 6);
     err = c->end(c);
   }
+  tend("c9version");
   return err;
 }
 
 C9error
 c9auth(C9ctx *c, C9tag *tag, C9fid afid, const char *uname, const char *aname)
 {
+  tbeg("c9auth");
   uint8_t *b;
   uint32_t ulen = safestrlen(uname), alen = safestrlen(aname);
   C9error err;
 
   if(ulen > C9maxstr || alen > C9maxstr){
     c->error("c9auth: string too long");
+    terr("c9auth");
     return C9Estr;
   }
   if((b = T(c, 4+2+ulen+2+alen, Tauth, tag, &err)) != NULL){
@@ -269,6 +280,7 @@ c9auth(C9ctx *c, C9tag *tag, C9fid afid, const char *uname, const char *aname)
     wcs(&b, aname, alen);
     err = c->end(c);
   }
+  tend("c9auth");
   return err;
 }
 
@@ -644,6 +656,7 @@ error:
 C9error
 s9version(C9ctx *c)
 {
+  tbeg("s9version");
   uint8_t *b;
   C9error err;
 
@@ -652,12 +665,14 @@ s9version(C9ctx *c)
     wcs(&b, "9P2000", 6);
     err = c->end(c);
   };
+  tend("s9version");
   return err;
 }
 
 C9error
 s9auth(C9ctx *c, C9tag tag, const C9qid *aqid)
 {
+  tbeg("s9auth");
   uint8_t *b;
   C9error err;
 
@@ -667,6 +682,7 @@ s9auth(C9ctx *c, C9tag tag, const C9qid *aqid)
     w64(&b, aqid->path);
     err = c->end(c);
   }
+  tend("s9auth");
   return err;
 }
 

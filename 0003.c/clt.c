@@ -167,9 +167,12 @@ int sendbuf(C9ctx *ctx)
 
 void *threadf(void *arg)
 {
+    t2beg("threadf");
     C9ctx *ctx = ((C9ctx*)arg);
     int i = 0;
     while(i++ < 4) c9proc(ctx);
+
+    t2end("threadf");
     pthread_exit(NULL);
 }
 
@@ -220,13 +223,21 @@ int main(int argc , char *argv[])
     c9version(&ctx, &tag, 8192 + 2);
     c9version(&ctx, &tag, 8192);
     c9version(&ctx, &tag, 8192 + 1);
-    C9fid afid = 7;
-    c9auth(&ctx, &tag, afid, "user/password", "instance");
 
+    C9fid afid = 7;
+    c9auth(&ctx, &tag, afid, "user/password1", "instance");
+    c9auth(&ctx, &tag, afid, "user/password2", "instance");
+    c9auth(&ctx, &tag, afid, "user/password3", "instance");
 
     // sleep(1);
     pthread_join(pth, NULL);
     close(sock);
+
+    if (aux.nrecv > 0) {
+        t2log("free (recv): %d bytes", aux.nrecv);
+        free(aux.recv);
+        aux.nrecv = 0;
+    }
 
     tend("main");
     return 0;
