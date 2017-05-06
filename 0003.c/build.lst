@@ -214,11 +214,14 @@ s:    client disconnected
 s:    free (recv): 4 bytes
 s:main/END
 
+
 c:main/BEG
 c:    socket created
 c:    connected
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -229,6 +232,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -239,6 +244,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -249,6 +256,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END
@@ -259,6 +268,8 @@ c:        sendbuf/END
 c:    c9auth/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END
@@ -269,6 +280,8 @@ c:        sendbuf/END
 c:    c9auth/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END
@@ -280,55 +293,121 @@ c:    c9auth/END
 c:main/END
 
 c2:threadf/BEG
-c2:    readbuf/BEG
-c2:        alloc (recv): 4 bytes
-c2:        13:00:00:00
-c2:    readbuf/END
-c2:    readbuf/BEG
-c2:        free (recv): 4 bytes
-c2:        alloc (recv): 15 bytes
-c2:        65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
-c2:    readbuf/END
-c2:    r_/BEG
-c2:        free (recv): 15 bytes
-c2:        Rversion
-c2:    r_/END
-c2:    readbuf/BEG
-c2:        alloc (recv): 4 bytes
-c2:        13:00:00:00
-c2:    readbuf/END
-c2:    readbuf/BEG
-c2:        free (recv): 4 bytes
-c2:        alloc (recv): 15 bytes
-c2:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:    readbuf/END
-c2:    r_/BEG
-c2:        free (recv): 15 bytes
-c2:        Rversion
-c2:    r_/END
-c2:    readbuf/BEG
-c2:        alloc (recv): 4 bytes
-c2:        13:00:00:00
-c2:    readbuf/END
-c2:    readbuf/BEG
-c2:        free (recv): 4 bytes
-c2:        alloc (recv): 15 bytes
-c2:        65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
-c2:    readbuf/END
-c2:    r_/BEG
-c2:        free (recv): 15 bytes
-c2:        Rversion
-c2:    r_/END
-c2:    readbuf/BEG
-c2:        alloc (recv): 4 bytes
-c2:        14:00:00:00
-c2:    readbuf/END
-c2:    readbuf/BEG
-c2:        free (recv): 4 bytes
-c2:        alloc (recv): 16 bytes
-c2:        67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
-c2:    readbuf/END
-c2:    r_/BEG
-c2:        free (recv): 16 bytes
-c2:    r_/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            13:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 15 bytes
+c2:            65:ff:ff:01:20:00:00:06:00:39:50:32:30:30:30
+c2:        readbuf/END
+c2:        read type,tag
+c2:        r.type = 101
+c2:        r_/BEG
+c2:            free (recv): 15 bytes
+c2:            Rversion
+c2:        r_/END
+c2:    c9proc/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            13:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 15 bytes
+c2:            65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:        readbuf/END
+c2:        read type,tag
+c2:        r.type = 101
+c2:        r_/BEG
+c2:            free (recv): 15 bytes
+c2:            Rversion
+c2:        r_/END
+c2:    c9proc/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            13:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 15 bytes
+c2:            65:ff:ff:00:20:00:00:06:00:39:50:32:30:30:30
+c2:        readbuf/END
+c2:        read type,tag
+c2:        r.type = 101
+c2:        r_/BEG
+c2:            free (recv): 15 bytes
+c2:            Rversion
+c2:        r_/END
+c2:    c9proc/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            14:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 16 bytes
+c2:            67:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+c2:        readbuf/END
+c2:        read type,tag
+c2:        freetag/BEG
+c2:            tag = 0
+c2:        freetag/END
+c2:        r.type = 103
+c2:        r_/BEG
+c2:            free (recv): 16 bytes
+c2:            Rauth
+c2:        r_/END
+c2:    c9proc/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            14:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 16 bytes
+c2:            67:01:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+c2:        readbuf/END
+c2:        read type,tag
+c2:        freetag/BEG
+c2:            tag = 1
+c2:        freetag/END
+c2:        r.type = 103
+c2:        r_/BEG
+c2:            free (recv): 16 bytes
+c2:            Rauth
+c2:        r_/END
+c2:    c9proc/END
+c2:    c9proc/BEG
+c2:        readbuf/BEG
+c2:            alloc (recv): 4 bytes
+c2:            14:00:00:00
+c2:        readbuf/END
+c2:        read size
+c2:        readbuf/BEG
+c2:            free (recv): 4 bytes
+c2:            alloc (recv): 16 bytes
+c2:            67:02:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+c2:        readbuf/END
+c2:        read type,tag
+c2:        freetag/BEG
+c2:            tag = 2
+c2:        freetag/END
+c2:        r.type = 103
+c2:        r_/BEG
+c2:            free (recv): 16 bytes
+c2:            Rauth
+c2:        r_/END
+c2:    c9proc/END
 c2:threadf/END

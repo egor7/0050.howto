@@ -6,6 +6,7 @@ echo -n > build.lst
 #tcc c9.c -run main.c
 
 echo -n > srv.lst
+echo -n > srv2.lst
 echo -n > clt.lst
 echo -n > clt2.lst
 
@@ -14,6 +15,8 @@ sleep 1
 tcc c9.c -lpthread -run clt.c
 wait
 cat srv.lst >> build.lst
+echo >> build.lst
+cat srv2.lst >> build.lst
 echo >> build.lst
 cat clt.lst >> build.lst
 echo >> build.lst

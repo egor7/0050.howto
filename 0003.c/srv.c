@@ -51,6 +51,38 @@ int terr(const char* str) {
     return 1;
 }
 
+int t2lvl = 0;
+void t2log(const char *fmt, ...) {
+    va_list args;
+    va_start(args, fmt);
+
+    FILE *o;
+    o = fopen("srv2.lst", "a+");
+    fprintf(o, "c2:");
+    int i;
+    for (i = 0; i < t2lvl; i++) {
+        fprintf(o, "    ");
+    }
+    vfprintf(o, fmt, args);
+    fprintf(o, "\n");
+    fclose(o);
+
+    va_end(args);
+}
+void t2beg(const char* str) {
+    t2log("%s/BEG", str);
+    t2lvl++;
+}
+void t2end(const char* str) {
+    t2lvl--;
+    t2log("%s/END", str);
+}
+int t2err(const char* str) {
+    t2lvl--;
+    t2log("%s/ERR", str);
+    return 1;
+}
+
 uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
 {
     tbeg("readbuf");

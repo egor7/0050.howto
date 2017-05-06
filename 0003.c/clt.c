@@ -126,6 +126,14 @@ void r_(C9ctx *ctx, C9r *r9)
             t2log("Rversion");
             // how to get full message unpacked info?
             break;
+
+        case Rauth:
+            t2log("Rauth");
+            // how to get full message unpacked info?
+            break;
+
+        default:
+            t2log("%d", r9->type);
     }
 
     t2end("r_");
@@ -170,11 +178,13 @@ void *threadf(void *arg)
     t2beg("threadf");
     C9ctx *ctx = ((C9ctx*)arg);
     int i = 0;
-    while(i++ < 4) c9proc(ctx);
+    while(i++ < 6) c9proc(ctx);
 
     t2end("threadf");
     pthread_exit(NULL);
 }
+
+pthread_mutex_t lock;
 
 int main(int argc , char *argv[])
 {
@@ -182,18 +192,27 @@ int main(int argc , char *argv[])
     int sock, read_size;
     struct sockaddr_in server;
 
+    if (pthread_mutex_init(&lock, NULL) != 0)
+    {
+        return terr("mutex init failed");
+    }
+
     sock = socket(AF_INET , SOCK_STREAM , 0);
-    if (sock == -1)
+    if (sock == -1) {
+        pthread_mutex_destroy(&lock);
         return terr("could not create socket");
-        tlog("socket created");
+    }
+    tlog("socket created");
 
     server.sin_addr.s_addr = inet_addr("127.0.0.1");
     server.sin_family = AF_INET;
     server.sin_port = htons( 8888 );
 
-    if (connect(sock , (struct sockaddr*)&server , sizeof(server)) < 0)
+    if (connect(sock , (struct sockaddr*)&server , sizeof(server)) < 0) {
+        pthread_mutex_destroy(&lock);
         return terr("connect failed");
-        tlog("connected");
+    }
+    tlog("connected");
 
 
     C9tag tag;
@@ -204,6 +223,7 @@ int main(int argc , char *argv[])
     aux.nsend = 0;
     aux.nrecv = 0;
     aux.sock = sock;
+    aux.lock = &lock;
 
     C9ctx ctx;
     ctx.aux = &aux;
@@ -239,6 +259,7 @@ int main(int argc , char *argv[])
         aux.nrecv = 0;
     }
 
+    pthread_mutex_destroy(&lock);
     tend("main");
     return 0;
 }

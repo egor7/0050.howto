@@ -3,6 +3,8 @@ c:    socket created
 c:    connected
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -13,6 +15,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -23,6 +27,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9version/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 19 bytes
 c:            makebuf/END
@@ -33,6 +39,8 @@ c:        sendbuf/END
 c:    c9version/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END
@@ -43,6 +51,8 @@ c:        sendbuf/END
 c:    c9auth/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END
@@ -53,6 +63,84 @@ c:        sendbuf/END
 c:    c9auth/END
 c:    c9auth/BEG
 c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 37 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 37 bytes
+c:        sendbuf/END
+c:    c9auth/END
+c:main/END
+c:main/BEG
+c:    socket created
+c:    connected
+c:    c9version/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 19 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 19 bytes
+c:        sendbuf/END
+c:    c9version/END
+c:    c9version/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 19 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 19 bytes
+c:        sendbuf/END
+c:    c9version/END
+c:    c9version/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 19 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 19 bytes
+c:        sendbuf/END
+c:    c9version/END
+c:    c9auth/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 37 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 37 bytes
+c:        sendbuf/END
+c:    c9auth/END
+c:    c9auth/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
+c:            makebuf/BEG
+c:                alloc (send): 37 bytes
+c:            makebuf/END
+c:        T/END
+c:        sendbuf/BEG
+c:            free (send): 37 bytes
+c:        sendbuf/END
+c:    c9auth/END
+c:    c9auth/BEG
+c:        T/BEG
+c:            newtag/BEG
+c:            newtag/END
 c:            makebuf/BEG
 c:                alloc (send): 37 bytes
 c:            makebuf/END

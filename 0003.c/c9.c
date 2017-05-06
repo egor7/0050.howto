@@ -2,6 +2,8 @@
 #include <stdint.h>
 #include "c9.h"
 
+#include <pthread.h>
+#include "aux.h"
 #include "trace.h"
 
 enum
@@ -91,10 +93,16 @@ r64(uint8_t **p)
 static C9error
 newtag(C9ctx *c, C9ttype type, C9tag *tag)
 {
+  tbeg("newtag");
+  C9aux *a = ((C9aux*)c->aux);
+  pthread_mutex_lock(a->lock);
+
   uint32_t i;
 
   if(type == Tversion){
     *tag = 0xffff;
+    pthread_mutex_unlock(a->lock);
+    tend("newtag");
     return 0;
   }
 
@@ -103,6 +111,8 @@ newtag(C9ctx *c, C9ttype type, C9tag *tag)
     if((c->tags[d] & 1<<m) != 0){
       c->tags[d] &= ~(1<<m);
       *tag = c->lowfreetag++;
+      pthread_mutex_unlock(a->lock);
+      tend("newtag");
       return 0;
     }
   }
@@ -116,32 +126,47 @@ newtag(C9ctx *c, C9ttype type, C9tag *tag)
 		    c->tags[i] &= ~(1<<j);
 		    *tag = i*C9tagsbits + j;
 		    c->lowfreetag = *tag + 1;
+            pthread_mutex_unlock(a->lock);
+            tend("newtag");
 		    return 0;
 		  }
 		}
   }
 
   c->error("newtag: no free tags");
+  pthread_mutex_unlock(a->lock);
+  terr("newtag");
   return C9Etag;
 }
 
 static int
 freetag(C9ctx *c, C9tag tag)
 {
+  t2beg("freetag");
+  C9aux *a = ((C9aux*)c->aux);
+  pthread_mutex_lock(a->lock);
+
+  t2log("tag = %d", tag);
   if(tag != 0xffff){
     uint32_t d = tag / C9tagsbits, m = tag % C9tagsbits;
     if(tag >= C9maxtags){
       c->error("freetag: invalid tag");
+      pthread_mutex_unlock(a->lock);
+      t2err("freetag");
       return -1;
     }
     if((c->tags[d] & 1<<m) != 0){
       c->error("freetag: double free");
+      pthread_mutex_unlock(a->lock);
+      t2err("freetag");
       return -1;
     }
 		if(c->lowfreetag > tag)
 		  c->lowfreetag = tag;
 		c->tags[d] |= 1<<m;
   }
+  pthread_mutex_unlock(a->lock);
+  t2end("freetag");
   return 0;
 }
 
@@ -507,6 +532,7 @@ c9wstat(C9ctx *c, C9tag *tag, C9fid fid, const C9stat *s)
 C9error
 c9proc(C9ctx *c)
 {
+  t2beg("c9proc");
   uint32_t i, sz, cnt, msize;
   uint8_t *b;
   int err;
@@ -516,12 +542,15 @@ c9proc(C9ctx *c)
   if((b = c->read(c, 4, &err)) == NULL){
 		if(err != 0)
 		  c->error("c9proc: short read");
+		t2err("c9proc");
 		return err == 0 ? 0 : C9Epkt;
   }
 
+  t2log("read size");
   sz = r32(&b);
   if(sz < 7 || sz > c->msize){
     c->error("c9proc: invalid packet size !(7 <= %u <= %u)", sz, c->msize);
+    t2err("c9proc");
     return C9Epkt;
   }
   sz -= 4;
@@ -529,22 +558,28 @@ c9proc(C9ctx *c)
   if((b = c->read(c, sz, &err)) == NULL){
 		if(err != 0)
 		  c->error("c9proc: short read");
+		t2err("c9proc");
 		return err == 0 ? 0 : C9Epkt;
   }
 
+  t2log("read type,tag");
   r.type = r08(&b);
   r.tag = r16(&b);
   if(r.type != Rversion){
     if(r.tag >= C9maxtags){
       c->error("c9proc: invalid tag 0x%x", r.tag);
+      t2err("c9proc");
       return C9Epkt;
     }
-    if(freetag(c, r.tag) != 0)
+    if(freetag(c, r.tag) != 0){
+      t2err("c9proc");
       return C9Etag;
+    }
   }
   sz -= 3;
   r.numqid = 0;
 
+  t2log("r.type = %d", r.type);
   switch(r.type){
 	case Rread:
 		if(sz < 4 || (cnt = r32(&b)) > sz-4)
@@ -566,6 +601,7 @@ c9proc(C9ctx *c)
 		  goto error;
 		if(cnt > C9maxpathel){
 		  c->error("c9proc: Rwalk !(%d <= %d)", cnt, C9maxpathel);
+		  t2err("c9proc");
 		  return C9Epath;
 		}
 		for(i = 0; i < cnt; i++){
@@ -581,6 +617,7 @@ c9proc(C9ctx *c)
 	  b += 2; sz -= 2;
 	  if((err = c9parsedir(c, &r.stat, &b, &sz)) != 0){
 	    c->error("c9proc");
+	    t2err("c9proc");
 	    return err;
 	  }
 	  r.numqid = 1;
@@ -637,6 +674,7 @@ c9proc(C9ctx *c)
 		  goto error;
 		if(cnt < 6 || memcmp(b, "9P2000", 6) != 0){
 		  c->error("invalid version");
+		  t2err("c9proc");
 		  return C9Ever;
 		}
 		if(msize < c->msize)
@@ -647,9 +685,11 @@ c9proc(C9ctx *c)
 	default:
 	  goto error;
   }
+  t2end("c9proc");
   return 0;
 error:
   c->error("c9proc: invalid packet (type=%d)", r.type);
+  t2err("c9proc");
   return C9Epkt;
 }
 

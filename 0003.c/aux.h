@@ -10,4 +10,6 @@ struct C9aux {
     int nrecv;
 
     C9t *t9;
+
+    pthread_mutex_t *lock;
 };
