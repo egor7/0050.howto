@@ -9,7 +9,5 @@ struct C9aux {
     uint8_t *recv;
     int nrecv;
 
-    C9t *t9;
-
     pthread_mutex_t *lock;
 };

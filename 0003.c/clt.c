@@ -209,6 +209,7 @@ int main(int argc , char *argv[])
     server.sin_port = htons( 8888 );
 
     if (connect(sock , (struct sockaddr*)&server , sizeof(server)) < 0) {
+        close(sock);
         pthread_mutex_destroy(&lock);
         return terr("connect failed");
     }
@@ -261,5 +262,10 @@ int main(int argc , char *argv[])
 
     pthread_mutex_destroy(&lock);
     tend("main");
+
+    fclose(stdin);
+    fclose(stdout);
+    fclose(stderr);
+
     return 0;
 }

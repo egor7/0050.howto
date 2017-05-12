@@ -115,16 +115,41 @@ uint8_t *readbuf(C9ctx *ctx, uint32_t size, int *err)
     return a->recv;
 }
 
-void *threadf(void *arg)
-{
-    tbeg("threadf");
-    C9ctx *ctx = ((C9ctx*)arg);
-    C9aux *a = ((C9aux*)ctx->aux);
-    C9t *t9 = a->t9;
+// void *threadf(void *arg)
+// {
+//     tbeg("threadf");
+//     C9ctx *ctx = ((C9ctx*)arg);
+//     C9aux *a = ((C9aux*)ctx->aux);
+//     C9t *t9 = a->t9;
+// 
+//     switch (t9->type){
+//         case Tauth:
+//             tlog("Tauth: [%d] (%d) %s %s", t9->tag, t9->auth.afid, t9->auth.uname, t9->auth.aname);
+//             C9qid q;
+//             q.path = 0;
+//             q.version = 0;
+//             q.type = C9qtfile;
+//             s9auth(ctx, t9->tag, &q);
+//             break;
+// 
+//         default:
+//             tlog("%d", (int)t9->type);
+//     }
+// 
+//     tend("threadf");
+//     // pthread_exit(NULL);
+// }
 
-//printf("=== %d\n", ((C9aux*)ctx->aux)->t9->type);
+void t_(C9ctx *ctx, C9t *t9)
+{
+    tbeg("t_");
 
     switch (t9->type){
+        case Tversion:
+            tlog("Tversion: [%d]", t9->tag);
+            s9version(ctx);
+            break;
+
         case Tauth:
             tlog("Tauth: [%d] (%d) %s %s", t9->tag, t9->auth.afid, t9->auth.uname, t9->auth.aname);
             C9qid q;
@@ -136,31 +161,12 @@ void *threadf(void *arg)
 
         default:
             tlog("%d", (int)t9->type);
+
+        // default:
+        //     //pthread_t pth;
+        //     //pthread_create(&pth, NULL, threadf, ctx);
+        //     threadf(ctx);
     }
-
-    tend("threadf");
-//    pthread_exit(NULL);
-}
-
-void t_(C9ctx *ctx, C9t *t9)
-{
-    tbeg("t_");
-    C9aux *a = ((C9aux*)ctx->aux);
-
-    a->t9 = t9;
-
-    switch (t9->type){
-        case Tversion:
-            tlog("Tversion: [%d]", t9->tag);
-            s9version(ctx);
-            break;
-
-        default:
-            //pthread_t pth;
-            //pthread_create(&pth, NULL, threadf, ctx);
-            threadf(ctx);
-    }
-
 
     tend("t_");
 }
@@ -204,11 +210,11 @@ int main(int argc, char *argv[])
 {
     tbeg("main");
 
-    int socket_desc, client_sock, c;
+    int sock, client_sock, c;
     struct sockaddr_in server, client;
 
-    socket_desc = socket(AF_INET, SOCK_STREAM, 0);
-    if (socket_desc == -1)
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == -1)
         return terr("could not create socket");
         tlog("socket created");
 
@@ -216,13 +222,13 @@ int main(int argc, char *argv[])
     server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons( 8888 );
 
-    if(bind(socket_desc, (struct sockaddr*)&server, sizeof(server)) < 0)
+    if(bind(sock, (struct sockaddr*)&server, sizeof(server)) < 0)
         return terr("bind failed");
         tlog("bind done");
 
-    listen(socket_desc, 3);
+    listen(sock, 3);
     c = sizeof(struct sockaddr_in);
-    client_sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c);
+    client_sock = accept(sock, (struct sockaddr *)&client, (socklen_t*)&c);
     if (client_sock < 0)
         return terr("accept failed");
         tlog("connection accepted");
@@ -257,9 +263,14 @@ int main(int argc, char *argv[])
         aux.nrecv = 0;
     }
 
-    // custom
     close(client_sock);
+    close(sock);
 
     tend("main");
+
+    fclose(stdin);
+    fclose(stdout);
+    fclose(stderr);
+
     return 0;
 }

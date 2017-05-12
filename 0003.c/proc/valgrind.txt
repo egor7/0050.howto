@@ -1,0 +1,4 @@
+http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/
+
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./srv
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./clt

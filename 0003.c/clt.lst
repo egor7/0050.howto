@@ -150,3 +150,9 @@ c:            free (send): 37 bytes
 c:        sendbuf/END
 c:    c9auth/END
 c:main/END
+c:main/BEG
+c:    socket created
+c:connect failed/ERR
+c:main/BEG
+c:    socket created
+c:connect failed/ERR
