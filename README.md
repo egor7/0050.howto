@@ -1,6 +1,6 @@
 # Everyday scripts
 
-## 0010.readable - make sources readable
+## 0010.readable - remove unnecessary pieces from source files
 
 ### Usage
 Put build.sh and *.awk files into target sources tree, run build.sh. You should configure scripts by yourself. Files provided for an example purposes only.
