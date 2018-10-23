@@ -8,7 +8,11 @@ BEGIN {
 	next
 }
 /\*\// {
-	f_incopy = 0
+	if (f_incopy == 1) {
+		f_incopy = 0
+	} else {
+		print $0
+	}
 	next
 }
 
