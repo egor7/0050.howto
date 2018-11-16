@@ -19,5 +19,7 @@ main(void)
            ,offsetof(struct s, a));
     printf("sizeof(struct s)=%zd\n", sizeof(struct s));
 
+	printf("%.*s\n", 5, "abcdefg");
+
     exit(EXIT_SUCCESS);
 }
